@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  background-color: #12131d;
+  padding: 0 !important;
+  margin: 0;
+  left: 0;
+  right: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  height: 200vh;
+}
+
+.bgSetting {
+  background-color: transparent !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #12131d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  border-radius: 10rem;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(146.97deg, #d600a6 17.88%, #00beff 200%);
+  cursor: pointer !important;
+}
+
+/* Navigation Design */
+
+.navbar {
+  background: #12131d;
+}
+
+.navbar a {
+  color: #efefef;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 12px;
+}
+
+.navbar a:hover {
+  color: #efefef;
+}
+
+.btn__lightPaper {
+  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  background-blend-mode: lighten;
+  font-weight: 700;
+  display: grid;
+  place-content: center;
+}
+
+.mode__changer {
+  display: grid;
+  place-content: center;
+}
+
+input[type="checkbox"] {
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+label {
+  cursor: pointer;
+  text-indent: -9999px;
+  width: 40px;
+  height: 25px;
+  background: #efefef;
+  display: block;
+  border-radius: 100px;
+  position: relative;
+}
+
+label:after {
+  content: "";
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  width: 20px;
+  height: 20px;
+  background: #0e0e0e;
+  border-radius: 90px;
+  transition: all 0.3s;
+}
+
+input:checked + label {
+  background: #efefef;
+}
+
+input:checked + label:after {
+  left: calc(100% - 2.5px);
+  transform: translateX(-100%);
+}
+
+label:active:after {
+  width: 38px;
+}
