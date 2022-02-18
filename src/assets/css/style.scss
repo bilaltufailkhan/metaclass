@@ -221,3 +221,161 @@ html {
     color: $darkText;
   }
 }
+
+.control__card {
+  background-color: rgba($color: $darkText, $alpha: 0.1);
+  img {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 1.3rem;
+  }
+  p {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 0.8rem;
+  }
+  &:hover {
+    transform: scale(105%);
+    cursor: pointer;
+    transition: all 0.5s;
+  }
+}
+
+// Market Place
+
+.market__place {
+  h2 {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 2rem;
+  }
+  p {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
+  h5 {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 1.2rem;
+  }
+}
+
+// Display Ads
+
+.display__ads {
+  h1 {
+    font-family: $fontStack;
+    font-weight: 600;
+    color: $darkText;
+  }
+  p {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+}
+
+.ads__card {
+  border: 1px solid rgba($color: $darkText, $alpha: 0.1);
+  border-bottom: none;
+  h5 {
+    color: $darkText;
+    font-family: $fontStack;
+    font-size: 1rem;
+  }
+  p {
+    color: $darkText;
+    font-family: $fontStack;
+    font-size: 0.8rem;
+  }
+}
+
+// Seller Section
+
+.seller__section {
+  h2 {
+    font-size: 2rem;
+    font-family: $fontStack;
+    color: $darkText;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+  p {
+    font-size: 0.9rem;
+    font-family: $fontStack;
+    color: $darkText;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
+
+.buyer__section {
+  h2 {
+    font-size: 2rem;
+    font-family: $fontStack;
+    color: $darkText;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+  p {
+    font-size: 0.9rem;
+    font-family: $fontStack;
+    color: $darkText;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+}
+
+// Live Platforms
+
+.live__platforms {
+  h1 {
+    font-family: $fontStack;
+    font-weight: 600;
+    color: $darkText;
+  }
+  p {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+}
+
+.live__card {
+  background-color: rgba($color: $darkText, $alpha: 0.1);
+  img {
+    margin-bottom: 1.5rem;
+  }
+  h2 {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 1.3rem;
+  }
+  p {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 0.8rem;
+  }
+  a {
+    background-color: rgba($color: $darkText, $alpha: 0.1);
+    padding: 1rem;
+    text-decoration: none;
+    color: $darkText;
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    font-weight: 500;
+    &:hover {
+      color: $darkText;
+      text-decoration: none;
+    }
+  }
+}
