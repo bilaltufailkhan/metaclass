@@ -1,7 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 $darkBG: #12131d;
+$darkText: #efefef;
+$gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
 $fontStack: "Poppins", sans-serif;
+
+@mixin hoverTrans {
+  cursor: pointer;
+  transform: scale(110%);
+  transition: all 0.25s;
+}
 
 html {
   background-color: $darkBG;
@@ -12,11 +20,10 @@ html {
   font-family: $fontStack;
   font-size: 1rem;
   font-weight: 500;
-  height: 200vh;
 }
 
 .bgSetting {
-  background-color: transparent !important;
+  background-color: $darkBG;
 }
 
 /* width */
@@ -31,81 +38,186 @@ html {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  background: $gradientBG;
   border-radius: 10rem;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(146.97deg, #d600a6 17.88%, #00beff 200%);
+  background: $gradientBG;
   cursor: pointer !important;
 }
 
 /* Navigation Design */
 
 .navbar {
-  background: #12131d;
+  background: $darkBG;
   a {
-    color: #efefef;
+    color: $darkText;
     text-decoration: none;
     font-family: "Poppins", sans-serif;
+    // border-bottom: 2px solid transparent;
     font-size: 12px;
+
     &:hover {
-      color: #efefef;
+      color: $darkText;
+      text-decoration: none;
+      @include hoverTrans();
     }
   }
 }
 
-.btn__lightPaper {
-  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+.lightPaper__link {
+  background: $gradientBG;
   background-blend-mode: lighten;
   font-weight: 700;
   display: grid;
   place-content: center;
 }
 
+// input[type="checkbox"] {
+//   height: 0;
+//   width: 0;
+//   visibility: hidden;
+// }
+
+// label {
+//   cursor: pointer;
+//   text-indent: -9999px;
+//   width: 40px;
+//   height: 25px;
+//   background: #efefef;
+//   display: block;
+//   border-radius: 100px;
+//   position: relative;
+//   &:after {
+//     content: "";
+//     position: absolute;
+//     top: 2.5px;
+//     left: 2.5px;
+//     width: 20px;
+//     height: 20px;
+//     background: #0e0e0e;
+//     border-radius: 90px;
+//     transition: all 0.3s;
+//   }
+// }
+
+// input:checked + label {
+//   background: #efefef;
+// }
+
+// input:checked + label:after {
+//   left: calc(100% - 2.5px);
+//   transform: translateX(-100%);
+// }
+
+// label:active:after {
+//   width: 38px;
+// }
+
 .mode__changer {
-  display: grid;
-  place-content: center;
-}
-
-input[type="checkbox"] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 40px;
-  height: 25px;
-  background: #efefef;
-  display: block;
-  border-radius: 100px;
-  position: relative;
-  &:after {
-    content: "";
-    position: absolute;
-    top: 2.5px;
-    left: 2.5px;
-    width: 20px;
-    height: 20px;
-    background: #0e0e0e;
-    border-radius: 90px;
-    transition: all 0.3s;
+  width: 125px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.21);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  .mode__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  i {
+    color: #efefef;
+    font-size: 1.2rem;
   }
 }
 
-input:checked + label {
-  background: #efefef;
+// Slider
+
+.slider {
+  background-color: $darkBG;
+  h1 {
+    color: $darkText;
+    font-size: 4rem;
+    font-family: $fontStack;
+    font-weight: 700;
+  }
+  p {
+    color: $darkText;
+    font-size: 1rem;
+    font-family: $fontStack;
+    font-weight: 400;
+    padding-right: 8rem;
+  }
+  .btn__telegram {
+    background: $gradientBG;
+    background-blend-mode: lighten;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: grid;
+    place-content: center;
+    color: $darkText;
+    text-decoration: none;
+    font-family: $fontStack;
+    cursor: pointer;
+    &:hover {
+      color: $darkText;
+      text-decoration: none;
+      @include hoverTrans();
+    }
+  }
+
+  .btn__info {
+    background: transparent;
+    background-blend-mode: lighten;
+    font-weight: 600;
+    font-size: 0.9rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    color: $darkText;
+    text-decoration: none;
+    font-family: $fontStack;
+    cursor: pointer;
+    &:hover {
+      color: $darkText;
+      text-decoration: none;
+    }
+  }
 }
 
-input:checked + label:after {
-  left: calc(100% - 2.5px);
-  transform: translateX(-100%);
+// Partners
+
+.partners {
+  h1 {
+    font-family: $fontStack;
+    color: $darkText;
+  }
+  .partner__img {
+    height: 5rem;
+    display: grid;
+    place-content: center;
+    filter: brightness(150%);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    &:hover {
+      @include hoverTrans();
+    }
+  }
 }
 
-label:active:after {
-  width: 38px;
+// Control
+
+.control {
+  h1,
+  p {
+    font-family: $fontStack;
+    color: $darkText;
+  }
 }
