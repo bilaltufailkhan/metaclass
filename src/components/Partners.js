@@ -11,17 +11,17 @@ const Partners = () => {
     <>
       <Container className="partners py-5">
         <Row className="align-items-center justify-content-between">
-          <Col xs="3">
+          <Col md="3" sm="12" className="my-3">
             <h1>Partners {"&"} Integration</h1>
           </Col>
-          <Col xs="2" className="offset-2 partner__img mr-2">
+          <Col md="2" sm="4" className="partner__img my-3">
             <img src={market} width="150px" height="auto" />
           </Col>
-          <Col xs="2" className="partner__img mr-2">
+          <Col md="2" sm="4" className="partner__img my-3">
             <img src={yahoo} width="150px" height="auto" />
           </Col>
-          <Col xs="2" className="partner__img">
-            <img src={post} width="200px" height="auto" />
+          <Col md="2" sm="4" className="partner__img my-3">
+            <img src={post} width="150px" height="auto" />
           </Col>
         </Row>
       </Container>

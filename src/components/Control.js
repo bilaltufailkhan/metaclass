@@ -15,7 +15,7 @@ const Control = (props) => {
     <>
       <Container className="control py-5 my-5">
         <Row className="justify-content-center align-items-center text-center">
-          <Col xs="8">
+          <Col md="8" sm="12">
             <h1>Take full control of your platform</h1>
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem

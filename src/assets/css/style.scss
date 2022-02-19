@@ -5,6 +5,17 @@ $darkText: #efefef;
 $gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
 $fontStack: "Poppins", sans-serif;
 
+@mixin gradientBorder {
+  border: solid 2px;
+  border-bottom: none;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(
+    146.97deg,
+    #d600a6 7.88%,
+    #00beff 163.69%
+  );
+}
+
 @mixin hoverTrans {
   cursor: pointer;
   transform: scale(110%);
@@ -283,8 +294,8 @@ html {
 }
 
 .ads__card {
-  border: 1px solid rgba($color: $darkText, $alpha: 0.1);
-  border-bottom: none;
+  @include gradientBorder();
+  height: 6rem;
   h5 {
     color: $darkText;
     font-family: $fontStack;
@@ -377,5 +388,267 @@ html {
       color: $darkText;
       text-decoration: none;
     }
+  }
+}
+
+// Roadmap
+
+.roadmap {
+  h1 {
+    font-family: $fontStack;
+    font-weight: 600;
+    color: $darkText;
+  }
+  p {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+
+  .smallLine {
+    width: 60%;
+    height: auto;
+  }
+}
+
+.roadmap__card {
+  height: 9rem;
+  @include gradientBorder();
+  h5 {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 1rem;
+  }
+  ul {
+    font-family: $fontStack;
+    color: $darkText;
+    font-size: 0.8rem;
+    list-style-type: "-  ";
+    padding-left: 15px;
+  }
+}
+
+.line__img {
+  position: absolute;
+  top: 45px;
+  left: -40px;
+  text-align: center;
+}
+
+.line__imgRight {
+  position: absolute;
+  top: 45px;
+  left: 40px;
+  text-align: center;
+}
+
+// Footer
+
+.footer {
+  a {
+    color: #00beff;
+    padding-right: 1.2rem;
+    &:hover {
+      color: darken($color: #00beff, $amount: 10);
+    }
+    i {
+      font-size: 1.2rem;
+    }
+  }
+
+  .navlist {
+    a {
+      color: $darkText;
+      font-family: $fontStack;
+      font-size: 0.8rem;
+      &:hover {
+        color: $darkText;
+        text-decoration: none;
+        @include hoverTrans();
+      }
+    }
+  }
+}
+
+.footer__bottom {
+  p {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+  }
+  span {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    padding-right: 1rem;
+  }
+  a {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    &:hover {
+      color: $darkText;
+      text-decoration: none;
+      @include hoverTrans();
+    }
+  }
+}
+
+// Side Drawer Nav
+
+.bread__crumb > .btn__drawer > i {
+  font-size: 1.5rem;
+  color: $darkText;
+  font-weight: 700;
+}
+
+.btn__drawer {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.drawer__nav {
+  display: flex !important;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.drawer {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3002;
+  padding: 1.8rem;
+  background: $gradientBG;
+  box-sizing: border-box;
+  transition: all ease-in 5s;
+}
+
+.drawer__off {
+  display: none;
+}
+
+.drawer__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.drawer__item:last-child {
+  border-bottom: #ffe600 solid 0;
+}
+
+.drawer__item:first-child {
+  border-bottom: #ffe600 solid 0;
+}
+
+.drawer__item {
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  // border-bottom: $darkText solid 2px;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+.drawer__item > a {
+  color: #fff;
+  font-size: 20px;
+  width: 80%;
+}
+
+.drawer__item > a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.openApp__btn {
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  height: auto;
+  width: 40%;
+  text-align: center;
+  background: $darkBG;
+  color: $darkText;
+  padding: 1rem;
+  font-family: $fontStack;
+}
+
+.openApp__btn:hover {
+  background: $gradientBG;
+}
+
+.fa-xmark {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#btn__xmark {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+  &:hover {
+    background-color: transparent !important;
+  }
+}
+
+// Responsiveness
+
+@media screen and (max-width: 480px) {
+  .slider {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      padding: 0;
+    }
+
+    .btn__telegram {
+      font-size: 0.8rem;
+    }
+    .btn__info {
+      font-size: 0.8rem;
+    }
+  }
+
+  .control {
+    h1 {
+      font-size: 2.5rem;
+    }
+    p {
+      padding: 0;
+    }
+  }
+
+  .partners {
+    h1 {
+      text-align: center;
+    }
+  }
+
+  .smallLine {
+    width: auto;
+    height: 100px !important;
+  }
+
+  .lineMove {
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+  }
+  .lineMove1 {
+    margin-left: -5rem;
+    margin-bottom: 1rem;
   }
 }

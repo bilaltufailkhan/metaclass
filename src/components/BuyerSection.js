@@ -3,7 +3,7 @@ import "../assets/css/style.css";
 
 import { Container, Row, Col } from "reactstrap";
 
-import illustration2 from "../assets/img/illustration2.png";
+import illustration2 from "../assets/img/mobile.png";
 
 const BuyerSection = () => {
   return (
@@ -26,7 +26,7 @@ const BuyerSection = () => {
             </p>
           </Col>
           <Col md="6" className="text-right">
-            <img src={illustration2} width="300px" height="auto" />
+            <img src={illustration2} width="100%" height="auto" />
           </Col>
         </Row>
       </Container>

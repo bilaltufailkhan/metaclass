@@ -10,7 +10,7 @@ const SellerSection = () => {
       <Container className="seller__section py-5 my-5">
         <Row className="justify-content-center align-items-center">
           <Col md="6">
-            <img src={illustration2} width="300px" height="auto" />
+            <img src={illustration2} width="100%" height="auto" />
           </Col>
           <Col md="6">
             <h2>Being a Seller</h2>

@@ -14,7 +14,7 @@ const MarketPlace = () => {
       <Container className="market__place py-5 my-5">
         <Row className="align-items-center justify-content-center">
           <Col md="6" className="text-center">
-            <img src={illustration2} width="400px" height="auto" />
+            <img src={illustration2} width="100%" height="auto" />
           </Col>
           <Col md="6" className="py-5">
             <h2>Marketplace of 2 Million Users</h2>
@@ -25,7 +25,7 @@ const MarketPlace = () => {
             </p>
             <Row>
               <Col xs="2">
-                <img src={bit1} width="80px" height="auto" />
+                <img src={bit1} width="100%" height="auto" />
               </Col>
               <Col xs="10">
                 <h5>Huge Market Gap</h5>
@@ -37,7 +37,7 @@ const MarketPlace = () => {
             </Row>
             <Row>
               <Col xs="2">
-                <img src={bit2} width="80px" height="auto" />
+                <img src={bit2} width="100%" height="auto" />
               </Col>
               <Col xs="10">
                 <h5>High Impact</h5>
@@ -49,7 +49,7 @@ const MarketPlace = () => {
             </Row>
             <Row>
               <Col xs="2">
-                <img src={bit3} width="80px" height="auto" />
+                <img src={bit3} width="100%" height="auto" />
               </Col>
               <Col xs="10">
                 <h5>Market Leader</h5>

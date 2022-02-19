@@ -269,8 +269,11 @@ html {
 }
 
 .ads__card {
-  border: 1px solid rgba(239, 239, 239, 0.1);
+  border: solid 2px;
   border-bottom: none;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  height: 6rem;
 }
 
 .ads__card h5 {
@@ -364,5 +367,278 @@ html {
 .live__card a:hover {
   color: #efefef;
   text-decoration: none;
+}
+
+.roadmap h1 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: #efefef;
+}
+
+.roadmap p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #efefef;
+  font-weight: 400;
+  margin-bottom: 4rem;
+}
+
+.roadmap .smallLine {
+  width: 60%;
+  height: auto;
+}
+
+.roadmap__card {
+  height: 9rem;
+  border: solid 2px;
+  border-bottom: none;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+}
+
+.roadmap__card h5 {
+  font-family: "Poppins", sans-serif;
+  color: #efefef;
+  font-size: 1rem;
+}
+
+.roadmap__card ul {
+  font-family: "Poppins", sans-serif;
+  color: #efefef;
+  font-size: 0.8rem;
+  list-style-type: "-  ";
+  padding-left: 15px;
+}
+
+.line__img {
+  position: absolute;
+  top: 45px;
+  left: -40px;
+  text-align: center;
+}
+
+.line__imgRight {
+  position: absolute;
+  top: 45px;
+  left: 40px;
+  text-align: center;
+}
+
+.footer a {
+  color: #00beff;
+  padding-right: 1.2rem;
+}
+
+.footer a:hover {
+  color: #0098cc;
+}
+
+.footer a i {
+  font-size: 1.2rem;
+}
+
+.footer .navlist a {
+  color: #efefef;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+.footer .navlist a:hover {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.footer__bottom p {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #efefef;
+}
+
+.footer__bottom span {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #efefef;
+  padding-right: 1rem;
+}
+
+.footer__bottom a {
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+  color: #efefef;
+}
+
+.footer__bottom a:hover {
+  color: #efefef;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-transform: scale(110%);
+          transform: scale(110%);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+.bread__crumb > .btn__drawer > i {
+  font-size: 1.5rem;
+  color: #efefef;
+  font-weight: 700;
+}
+
+.btn__drawer {
+  background-color: transparent;
+  border: none;
+  outline: 0;
+  padding-right: 0;
+  margin-right: 0;
+}
+
+.drawer__nav {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.drawer {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 3002;
+  padding: 1.8rem;
+  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: all ease-in 5s;
+  transition: all ease-in 5s;
+}
+
+.drawer__off {
+  display: none;
+}
+
+.drawer__list {
+  list-style: none;
+  padding-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.drawer__item:last-child {
+  border-bottom: #ffe600 solid 0;
+}
+
+.drawer__item:first-child {
+  border-bottom: #ffe600 solid 0;
+}
+
+.drawer__item {
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+  width: 100%;
+  text-align: right;
+  padding-bottom: 1rem;
+}
+
+.drawer__item > a {
+  color: #fff;
+  font-size: 20px;
+  width: 80%;
+}
+
+.drawer__item > a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
+.openApp__btn {
+  border: none;
+  border-radius: 10px;
+  font-size: 13px;
+  height: auto;
+  width: 40%;
+  text-align: center;
+  background: #12131d;
+  color: #efefef;
+  padding: 1rem;
+  font-family: "Poppins", sans-serif;
+}
+
+.openApp__btn:hover {
+  background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+}
+
+.fa-xmark {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#btn__xmark {
+  background-color: transparent;
+  border: none;
+  text-align: right;
+}
+
+#btn__xmark:hover {
+  background-color: transparent !important;
+}
+
+@media screen and (max-width: 480px) {
+  .slider h1 {
+    font-size: 2.5rem;
+  }
+  .slider p {
+    padding: 0;
+  }
+  .slider .btn__telegram {
+    font-size: 0.8rem;
+  }
+  .slider .btn__info {
+    font-size: 0.8rem;
+  }
+  .control h1 {
+    font-size: 2.5rem;
+  }
+  .control p {
+    padding: 0;
+  }
+  .partners h1 {
+    text-align: center;
+  }
+  .smallLine {
+    width: auto;
+    height: 100px !important;
+  }
+  .lineMove {
+    margin-left: 5rem;
+    margin-bottom: 1rem;
+  }
+  .lineMove1 {
+    margin-left: -5rem;
+    margin-bottom: 1rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

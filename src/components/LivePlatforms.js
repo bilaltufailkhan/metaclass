@@ -12,7 +12,7 @@ const LivePlatforms = () => {
     <>
       <Container className="live__platforms py-5 my-5">
         <Row className="justify-content-center align-items-center text-center">
-          <Col xs="7">
+          <Col md="7" sm="12">
             <h1>Live Platforms, Ready to Utilize</h1>
             <p>
               Sed ut perspiciatis unde omnis iste natus error sit voluptatem

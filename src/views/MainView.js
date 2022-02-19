@@ -13,6 +13,7 @@ import SellerSection from "../components/SellerSection";
 import BuyerSection from "../components/BuyerSection";
 import LivePlatforms from "../components/LivePlatforms";
 import RoadMap from "../components/RoadMap";
+import Footer from "../components/Footer";
 
 const AdminView = (props) => {
   return (
@@ -48,6 +49,9 @@ const AdminView = (props) => {
           </Col>
           <Col xs="12">
             <RoadMap />
+          </Col>
+          <Col xs="12">
+            <Footer />
           </Col>
         </Row>
       </Container>
