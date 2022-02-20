@@ -14,7 +14,7 @@ const MarketPlace = () => {
       <Container className="market__place py-5 my-5">
         <Row className="align-items-center justify-content-center">
           <Col md="6" className="text-center">
-            <img src={illustration2} width="100%" height="auto" />
+            <img src={illustration2} width="70%" height="auto" />
           </Col>
           <Col md="6" className="py-5">
             <h2>Marketplace of 2 Million Users</h2>
