@@ -10,12 +10,12 @@ const Footer = () => {
     <>
       <Container className="footer">
         <Row className="justify-content-center align-items-center border-bottom border-secondary border-1 py-5">
-          <Col xs="6">
-            <a>
-              <img src={logo} height="35px" width="auto" />
+          <Col md="6" sm="4" className="mt-4">
+            <a href="#" className="footer__logolink">
+              <img src={logo} className="footer__logo" />
             </a>
           </Col>
-          <Col xs="6" className="text-right">
+          <Col md="6" sm="8" className="text-right">
             <a href="#">
               <i class="fa-brands fa-linkedin"></i>
             </a>

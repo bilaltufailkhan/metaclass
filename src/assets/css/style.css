@@ -1,6 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+:root {
+  --darkBG: #12131d;
+  --darkText: #efefef;
+  --gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  --fontStack: "Poppins", sans-serif;
+  --textPurple: #d600a6;
+  --boxShadow: rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --darkBG: #efefef;
+  --darkText: #12131d;
+  --gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  --fontStack: "Poppins", sans-serif;
+  --textPurple: #d600a6;
+  --boxShadow: rgba(100, 100, 100, 0.5);
+}
+
 html {
-  background-color: #12131d;
+  background-color: var(--darkBG);
   padding: 0 !important;
   margin: 0;
   left: 0;
@@ -11,7 +30,7 @@ html {
 }
 
 .bgSetting {
-  background-color: #12131d;
+  background-color: var(--darkBG);
 }
 
 /* width */
@@ -21,7 +40,7 @@ html {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #12131d;
+  background: var(--darkBG);
 }
 
 /* Handle */
@@ -38,22 +57,22 @@ html {
 
 /* Navigation Design */
 .navbar {
-  background: #12131d;
+  background: var(--darkBG);
 }
 
 .navbar a {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
 }
 
 .navbar a:hover {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   cursor: pointer;
   -webkit-transform: scale(110%);
-          transform: scale(110%);
+  transform: scale(110%);
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -65,6 +84,7 @@ html {
   display: -ms-grid;
   display: grid;
   place-content: center;
+  color: #efefef !important;
 }
 
 .mode__changer {
@@ -74,17 +94,17 @@ html {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   background: rgba(255, 255, 255, 0.21);
   -webkit-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
 }
@@ -95,34 +115,35 @@ html {
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .mode__changer i {
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1.2rem;
+  color: var(--textPurple);
 }
 
 .slider {
-  background-color: #12131d;
+  background-color: var(--darkBG);
 }
 
 .slider h1 {
-  color: #efefef;
+  color: var(--darkText);
   font-size: 4rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
 }
 
 .slider p {
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1rem;
   font-family: "Poppins", sans-serif;
   font-weight: 400;
@@ -137,18 +158,19 @@ html {
   display: -ms-grid;
   display: grid;
   place-content: center;
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  color: #efefef !important;
 }
 
 .slider .btn__telegram:hover {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   cursor: pointer;
   -webkit-transform: scale(110%);
-          transform: scale(110%);
+  transform: scale(110%);
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -162,25 +184,25 @@ html {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   text-align: center;
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
 }
 
 .slider .btn__info:hover {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
 }
 
 .partners h1 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .partners .partner__img {
@@ -189,14 +211,14 @@ html {
   display: grid;
   place-content: center;
   -webkit-filter: brightness(150%);
-          filter: brightness(150%);
+  filter: brightness(150%);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .partners .partner__img:hover {
   cursor: pointer;
   -webkit-transform: scale(110%);
-          transform: scale(110%);
+  transform: scale(110%);
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -204,11 +226,12 @@ html {
 .control h1,
 .control p {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .control__card {
-  background-color: rgba(239, 239, 239, 0.1);
+  background-color: rgba(100, 100, 100, 0.1);
+  box-shadow: var(--boxShadow) 5px 5px 15px;
 }
 
 .control__card img {
@@ -217,19 +240,19 @@ html {
 
 .control__card h2 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1.3rem;
 }
 
 .control__card p {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 0.8rem;
 }
 
 .control__card:hover {
   -webkit-transform: scale(105%);
-          transform: scale(105%);
+  transform: scale(105%);
   cursor: pointer;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
@@ -237,33 +260,33 @@ html {
 
 .market__place h2 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 2rem;
 }
 
 .market__place p {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 0.8rem;
   font-weight: 400;
 }
 
 .market__place h5 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1.2rem;
 }
 
 .display__ads h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .display__ads p {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 400;
   margin-bottom: 4rem;
 }
@@ -272,18 +295,22 @@ html {
   border: solid 2px;
   border-bottom: none;
   border-image-slice: 1;
-  border-image-source: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  border-image-source: linear-gradient(
+    146.97deg,
+    #d600a6 7.88%,
+    #00beff 163.69%
+  );
   height: 6rem;
 }
 
 .ads__card h5 {
-  color: #efefef;
+  color: var(--darkText);
   font-family: "Poppins", sans-serif;
   font-size: 1rem;
 }
 
 .ads__card p {
-  color: #efefef;
+  color: var(--darkText);
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
 }
@@ -291,7 +318,7 @@ html {
 .seller__section h2 {
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 600;
   margin-bottom: 3rem;
 }
@@ -299,7 +326,7 @@ html {
 .seller__section p {
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   line-height: 1.5;
   font-weight: 400;
 }
@@ -307,7 +334,7 @@ html {
 .buyer__section h2 {
   font-size: 2rem;
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 600;
   margin-bottom: 3rem;
 }
@@ -315,7 +342,7 @@ html {
 .buyer__section p {
   font-size: 0.9rem;
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   line-height: 1.5;
   font-weight: 400;
 }
@@ -323,19 +350,21 @@ html {
 .live__platforms h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .live__platforms p {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 400;
   margin-bottom: 4rem;
 }
 
 .live__card {
-  background-color: rgba(239, 239, 239, 0.1);
+  background-color: rgba(100, 100, 100, 0.1);
+  box-shadow: var(--boxShadow) 5px 5px 15px;
+  height: 70vh;
 }
 
 .live__card img {
@@ -344,41 +373,49 @@ html {
 
 .live__card h2 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1.3rem;
 }
 
 .live__card p {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 0.8rem;
 }
 
-.live__card a {
+.live__card button {
   background-color: rgba(239, 239, 239, 0.1);
   padding: 1rem;
   text-decoration: none;
-  color: #efefef;
+  border: none;
+  outline: 0;
+  color: #d600a6;
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
+  background-color: rgba(214, 0, 166, 0.1);
 }
 
-.live__card a:hover {
-  color: #efefef;
+.live__card button:hover {
+  color: #d600a6;
   text-decoration: none;
+  cursor: pointer;
+  -webkit-transform: scale(110%);
+  transform: scale(110%);
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
 }
 
 .roadmap h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .roadmap p {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 400;
   margin-bottom: 4rem;
 }
@@ -393,18 +430,22 @@ html {
   border: solid 2px;
   border-bottom: none;
   border-image-slice: 1;
-  border-image-source: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
+  border-image-source: linear-gradient(
+    146.97deg,
+    #d600a6 7.88%,
+    #00beff 163.69%
+  );
 }
 
 .roadmap__card h5 {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 1rem;
 }
 
 .roadmap__card ul {
   font-family: "Poppins", sans-serif;
-  color: #efefef;
+  color: var(--darkText);
   font-size: 0.8rem;
   list-style-type: "-  ";
   padding-left: 15px;
@@ -425,7 +466,7 @@ html {
 }
 
 .footer a {
-  color: #00beff;
+  color: #d600a6;
   padding-right: 1.2rem;
 }
 
@@ -437,18 +478,23 @@ html {
   font-size: 1.2rem;
 }
 
+.footer .footer__logo {
+  height: 35px;
+  width: auto;
+}
+
 .footer .navlist a {
-  color: #efefef;
+  color: var(--darkText);
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
 }
 
 .footer .navlist a:hover {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   cursor: pointer;
   -webkit-transform: scale(110%);
-          transform: scale(110%);
+  transform: scale(110%);
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -456,35 +502,35 @@ html {
 .footer__bottom p {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .footer__bottom span {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
   padding-right: 1rem;
 }
 
 .footer__bottom a {
   font-family: "Poppins", sans-serif;
   font-size: 0.8rem;
-  color: #efefef;
+  color: var(--darkText);
 }
 
 .footer__bottom a:hover {
-  color: #efefef;
+  color: var(--darkText);
   text-decoration: none;
   cursor: pointer;
   -webkit-transform: scale(110%);
-          transform: scale(110%);
+  transform: scale(110%);
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
 
 .bread__crumb > .btn__drawer > i {
   font-size: 1.5rem;
-  color: #efefef;
+  color: var(--darkText);
   font-weight: 700;
 }
 
@@ -502,14 +548,14 @@ html {
   display: flex !important;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
 .drawer {
@@ -523,7 +569,7 @@ html {
   padding: 1.8rem;
   background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   -webkit-transition: all ease-in 5s;
   transition: all ease-in 5s;
 }
@@ -540,11 +586,11 @@ html {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-align: end;
-      -ms-flex-align: end;
-          align-items: flex-end;
+  -ms-flex-align: end;
+  align-items: flex-end;
 }
 
 .drawer__item:last-child {
@@ -581,8 +627,8 @@ html {
   height: auto;
   width: 40%;
   text-align: center;
-  background: #12131d;
-  color: #efefef;
+  background: var(--darkBG);
+  color: var(--darkText);
   padding: 1rem;
   font-family: "Poppins", sans-serif;
 }
@@ -639,6 +685,35 @@ html {
   .lineMove1 {
     margin-left: -5rem;
     margin-bottom: 1rem;
+  }
+  .live__card {
+    height: auto;
+  }
+  .footer a {
+    color: #d600a6;
+    padding-right: 0.8rem;
+  }
+  .footer a:hover {
+    color: #0098cc;
+  }
+  .footer a i {
+    font-size: 0.8rem;
+  }
+  .footer__logo {
+    height: 2rem !important;
+    width: auto;
+  }
+  .footer__logolink {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 3rem;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

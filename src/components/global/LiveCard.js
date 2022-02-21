@@ -10,7 +10,9 @@ const LiveCard = (props) => {
         <img src={props.img} width="70px" height="auto" />
         <h2>{props.title}</h2>
         <p>{props.text}</p>
-        <a href="#">Launch App</a>
+        <button type="link" href="#" className="liveCard__btn">
+          Launch App
+        </button>
       </Col>
     </>
   );

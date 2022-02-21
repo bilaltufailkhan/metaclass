@@ -11,6 +11,7 @@ import {
 
 import logo from "../assets/img/metaclass-logo.svg";
 import Switch from "react-switch";
+import useLocalStorage from "use-local-storage";
 
 class MainNav extends React.Component {
   constructor(props) {
@@ -21,8 +22,11 @@ class MainNav extends React.Component {
       isOpen: true,
       checked: false,
       windowWidth: window.innerWidth,
+      // theme: useLocalStorage("theme", defaultDark ? "dark" : "light"),
     };
   }
+
+  // defaultDark = this.window.matchMedia("(prefers-color-scheme: dark)").matches;
 
   handleResize = (e) => {
     this.setState({ windowWidth: window.innerWidth });

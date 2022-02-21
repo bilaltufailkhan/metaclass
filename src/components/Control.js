@@ -10,18 +10,23 @@ import governance from "../assets/img/governance.png";
 import staking from "../assets/img/staking.png";
 import orders from "../assets/img/orders.png";
 
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
+
 const Control = (props) => {
   return (
     <>
       <Container className="control py-5 my-5">
         <Row className="justify-content-center align-items-center text-center">
           <Col md="8" sm="12">
-            <h1>Take full control of your platform</h1>
-            <p>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
-              quae ab illo inventore veritatis et.
-            </p>
+            <Zoom>
+              <h1>Take full control of your platform</h1>
+              <p>
+                Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                accusantium doloremque laudantium, totam rem aperiam, eaque ipsa
+                quae ab illo inventore veritatis et.
+              </p>
+            </Zoom>
           </Col>
         </Row>
         <Row className="justify-content-center">

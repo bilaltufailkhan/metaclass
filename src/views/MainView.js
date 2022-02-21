@@ -1,9 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 
-import MainNav from "../components/MainNav";
-
-import "../assets/css/style.css";
+import MainNav from "../components/MainNavFunc";
 import Slider from "../components/Slider";
 import Partners from "../components/Partners";
 import Control from "../components/Control";
@@ -15,10 +13,44 @@ import LivePlatforms from "../components/LivePlatforms";
 import RoadMap from "../components/RoadMap";
 import Footer from "../components/Footer";
 
+import "../assets/css/style.css";
+
+import useLocalStorage from "use-local-storage";
+
 const AdminView = (props) => {
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // const [theme, setTheme] = useLocalStorage(
+  //   "theme",
+  //   defaultDark ? "dark" : "light"
+  // );
+
+  const [theme, setTheme] = React.useState("light");
+
+  const switchTheme = () => {
+    // const newTheme = theme === "light" ? "dark" : "light";
+    // setTheme("dark");
+    if (theme == "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   return (
     <>
-      <Container fluid className="bgSetting">
+      <button
+        style={{
+          background: "#efefef",
+          width: "auto",
+          height: "auto",
+          marginTop: "10rem",
+        }}
+        onClick={switchTheme}
+      >
+        Switch Theme
+      </button>
+      <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">
             <MainNav />
