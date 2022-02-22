@@ -3,16 +3,23 @@ import { Link } from "react-router-dom";
 import { Col, Container, Row, Nav, NavItem, NavLink } from "reactstrap";
 import "../assets/css/style.css";
 
-import logo from "../assets/img/metaclass-logo.svg";
+import logoDark from "../assets/img/metaclass-assets/dark/logo.svg";
+import logo from "../assets/img/metaclass-assets/light/logo.png";
 
-const Footer = () => {
+const Footer = (props) => {
   return (
     <>
       <Container className="footer">
         <Row className="justify-content-center align-items-center border-bottom border-secondary border-1 py-5">
           <Col md="6" sm="4" className="mt-4">
             <a href="#" className="footer__logolink">
-              <img src={logo} className="footer__logo" />
+              {/* <img src={logo} className="footer__logo" /> */}
+              <img
+                src={props.theme == "light" ? logoDark : logo}
+                height="35px"
+                width="auto"
+                className="footer__logo"
+              />
             </a>
           </Col>
           <Col md="6" sm="8" className="text-right">

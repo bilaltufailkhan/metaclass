@@ -37,6 +37,7 @@ const AdminView = (props) => {
 
   return (
     <>
+      <div id="ellipse1"></div>
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">
@@ -77,7 +78,7 @@ const AdminView = (props) => {
             <RoadMap />
           </Col>
           <Col xs="12">
-            <Footer />
+            <Footer theme={theme} />
           </Col>
         </Row>
       </Container>
