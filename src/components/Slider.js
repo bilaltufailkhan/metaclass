@@ -19,10 +19,10 @@ const Slider = () => {
               </p>
               <Row>
                 <Col lg="4" md="4">
-                  <a className="p-3 btn__telegram btn">Join Telegram</a>
+                  <a className="p-3 btn__telegram">Join Telegram</a>
                 </Col>
                 <Col lg="4" md="4">
-                  <a className="p-3 btn__info btn">
+                  <a className="p-3 btn__info">
                     <i class="fa-solid fa-circle-play"></i>How it works
                   </a>
                 </Col>

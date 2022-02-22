@@ -16,20 +16,13 @@ import Footer from "../components/Footer";
 import "../assets/css/style.css";
 
 import useLocalStorage from "use-local-storage";
+import Switch from "react-switch";
 
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-  // const [theme, setTheme] = useLocalStorage(
-  //   "theme",
-  //   defaultDark ? "dark" : "light"
-  // );
-
   const [theme, setTheme] = React.useState("light");
 
   const switchTheme = () => {
-    // const newTheme = theme === "light" ? "dark" : "light";
-    // setTheme("dark");
     if (theme == "light") {
       setTheme("dark");
     } else {
@@ -39,20 +32,29 @@ const AdminView = (props) => {
 
   return (
     <>
-      <button
-        style={{
-          background: "#efefef",
-          width: "auto",
-          height: "auto",
-          marginTop: "10rem",
-        }}
-        onClick={switchTheme}
-      >
-        Switch Theme
-      </button>
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">
+            <button
+              style={{
+                background: "#efefef",
+                width: "auto",
+                height: "auto",
+                marginTop: "10rem",
+                position: "fixed",
+                top: "-21%",
+                right: "10%",
+                zIndex: "300010",
+              }}
+              onClick={switchTheme}
+              className="p-2"
+            >
+              <i
+                class={
+                  theme == "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
+                }
+              ></i>
+            </button>
             <MainNav />
           </Col>
           <Col xs="12">

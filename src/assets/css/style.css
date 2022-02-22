@@ -2,7 +2,7 @@
 
 :root {
   --darkBG: #12131d;
-  --darkText: #efefef;
+  --darkText: #d8d8d8;
   --gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
   --fontStack: "Poppins", sans-serif;
   --textPurple: #d600a6;
@@ -10,7 +10,7 @@
 }
 
 [data-theme="dark"] {
-  --darkBG: #efefef;
+  --darkBG: #d8d8d8;
   --darkText: #12131d;
   --gradientBG: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
   --fontStack: "Poppins", sans-serif;
@@ -451,7 +451,7 @@ html {
   padding-left: 15px;
 }
 
-.line__img {
+/* .line__img {
   position: absolute;
   top: 45px;
   left: -40px;
@@ -463,7 +463,7 @@ html {
   top: 45px;
   left: 40px;
   text-align: center;
-}
+} */
 
 .footer a {
   color: #d600a6;

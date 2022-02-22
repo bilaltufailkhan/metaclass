@@ -14,9 +14,10 @@ import Switch from "react-switch";
 
 import useLocalStorage from "use-local-storage";
 
-const MainNav = () => {
+const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
   const [checked, setChecked] = React.useState(false);
+
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
 
   const handleResize = (e) => {
@@ -76,8 +77,8 @@ const MainNav = () => {
                   Read Litepaper
                 </NavLink>
               </NavItem>
-              <NavItem className="mode__changer py-3 px-2">
-                <i class="fa-solid fa-moon"></i>
+              {/* <NavItem className="mode__changer py-3"> */}
+              {/* <i class="fa-solid fa-moon"></i>
                 <div className="mode__button">
                   <Switch
                     onChange={onCheckClicked}
@@ -92,8 +93,8 @@ const MainNav = () => {
                     height={20}
                   />
                 </div>
-                <i class="fa-solid fa-sun"></i>
-              </NavItem>
+                <i class="fa-solid fa-sun"></i> */}
+              {/* </NavItem> */}
             </Nav>
           </Container>
         </Navbar>
