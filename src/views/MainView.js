@@ -17,6 +17,7 @@ import "../assets/css/style.css";
 
 import useLocalStorage from "use-local-storage";
 import Switch from "react-switch";
+import TokenDist from "../components/TokenDist";
 
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -49,22 +50,25 @@ const AdminView = (props) => {
             <Slider />
           </Col>
           <Col xs="12">
-            <Partners />
+            <Partners theme={theme} />
           </Col>
           <Col xs="12">
             <Control />
           </Col>
           <Col xs="12">
-            <MarketPlace />
+            <MarketPlace theme={theme} />
           </Col>
           <Col xs="12">
             <DisplayAds />
           </Col>
           <Col xs="12">
-            <SellerSection />
+            <SellerSection theme={theme} />
           </Col>
           <Col xs="12">
             <BuyerSection />
+          </Col>
+          <Col xs="12">
+            <TokenDist theme={theme} />
           </Col>
           <Col xs="12">
             <LivePlatforms />

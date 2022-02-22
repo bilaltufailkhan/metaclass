@@ -4,13 +4,18 @@ import "../assets/css/style.css";
 
 import illustration2 from "../assets/img/illustration2.png";
 
-import bit1 from "../assets/img/bit1.svg";
-import bit2 from "../assets/img/bit2.svg";
-import bit3 from "../assets/img/bit3.svg";
+import bit1Dark from "../assets/img/metaclass-assets/dark/huge-market-gap-icon.svg";
+import bit2Dark from "../assets/img/metaclass-assets/dark/hight-impact-icon.svg";
+import bit3Dark from "../assets/img/metaclass-assets/dark/market-leader-icon.svg";
+
+import bit1 from "../assets/img/metaclass-assets/light/huge-market-gap-icon.svg";
+import bit2 from "../assets/img/metaclass-assets/light/hight-impact-icon.svg";
+import bit3 from "../assets/img/metaclass-assets/light/market-leader-icon.svg";
 
 import { Zoom, Fade } from "react-reveal";
 
-const MarketPlace = () => {
+const MarketPlace = (props) => {
+  const { theme } = props;
   return (
     <>
       <Container className="market__place py-5 my-5">
@@ -31,7 +36,11 @@ const MarketPlace = () => {
 
               <Row>
                 <Col xs="2">
-                  <img src={bit1} width="100%" height="auto" />
+                  <img
+                    src={theme == "light" ? bit1Dark : bit1}
+                    width="80%"
+                    height="auto"
+                  />
                 </Col>
                 <Col xs="10">
                   <h5>Huge Market Gap</h5>
@@ -43,7 +52,11 @@ const MarketPlace = () => {
               </Row>
               <Row>
                 <Col xs="2">
-                  <img src={bit2} width="100%" height="auto" />
+                  <img
+                    src={theme == "light" ? bit2Dark : bit2}
+                    width="80%"
+                    height="auto"
+                  />
                 </Col>
                 <Col xs="10">
                   <h5>High Impact</h5>
@@ -55,7 +68,11 @@ const MarketPlace = () => {
               </Row>
               <Row>
                 <Col xs="2">
-                  <img src={bit3} width="100%" height="auto" />
+                  <img
+                    src={theme == "light" ? bit3Dark : bit3}
+                    width="80%"
+                    height="auto"
+                  />
                 </Col>
                 <Col xs="10">
                   <h5>Market Leader</h5>

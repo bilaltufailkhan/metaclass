@@ -9,7 +9,9 @@ import {
   Container,
 } from "reactstrap";
 
-import logo from "../assets/img/metaclass-logo.svg";
+import logoDark from "../assets/img/metaclass-assets/dark/logo.svg";
+import logo from "../assets/img/metaclass-assets/light/logo.png";
+
 import Switch from "react-switch";
 
 import useLocalStorage from "use-local-storage";
@@ -45,7 +47,11 @@ const MainNav = (props) => {
         <Navbar className="navbar fixed-top py-3" checked={checked}>
           <Container className="navbar__inner d-flex align-items-center">
             <NavbarBrand href="/" className="logo">
-              <img src={logo} height="35px" width="auto" />
+              <img
+                src={props.theme == "light" ? logoDark : logo}
+                height="35px"
+                width="auto"
+              />
             </NavbarBrand>
             <Nav className="ml-auto navlist">
               <NavItem>
@@ -102,7 +108,12 @@ const MainNav = (props) => {
         <Container>
           <div className="drawer__nav py-4 container">
             <div className="logo">
-              <img src={logo} width="auto" height="41px" className="logo" />
+              {/* <img src={logo} width="auto" height="41px" className="logo" /> */}
+              <img
+                src={props.theme == "light" ? logoDark : logo}
+                height="35px"
+                width="auto"
+              />
             </div>
             <div className="bread__crumb">
               <button className="btn__drawer" onClick={handleDrawer}>

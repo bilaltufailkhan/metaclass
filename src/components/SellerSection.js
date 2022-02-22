@@ -11,17 +11,25 @@ import sellerIllustrationLight from "../assets/img/metaclass-assets/light/seller
 const SellerSection = ({ theme }) => {
   return (
     <>
-      <Container className="seller__section py-5 my-5">
+      <Container className="seller__section py-5">
         <Row className="justify-content-center align-items-center">
-          <Col md="6">
+          <Col md="6" className="mb-5 text-center">
             <Zoom>
-              <img src={sellerIllustration} width="80%" height="auto" />
+              <img
+                src={
+                  theme == "light"
+                    ? sellerIllustration
+                    : sellerIllustrationLight
+                }
+                width="80%"
+                height="auto"
+              />
             </Zoom>
           </Col>
           <Col md="6">
             <Bounce right>
               <h2>Being a Seller</h2>
-              <p className="pr-5">
+              <p className="">
                 As a seller you’ll be in full control of how you’ll like to
                 dictate terms of your business. You’ll be able to receive
                 payments in BUSD, BNB and DCLASS.

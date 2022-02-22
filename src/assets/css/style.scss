@@ -312,6 +312,21 @@ html {
   }
 }
 
+.tokenDist {
+  h1 {
+    font-family: $fontStack;
+    font-weight: 600;
+    color: $darkText;
+  }
+  p {
+    font-family: $fontStack;
+    font-size: 0.8rem;
+    color: $darkText;
+    font-weight: 400;
+    margin-bottom: 4rem;
+  }
+}
+
 .ads__card {
   @include gradientBorder();
   height: 6rem;
