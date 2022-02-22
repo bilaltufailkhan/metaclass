@@ -21,12 +21,16 @@ import Switch from "react-switch";
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = React.useState("light");
+  const [checked, setChecked] = React.useState(false);
 
   const switchTheme = () => {
+    console.log("*****checked****", checked);
     if (theme == "light") {
       setTheme("dark");
+      setChecked(true);
     } else {
       setTheme("light");
+      setChecked(false);
     }
   };
 
@@ -35,27 +39,11 @@ const AdminView = (props) => {
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">
-            <button
-              style={{
-                background: "#efefef",
-                width: "auto",
-                height: "auto",
-                marginTop: "10rem",
-                position: "fixed",
-                top: "-21%",
-                right: "10%",
-                zIndex: "300010",
-              }}
-              onClick={switchTheme}
-              className="p-2"
-            >
-              <i
-                class={
-                  theme == "light" ? "fa-solid fa-moon" : "fa-solid fa-sun"
-                }
-              ></i>
-            </button>
-            <MainNav />
+            <MainNav
+              checked={checked}
+              switchTheme={switchTheme}
+              theme={theme}
+            />
           </Col>
           <Col xs="12">
             <Slider />

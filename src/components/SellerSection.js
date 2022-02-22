@@ -5,15 +5,17 @@ import "../assets/css/style.css";
 import { Zoom, Fade, Bounce } from "react-reveal";
 
 import illustration2 from "../assets/img/illustration2.png";
+import sellerIllustration from "../assets/img/metaclass-assets/dark/seller-illustration.svg";
+import sellerIllustrationLight from "../assets/img/metaclass-assets/light/seller-illustration.svg";
 
-const SellerSection = () => {
+const SellerSection = ({ theme }) => {
   return (
     <>
       <Container className="seller__section py-5 my-5">
         <Row className="justify-content-center align-items-center">
           <Col md="6">
             <Zoom>
-              <img src={illustration2} width="80%" height="auto" />
+              <img src={sellerIllustration} width="80%" height="auto" />
             </Zoom>
           </Col>
           <Col md="6">

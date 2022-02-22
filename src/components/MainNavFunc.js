@@ -16,9 +16,10 @@ import useLocalStorage from "use-local-storage";
 
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
-  const [checked, setChecked] = React.useState(false);
 
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
+
+  const { checked, switchTheme } = props;
 
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
@@ -38,15 +39,10 @@ const MainNav = (props) => {
     setIsOpen(!isOpen);
   };
 
-  const onCheckClicked = (checked) => {
-    setChecked(checked);
-    console.log("*****checked****", checked);
-  };
-
   if (windowWidth > 992) {
     return (
       <>
-        <Navbar className="navbar fixed-top py-3">
+        <Navbar className="navbar fixed-top py-3" checked={checked}>
           <Container className="navbar__inner d-flex align-items-center">
             <NavbarBrand href="/" className="logo">
               <img src={logo} height="35px" width="auto" />
@@ -77,11 +73,11 @@ const MainNav = (props) => {
                   Read Litepaper
                 </NavLink>
               </NavItem>
-              {/* <NavItem className="mode__changer py-3"> */}
-              {/* <i class="fa-solid fa-moon"></i>
+              <NavItem className="mode__changer py-3">
+                <i class="fa-solid fa-moon"></i>
                 <div className="mode__button">
                   <Switch
-                    onChange={onCheckClicked}
+                    onChange={switchTheme}
                     checked={checked}
                     className="react-switch"
                     uncheckedIcon={false}
@@ -93,8 +89,8 @@ const MainNav = (props) => {
                     height={20}
                   />
                 </div>
-                <i class="fa-solid fa-sun"></i> */}
-              {/* </NavItem> */}
+                <i class="fa-solid fa-sun"></i>
+              </NavItem>
             </Nav>
           </Container>
         </Navbar>

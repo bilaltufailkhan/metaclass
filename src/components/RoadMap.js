@@ -61,20 +61,22 @@ class RoadMap extends React.Component {
             </Col>
             <Col md="4" sm="12" className="line__img">
               <Zoom>
-                <img
-                  src={windowWidth > 992 ? line : smallLine}
-                  className="smallLine lineMove"
-                />
+                {windowWidth > 992 ? (
+                  <img src={line} className="bigLine bigLineMove" />
+                ) : (
+                  <img src={smallLine} className="smallLine lineMove" />
+                )}
               </Zoom>
             </Col>
           </Row>
           <Row className="justify-content-center align-items-center my-5">
             <Col md="4" sm="12" className="line__imgRight order-2 order-md-1">
               <Zoom>
-                <img
-                  src={windowWidth > 992 ? line2 : smallLine}
-                  className="smallLine lineMove1"
-                />
+                {windowWidth > 992 ? (
+                  <img src={line2} className="bigLine bigLineMove1" />
+                ) : (
+                  <img src={smallLine} className="smallLine lineMove1" />
+                )}
               </Zoom>
             </Col>
             <Col
@@ -105,10 +107,11 @@ class RoadMap extends React.Component {
             </Col>
             <Col md="4" sm="12" className="line__img">
               <Zoom>
-                <img
-                  src={windowWidth > 992 ? line : smallLine}
-                  className="smallLine lineMove"
-                />
+                {windowWidth > 992 ? (
+                  <img src={line} className="bigLine bigLineMove" />
+                ) : (
+                  <img src={smallLine} className="smallLine lineMove" />
+                )}
               </Zoom>
             </Col>
           </Row>

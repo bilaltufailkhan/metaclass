@@ -652,6 +652,21 @@ html {
   background-color: transparent !important;
 }
 
+.bigLine {
+  width: auto;
+  height: 100px !important;
+}
+
+.bigLineMove {
+  margin-left: 5rem;
+  margin-bottom: 1rem;
+}
+
+.bigLineMove1 {
+  margin-left: -5rem;
+  margin-bottom: 1rem;
+}
+
 @media screen and (max-width: 480px) {
   .slider h1 {
     font-size: 2.5rem;
@@ -678,10 +693,12 @@ html {
     width: auto;
     height: 100px !important;
   }
+
   .lineMove {
     margin-left: 5rem;
     margin-bottom: 1rem;
   }
+
   .lineMove1 {
     margin-left: -5rem;
     margin-bottom: 1rem;
