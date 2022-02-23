@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 
-import MainNav from "../components/MainNavFunc";
+import MainNavFunc from "../components/MainNavFunc";
 import Slider from "../components/Slider";
 import Partners from "../components/Partners";
 import Control from "../components/Control";
@@ -18,6 +18,7 @@ import "../assets/css/style.css";
 import useLocalStorage from "use-local-storage";
 import Switch from "react-switch";
 import TokenDist from "../components/TokenDist";
+import Wallet from "../components/Wallet";
 
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -37,11 +38,11 @@ const AdminView = (props) => {
 
   return (
     <>
-      <div id="ellipse1"></div>
+      {/* <div id="ellipse1"></div> */}
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">
-            <MainNav
+            <MainNavFunc
               checked={checked}
               switchTheme={switchTheme}
               theme={theme}

@@ -15,6 +15,7 @@ import logo from "../assets/img/metaclass-assets/light/logo.png";
 import Switch from "react-switch";
 
 import useLocalStorage from "use-local-storage";
+import { NavLink as Link } from "react-router-dom";
 
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -44,7 +45,7 @@ const MainNav = (props) => {
   if (windowWidth > 992) {
     return (
       <>
-        <Navbar className="navbar fixed-top py-3" checked={checked}>
+        <Navbar className="navbar py-3 fixed-top" checked={checked}>
           <Container className="navbar__inner d-flex align-items-center">
             <NavbarBrand href="/" className="logo">
               <img
@@ -67,13 +68,15 @@ const MainNav = (props) => {
                 <NavLink href="/components/">Distribution</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Staking</NavLink>
+                <Link to="/staking" style={{ marginTop: "10px" }}>
+                  Staking
+                </Link>
               </NavItem>
             </Nav>
             <Nav className="ml-auto navlist">
               <NavItem className="btn__lightPaper">
                 <NavLink
-                  href="/components/"
+                  to="/components/"
                   className="lightPaper__link p-3 mr-5"
                 >
                   Read Litepaper
@@ -146,6 +149,24 @@ const MainNav = (props) => {
                   <button href="#" className="openApp__btn">
                     Read Litepaper
                   </button>
+                </li>
+                <li className="mode__changer drawer__item py-3">
+                  <i class="fa-solid fa-moon"></i>
+                  <div className="mode__button">
+                    <Switch
+                      onChange={switchTheme}
+                      checked={checked}
+                      className="react-switch"
+                      uncheckedIcon={false}
+                      checkedIcon={false}
+                      offColor="#12131d"
+                      onColor="#12131d"
+                      handleDiameter={11}
+                      width={35}
+                      height={20}
+                    />
+                  </div>
+                  <i class="fa-solid fa-sun"></i>
                 </li>
               </ul>
             </div>

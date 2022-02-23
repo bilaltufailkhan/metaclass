@@ -4,8 +4,8 @@ import "../assets/css/style.css";
 
 import { Zoom } from "react-reveal";
 
-import tokenImg from "../assets/img/metaclass-assets/light/total-supply.svg";
-import tokenImgDark from "../assets/img/metaclass-assets/dark/total-supply.svg";
+import tokenImg from "../assets/img/metaclass-assets/light/total-supply-light.svg";
+import tokenImgDark from "../assets/img/metaclass-assets/dark/total-supply-dark.svg";
 
 import BscScanDark from "../assets/img/metaclass-assets/dark/bscscan-logo.svg";
 import CoinGekoDark from "../assets/img/metaclass-assets/dark/coin-gecko-logo.svg";
@@ -43,32 +43,40 @@ const TokenDist = (props) => {
         </Row>
         <Row className="justify-content-center align-items-center my-5">
           <Col md="2" sm="6" className="text-center mb-5">
-            <img
-              src={theme == "light" ? BscScanDark : BscScan}
-              width="150px"
-              height="auto"
-            />
+            <a href="https://bscscan.com/" target="_blank">
+              <img
+                src={theme == "light" ? BscScanDark : BscScan}
+                width="150px"
+                height="auto"
+              />
+            </a>
           </Col>
           <Col md="2" sm="6" className="text-center mb-5">
-            <img
-              src={theme == "light" ? CoinGekoDark : CoinGeko}
-              width="150px"
-              height="auto"
-            />
+            <a href="https://www.coingecko.com/" target="_blank">
+              <img
+                src={theme == "light" ? CoinGekoDark : CoinGeko}
+                width="150px"
+                height="auto"
+              />
+            </a>
           </Col>
           <Col md="2" sm="6" className="text-center mb-5">
-            <img
-              src={theme == "light" ? PanCakeDark : PanCake}
-              width="150px"
-              height="auto"
-            />
+            <a href="https://pancakeswap.finance/" target="_blank">
+              <img
+                src={theme == "light" ? PanCakeDark : PanCake}
+                width="150px"
+                height="auto"
+              />
+            </a>
           </Col>
           <Col md="2" sm="6" className="text-center mb-5">
-            <img
-              src={theme == "light" ? CoinMarketDark : CoinMarket}
-              width="150px"
-              height="auto"
-            />
+            <a href="https://coinmarketcap.com/" target="_blank">
+              <img
+                src={theme == "light" ? CoinMarketDark : CoinMarket}
+                width="150px"
+                height="auto"
+              />
+            </a>
           </Col>
         </Row>
       </Container>

@@ -27,7 +27,7 @@ const SellerSection = ({ theme }) => {
             </Zoom>
           </Col>
           <Col md="6">
-            <Bounce right>
+            <Fade right>
               <h2>Being a Seller</h2>
               <p className="">
                 As a seller you’ll be in full control of how you’ll like to
@@ -42,7 +42,7 @@ const SellerSection = ({ theme }) => {
                 This number will be initially determined by us, and will be
                 changed through governance platform.
               </p>
-            </Bounce>
+            </Fade>
           </Col>
         </Row>
       </Container>

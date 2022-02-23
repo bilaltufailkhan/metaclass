@@ -23,6 +23,7 @@ const Partners = (props) => {
               <h1>Partners {"&"} Integration</h1>
             </Fade>
           </Col>
+
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
               <img
@@ -30,6 +31,7 @@ const Partners = (props) => {
                 width="100px"
                 height="auto"
               />
+              {/* <div className="logo__hover"></div> */}
             </Zoom>
           </Col>
           <Col md="2" sm="4" className="partner__img my-3">

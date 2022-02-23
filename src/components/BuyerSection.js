@@ -5,7 +5,7 @@ import { Container, Row, Col } from "reactstrap";
 
 import illustration2 from "../assets/img/mobile.png";
 
-import { Bounce, Zoom } from "react-reveal";
+import { Bounce, Zoom, Fade } from "react-reveal";
 
 const BuyerSection = () => {
   return (
@@ -13,7 +13,7 @@ const BuyerSection = () => {
       <Container className="buyer__section py-5">
         <Row className="justify-content-center align-items-center">
           <Col md="6">
-            <Bounce left>
+            <Fade left>
               <h2>Being a Buyer</h2>
               <p className="">
                 As a buyer, we aim to protect your privacy and anonymity. You’ll
@@ -27,7 +27,7 @@ const BuyerSection = () => {
                 The fee will be initially determined by us, and will be changed
                 through governance platform.
               </p>
-            </Bounce>
+            </Fade>
           </Col>
           <Col md="6" className="text-center mt-5">
             <Zoom>
