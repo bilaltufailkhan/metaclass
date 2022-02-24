@@ -16,6 +16,7 @@ import Switch from "react-switch";
 
 import useLocalStorage from "use-local-storage";
 import { NavLink as Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
 
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -45,7 +46,7 @@ const MainNav = (props) => {
   if (windowWidth > 992) {
     return (
       <>
-        <Navbar className="navbar py-3 fixed-top" checked={checked}>
+        <Navbar className="navbar py-3" checked={checked}>
           <Container className="navbar__inner d-flex align-items-center">
             <NavbarBrand href="/" className="logo">
               <img
@@ -56,19 +57,51 @@ const MainNav = (props) => {
             </NavbarBrand>
             <Nav className="ml-auto navlist">
               <NavItem>
-                <NavLink href="/components/">Sellers</NavLink>
+                <ScrollLink
+                  to="seller"
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="nav-link"
+                >
+                  Sellers
+                </ScrollLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Buyers</NavLink>
+                <ScrollLink
+                  to="buyer"
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="nav-link"
+                >
+                  Buyers
+                </ScrollLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Market</NavLink>
+                <ScrollLink
+                  to="market__place"
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="nav-link"
+                >
+                  Market
+                </ScrollLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/components/">Distribution</NavLink>
+                <ScrollLink
+                  to="tokenDist"
+                  smooth={true}
+                  spy={true}
+                  duration={500}
+                  className="nav-link"
+                >
+                  Distribution
+                </ScrollLink>
               </NavItem>
               <NavItem>
-                <Link to="/staking" style={{ marginTop: "10px" }}>
+                <Link to="/staking" className="staking-link">
                   Staking
                 </Link>
               </NavItem>
@@ -130,20 +163,52 @@ const MainNav = (props) => {
                     <i class="fa-solid fa-xmark"></i>
                   </button>
                 </li>
-                <li className="drawer__item">
-                  <a href="#">Sellers</a>
+                <li className="drawer__item text-end">
+                  <ScrollLink
+                    to="seller"
+                    smooth={true}
+                    spy={true}
+                    duration={500}
+                    className="nav-link"
+                  >
+                    Sellers
+                  </ScrollLink>
                 </li>
                 <li className="drawer__item">
-                  <a href="#">Buyers</a>
+                  <ScrollLink
+                    to="buyer__section"
+                    smooth={true}
+                    spy={true}
+                    duration={500}
+                    className="nav-link"
+                  >
+                    Buyers
+                  </ScrollLink>
                 </li>
                 <li className="drawer__item">
-                  <a href="#">Market</a>
+                  <ScrollLink
+                    to="market__place"
+                    smooth={true}
+                    spy={true}
+                    duration={500}
+                    className="nav-link"
+                  >
+                    Market
+                  </ScrollLink>
                 </li>
                 <li className="drawer__item">
-                  <a href="#">Staking</a>
+                  <Link to="/staking">Staking</Link>
                 </li>
                 <li className="drawer__item">
-                  <a href="#">Distribution</a>
+                  <ScrollLink
+                    to="tokenDist"
+                    smooth={true}
+                    spy={true}
+                    duration={500}
+                    className="nav-link"
+                  >
+                    Distribution
+                  </ScrollLink>
                 </li>
                 <li className="drawer__item">
                   <button href="#" className="openApp__btn">

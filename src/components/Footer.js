@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import { Col, Container, Row, Nav, NavItem, NavLink } from "reactstrap";
 import "../assets/css/style.css";
 
+// import { NavLink as Link } from "react-router-dom";
+import { Link as ScrollLink } from "react-scroll";
+
 import logoDark from "../assets/img/metaclass-assets/dark/logo.svg";
 import logo from "../assets/img/metaclass-assets/light/logo.png";
 
@@ -43,22 +46,58 @@ const Footer = (props) => {
         <Row className="justify-content-center align-items-center border-bottom border-secondary border-1 py-5">
           <Nav className="navlist text-center justify-content-center">
             <NavItem>
-              <NavLink href="/components/">Sellers</NavLink>
+              <ScrollLink
+                className="nav-link"
+                spy={true}
+                smooth={true}
+                duration={500}
+                to="/seller"
+              >
+                Sellers
+              </ScrollLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Buyers</NavLink>
+              <ScrollLink
+                className="nav-link"
+                spy={true}
+                smooth={true}
+                duration={500}
+                to="/buyer__section"
+              >
+                Buyers
+              </ScrollLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Market</NavLink>
+              <ScrollLink
+                className="nav-link"
+                spy={true}
+                smooth={true}
+                duration={500}
+                to="/market__place"
+              >
+                Market
+              </ScrollLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Distribution</NavLink>
+              <ScrollLink
+                className="nav-link"
+                spy={true}
+                smooth={true}
+                duration={500}
+                to="/tokenDist"
+              >
+                Distribution
+              </ScrollLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Staking</NavLink>
+              <Link className="nav-link" to="/staking">
+                Staking
+              </Link>
             </NavItem>
             <NavItem>
-              <NavLink href="/components/">Read Lightpaper</NavLink>
+              <Link className="nav-link" to="/components/">
+                Read Lightpaper
+              </Link>
             </NavItem>
           </Nav>
         </Row>

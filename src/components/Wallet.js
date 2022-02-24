@@ -19,42 +19,14 @@ import logo from "../assets/img/metaclass-assets/light/logo.png";
 import tokenImg from "../assets/img/metaclass-assets/pancakeswap.svg";
 
 const Wallet = (props) => {
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = React.useState("light");
-  const [checked, setChecked] = React.useState(false);
-
-  const switchTheme = () => {
-    console.log("*****checked****", checked);
-    if (theme == "light") {
-      setTheme("dark");
-      setChecked(true);
-    } else {
-      setTheme("light");
-      setChecked(false);
-    }
-  };
-
   return (
     <>
-      <Container
-        fluid
-        className="bgSetting wallet text-white vh-auto"
-        data-theme={theme}
-      >
-        <Row>
-          <Col xs="12">
-            <MainNav
-              checked={checked}
-              switchTheme={switchTheme}
-              theme={theme}
-            />
-          </Col>
-        </Row>
+      <Container className="bgSetting wallet text-white vh-auto vw-100">
         <Row className="justify-content-center align-items-center">
           <Col
             md="6"
             sm="12"
-            className="order-2 order-md-1 align-items-center py-5"
+            className="order-2 order-md-1 align-items-center justify-content-center py-5"
           >
             <div className="px-5 stake__one">
               <h1>Stake MetaClass</h1>
@@ -98,7 +70,7 @@ const Wallet = (props) => {
             <div className="px-5 stake__two">
               <img
                 src={props.theme == "light" ? logoDark : logo}
-                height="45px"
+                height="50px"
                 width="auto"
               />
               <h2>MetaClass Stake Info</h2>

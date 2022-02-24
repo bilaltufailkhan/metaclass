@@ -25,16 +25,20 @@ const LivePlatforms = () => {
           <LiveCard
             title="Governance"
             img={governance}
+            btnTitle="Launch App"
             text="Since it’s decentralized platform, day to day decisions should be made by community through governance."
           />
           <LiveCard
             title="Staking Platform"
             img={staking}
+            margin="2.5rem"
+            btnTitle="Launch App"
             text="Maximize your rewards by staking DCLASS token, one of highest APY"
           />
           <LiveCard
             title="Market Place"
             img={market}
+            btnTitle="Coming Soon"
             text="With dClass you can buy or sell goods and services across the world and can communicate freely without censorship or fear."
           />
         </Row>

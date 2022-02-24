@@ -16,8 +16,13 @@ const LiveCard = (props) => {
           <p>{props.text}</p>
         </Bounce>
         <Flip left>
-          <button type="link" href="#" className="liveCard__btn">
-            Launch App
+          <button
+            type="link"
+            href="#"
+            style={{ marginTop: `${props.margin}` }}
+            className="liveCard__btn"
+          >
+            {props.btnTitle}
           </button>
         </Flip>
       </Col>

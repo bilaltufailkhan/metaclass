@@ -90,6 +90,11 @@ body {
   transition: all 0.25s;
 }
 
+.staking-link {
+  margin-bottom: 0;
+  font-family: Poppins;
+}
+
 .lightPaper__link {
   background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
   background-blend-mode: lighten;
@@ -422,7 +427,7 @@ body {
 .live__card {
   background-color: rgba(100, 100, 100, 0.1);
   box-shadow: var(--boxShadow) 5px 5px 15px;
-  height: 70vh;
+  height: auto;
 }
 
 .live__card img {
@@ -666,7 +671,7 @@ body {
 .drawer__item > a {
   color: #fff;
   font-size: 20px;
-  width: 80%;
+  width: 100%;
 }
 
 .drawer__item > a:hover {
@@ -742,9 +747,9 @@ body {
 
 .stake__one {
   /* box-shadow: var(--boxShadow) 0px 0px 20px; */
-  padding: 5rem;
+  /* padding: 5rem; */
   background-color: var(--darkBG);
-  width: 85%;
+  /* width: 85%; */
 }
 
 .form__inner > p {

@@ -1,6 +1,7 @@
 import Wallet from "../components/Wallet";
 import AuthView from "../views/auth/AuthView";
 import MainView from "../views/MainView";
+import StakingView from "../views/StakingView";
 
 let routes = [
   {
@@ -15,7 +16,7 @@ let routes = [
   },
   {
     path: "/staking",
-    component: Wallet,
+    component: StakingView,
     layout: "main",
   },
 ];

@@ -11,7 +11,7 @@ import sellerIllustrationLight from "../assets/img/metaclass-assets/light/seller
 const SellerSection = ({ theme }) => {
   return (
     <>
-      <Container className="seller__section py-5">
+      <Container className="seller__section py-5" id="seller">
         <Row className="justify-content-center align-items-center">
           <Col md="6" className="mb-5 text-center">
             <Zoom>
