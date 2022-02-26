@@ -20,9 +20,9 @@
   --boxShadow: rgba(100, 100, 100, 0.5);
 }
 
-body {
+html {
   background-color: var(--darkBG) !important;
-  padding: 0 !important;
+  /* padding: 0 !important; */
   margin: 0;
   left: 0;
   right: 0;
@@ -593,6 +593,7 @@ body {
   font-size: 1.5rem;
   color: var(--darkText);
   font-weight: 700;
+  /* margin-right: 3rem; */
 }
 
 .btn__drawer {
@@ -600,7 +601,7 @@ body {
   border: none;
   outline: 0;
   /* padding-right: -100px; */
-  margin-right: -100px;
+  /* margin-right: -200px; */
 }
 
 .drawer__nav {
