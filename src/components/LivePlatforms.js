@@ -31,9 +31,8 @@ const LivePlatforms = () => {
           <LiveCard
             title="Staking Platform"
             img={staking}
-            margin="2.5rem"
             btnTitle="Launch App"
-            text="Maximize your rewards by staking DCLASS token, one of highest APY"
+            text={`Maximize your rewards by staking DCLASS token, one of highest APY`}
           />
           <LiveCard
             title="Market Place"

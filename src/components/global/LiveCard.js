@@ -4,6 +4,8 @@ import "../../assets/css/style.css";
 import { Col } from "reactstrap";
 import { Bounce, Zoom, Flip } from "react-reveal";
 
+import { Link } from "react-router-dom";
+
 const LiveCard = (props) => {
   return (
     <>
@@ -16,14 +18,13 @@ const LiveCard = (props) => {
           <p>{props.text}</p>
         </Bounce>
         <Flip left>
-          <button
-            type="link"
-            href="#"
-            style={{ marginTop: `${props.margin}` }}
+          <Link
+            to="/staking"
+            style={{ marginTop: `${props.margin}`, height: "5rem" }}
             className="liveCard__btn"
           >
             {props.btnTitle}
-          </button>
+          </Link>
         </Flip>
       </Col>
     </>

@@ -1,5 +1,5 @@
-import React from "react";
-import { Col, Container, Row } from "reactstrap";
+import React, { useState, useEffect } from "react";
+import { Button, Col, Container, Row } from "reactstrap";
 
 import MainNavFunc from "../components/MainNavFunc";
 import Slider from "../components/Slider";
@@ -36,9 +36,34 @@ const AdminView = (props) => {
     }
   };
 
+  const [showButton, setShowButton] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.pageYOffset > 300 && window.innerWidth > 768) {
+        setShowButton(true);
+      } else {
+        setShowButton(false);
+      }
+    });
+  }, []);
+
+  // This function will scroll the window to the top
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth", // for smoothly scrolling
+    });
+  };
+
   return (
     <>
       {/* <div id="ellipse1"></div> */}
+      {showButton && (
+        <button onClick={scrollToTop} className="back-to-top">
+          <i class="fa-solid fa-chevron-up"></i>
+        </button>
+      )}
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">

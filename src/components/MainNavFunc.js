@@ -69,7 +69,7 @@ const MainNav = (props) => {
               </NavItem>
               <NavItem>
                 <ScrollLink
-                  to="buyer"
+                  to="buyer__section"
                   smooth={true}
                   spy={true}
                   duration={500}
@@ -101,7 +101,7 @@ const MainNav = (props) => {
                 </ScrollLink>
               </NavItem>
               <NavItem>
-                <Link to="/staking" className="staking-link">
+                <Link className="nav-link" to="/staking">
                   Staking
                 </Link>
               </NavItem>
@@ -144,12 +144,29 @@ const MainNav = (props) => {
         <Container>
           <div className="drawer__nav py-4 container">
             <div className="logo">
-              {/* <img src={logo} width="auto" height="41px" className="logo" /> */}
               <img
                 src={props.theme == "light" ? logoDark : logo}
-                height="35px"
+                height="30px"
                 width="auto"
               />
+            </div>
+            <div className="mode__changer">
+              <i class="fa-solid fa-moon"></i>
+              <div className="mode__button">
+                <Switch
+                  onChange={switchTheme}
+                  checked={checked}
+                  className="react-switch"
+                  uncheckedIcon={false}
+                  checkedIcon={false}
+                  offColor="#12131d"
+                  onColor="#12131d"
+                  handleDiameter={11}
+                  width={35}
+                  height={20}
+                />
+              </div>
+              <i class="fa-solid fa-sun"></i>
             </div>
             <div className="bread__crumb">
               <button className="btn__drawer" onClick={handleDrawer}>
@@ -197,7 +214,9 @@ const MainNav = (props) => {
                   </ScrollLink>
                 </li>
                 <li className="drawer__item">
-                  <Link to="/staking">Staking</Link>
+                  <Link className="nav-link" to="/staking">
+                    Staking
+                  </Link>
                 </li>
                 <li className="drawer__item">
                   <ScrollLink
@@ -215,7 +234,7 @@ const MainNav = (props) => {
                     Read Litepaper
                   </button>
                 </li>
-                <li className="mode__changer drawer__item py-3">
+                {/* <li className="mode__changer drawer__item py-3">
                   <i class="fa-solid fa-moon"></i>
                   <div className="mode__button">
                     <Switch
@@ -232,7 +251,7 @@ const MainNav = (props) => {
                     />
                   </div>
                   <i class="fa-solid fa-sun"></i>
-                </li>
+                </li> */}
               </ul>
             </div>
           </div>
