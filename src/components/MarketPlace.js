@@ -77,8 +77,8 @@ const MarketPlace = (props) => {
                 <Col xs="10">
                   <h5>Market Leader</h5>
                   <p>
-                    We aim to become one of top classified websites in terms of
-                    traffic across the globe.
+                    We aim to become one of the top classified websites in terms
+                    of traffic across the globe.
                   </p>
                 </Col>
               </Row>

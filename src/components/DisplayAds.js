@@ -13,9 +13,8 @@ const DisplayAds = () => {
             <Zoom>
               <h1>Display your Ads to Cryptocurrency Enthusiasts</h1>
               <p>
-                You can promote your classified ad post to millions of users,
-                which we are expected to reach in next 12 months by using
-                aggressive growth tactics.
+                We’ve made easy for you to promote your classified ad post to
+                millions of users by using aggressive growth tactics.
               </p>
             </Zoom>
           </Col>

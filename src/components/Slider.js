@@ -14,8 +14,11 @@ const Slider = () => {
             <Fade left>
               <h1>Decentralized Classified Ads Platform</h1>
               <p>
-                Empowering communities to buy and sell products and services
-                with full anonymity and privacy.
+                Metaverse is a decentralized hotline technological network of 3D
+                virtual worlds subjected to converge physical, augmented, and
+                virtual reality in a shared online space powered by an open
+                blockchain technology that encompasses digital assets and
+                digital identities.
               </p>
               <Row>
                 <Col lg="4" md="4">

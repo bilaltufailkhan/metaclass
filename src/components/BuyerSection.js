@@ -24,7 +24,7 @@ const BuyerSection = () => {
                 platform transaction fees is charge to the seller.
                 <br />
                 <br />
-                The fee will be initially determined by us, and will be changed
+                The fee will be initially determined by us, and will be charged
                 through governance platform.
               </p>
             </Fade>

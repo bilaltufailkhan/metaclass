@@ -38,29 +38,29 @@ const Control = (props) => {
           <ControlCard
             title="Escrow"
             img={escrow}
-            text="To ensure trustlessness, escrow holds funds until both parties are satisfied or to be used by arbitrator."
+            text="To ensure trustworthiness, escrow holds funds until both parties are satisfied or to be used by arbitrator."
           />
           <ControlCard
             title="Featured Ads"
             img={ads}
-            text="Showcase your ad to maximum number of users by using our decentralized platform without any limitations."
+            text="Showcase your ad to the maximum number of users by using our decentralized platform without any limitations."
           />
         </Row>
         <Row className="justify-content-center">
           <ControlCard
             title="Governance"
             img={governance}
-            text="Since it’s decentralized platform, day to day decisions should be made by community through governance"
+            text="Since it’s a decentralized platform, day to day decisions should be made by community through governance"
           />
           <ControlCard
             title="Staking"
             img={staking}
-            text="Maximize your rewards by staking DCLASS token, one of highest APY."
+            text="Maximize your rewards by staking DCLASS token, one of the highest APY."
           />
           <ControlCard
             title="Orders"
             img={orders}
-            text="You can place orders directly from dClass, platform charges transaction fees on orders to seller."
+            text="You can place orders directly from DCLASS, platform charges are applicable to the seller on orders."
           />
         </Row>
       </Container>

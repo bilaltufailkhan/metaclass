@@ -35,8 +35,8 @@ const SellerSection = ({ theme }) => {
                 payments in BUSD, BNB and DCLASS.
                 <br />
                 <br />
-                The cost to place ad is nothing, you’re only required to hold
-                certain number of tokens to be eligible to create ad.
+                The cost to place an ad is nothing, you’re only required to hold
+                certain number of tokens to be eligible to create an ad.
                 <br />
                 <br />
                 This number will be initially determined by us, and will be
