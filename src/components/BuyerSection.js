@@ -17,7 +17,7 @@ const BuyerSection = () => {
               <h2>Being a Buyer</h2>
               <p className="">
                 As a buyer, we aim to protect your privacy and anonymity. You’ll
-                be able to buy goods and services in BUSD, BNB and DCLASS.
+                be able to buy goods and services in BUSD, BNB and MCLS.
                 <br />
                 <br />
                 There is no cost of doing business through our platform. The

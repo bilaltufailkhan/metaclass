@@ -32,7 +32,7 @@ const SellerSection = ({ theme }) => {
               <p className="">
                 As a seller you’ll be in full control of how you’ll like to
                 dictate terms of your business. You’ll be able to receive
-                payments in BUSD, BNB and DCLASS.
+                payments in BUSD, BNB and MCLS.
                 <br />
                 <br />
                 The cost to place an ad is nothing, you’re only required to hold

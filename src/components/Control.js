@@ -55,12 +55,12 @@ const Control = (props) => {
           <ControlCard
             title="Staking"
             img={staking}
-            text="Maximize your rewards by staking DCLASS token, one of the highest APY."
+            text="Maximize your rewards by staking MCLS token, one of the highest APY."
           />
           <ControlCard
             title="Orders"
             img={orders}
-            text="You can place orders directly from DCLASS, platform charges are applicable to the seller on orders."
+            text="You can place orders directly from MCLS, platform charges are applicable to the seller on orders."
           />
         </Row>
       </Container>
