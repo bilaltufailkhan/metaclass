@@ -3,11 +3,12 @@ import "../assets/css/style.css";
 
 import { Container, Row, Col } from "reactstrap";
 
-import illustration2 from "../assets/img/mobile.png";
+import illustration2 from "../assets/img/metaclass-assets/dark/mobile-dark.svg";
+import illustration1 from "../assets/img/metaclass-assets/light/mobile-light.svg";
 
 import { Bounce, Zoom, Fade } from "react-reveal";
 
-const BuyerSection = () => {
+const BuyerSection = ({ theme }) => {
   return (
     <>
       <Container className="buyer__section py-5">
@@ -31,7 +32,11 @@ const BuyerSection = () => {
           </Col>
           <Col md="6" className="text-center mt-5">
             <Zoom>
-              <img src={illustration2} width="100%" height="auto" />
+              <img
+                src={theme == "dark" ? illustration1 : illustration2}
+                width="100%"
+                height="auto"
+              />
             </Zoom>
           </Col>
         </Row>

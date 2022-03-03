@@ -92,7 +92,7 @@ const AdminView = (props) => {
             <SellerSection theme={theme} />
           </Col>
           <Col xs="12">
-            <BuyerSection />
+            <BuyerSection theme={theme} />
           </Col>
           <Col xs="12">
             <TokenDist theme={theme} />
