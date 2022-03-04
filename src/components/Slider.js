@@ -22,7 +22,13 @@ const Slider = () => {
               </p>
               <Row>
                 <Col lg="4" md="4">
-                  <a className="p-3 btn__telegram">Join Telegram</a>
+                  <a
+                    href="https://t.me/metaclassbsc"
+                    target="_blank"
+                    className="p-3 btn__telegram"
+                  >
+                    Join Telegram
+                  </a>
                 </Col>
                 <Col lg="4" md="4">
                   <a className="p-3 btn__info">

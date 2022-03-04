@@ -18,6 +18,8 @@ import useLocalStorage from "use-local-storage";
 import { NavLink as Link, useHistory, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
+import litepaper from "../assets/pdf/whitepaper.pdf";
+
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
 
@@ -111,12 +113,9 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <NavLink
-                    to="/components/"
-                    className="lightPaper__link p-3 mr-5"
-                  >
+                  <a href={litepaper} className="lightPaper__link p-3 mr-5">
                     Read Litepaper
-                  </NavLink>
+                  </a>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -162,12 +161,9 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <NavLink
-                    to="/components/"
-                    className="lightPaper__link p-3 mr-5"
-                  >
+                  <a href={litepaper} className="lightPaper__link p-3 mr-5">
                     Read Litepaper
-                  </NavLink>
+                  </a>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -286,9 +282,9 @@ const MainNav = (props) => {
                     </ScrollLink>
                   </li>
                   <li className="drawer__item">
-                    <button href="#" className="openApp__btn">
+                    <a href={litepaper} className="openApp__btn">
                       Read Litepaper
-                    </button>
+                    </a>
                   </li>
                   {/* <li className="mode__changer drawer__item py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -364,9 +360,9 @@ const MainNav = (props) => {
                     </Link>
                   </li>
                   <li className="drawer__item">
-                    <button href="#" className="openApp__btn">
+                    <a href={litepaper} className="openApp__btn">
                       Read Litepaper
-                    </button>
+                    </a>
                   </li>
                   {/* <li className="mode__changer drawer__item py-3">
                   <i class="fa-solid fa-moon"></i>
