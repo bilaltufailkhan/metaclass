@@ -29,16 +29,16 @@ const Footer = (props) => {
             <a href="#">
               <i class="fa-brands fa-linkedin"></i>
             </a>
-            <a href="#">
+            <a href="https://www.facebook.com/metaclassbsc/" target="_blank">
               <i class="fa-brands fa-facebook-f"></i>
             </a>
             <a href="#">
               <i class="fa-brands fa-instagram"></i>
             </a>
-            <a href="#">
+            <a href="https://metaclassbsc.medium.com/" target="_blank">
               <i class="fa-brands fa-medium"></i>
             </a>
-            <a href="#">
+            <a href="https://twitter.com/metaclassbsc" target="_blank">
               <i class="fa-brands fa-twitter"></i>
             </a>
           </Col>
