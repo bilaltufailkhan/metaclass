@@ -7,12 +7,15 @@ import routes from "./routes";
 import useLocalStorage from "use-local-storage";
 import store from "./store";
 
+import ReactGA from "react-ga";
+
 import { googleAnalyticsActions } from "./utils/googleAnalytics";
 
 function App(props) {
-  React.useEffect(() => {
-    googleAnalyticsActions.initGoogleAnalytics("G-M22M8DSQYV");
-  }, []);
+  // React.useEffect(() => {
+  //   ReactGA.initialize("UA-222300293-1");
+  //   ReactGA.pageview("/");
+  // }, []);
 
   return (
     <>
