@@ -8,7 +8,7 @@ import Fade from "react-reveal/Fade";
 const Slider = () => {
   return (
     <>
-      <Container className="slider py-5 my-5">
+      <Container className="slider py-5">
         <Row className="align-items-center">
           <Col md="6" sm="12">
             <Fade left>
@@ -39,7 +39,12 @@ const Slider = () => {
             </Fade>
           </Col>
           <Col md="6" sm="12" className="text-center">
-            <img src={sliderBG} width="100%" height="auto" />
+            <img
+              src={sliderBG}
+              width="100%"
+              height="auto"
+              className="slider__bg"
+            />
           </Col>
         </Row>
       </Container>

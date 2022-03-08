@@ -42,7 +42,7 @@
 }
 
 html {
-  background-color: $darkBG;
+  background: $darkBG;
   padding: 0 !important;
   margin: 0;
   left: 0;
@@ -202,6 +202,8 @@ html {
       @include hoverTrans();
     }
   }
+
+  // Slider Animation
 
   .btn__info {
     background: transparent;

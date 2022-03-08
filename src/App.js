@@ -1,3 +1,4 @@
+import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
 import Auth from "./layout/Auth";
@@ -6,7 +7,13 @@ import routes from "./routes";
 import useLocalStorage from "use-local-storage";
 import store from "./store";
 
+import { googleAnalyticsActions } from "./utils/googleAnalytics";
+
 function App(props) {
+  React.useEffect(() => {
+    googleAnalyticsActions.initGoogleAnalytics("G-M22M8DSQYV");
+  }, []);
+
   return (
     <>
       <Provider store={store}>

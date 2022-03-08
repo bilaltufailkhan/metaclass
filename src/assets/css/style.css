@@ -224,6 +224,21 @@ body {
   text-decoration: none;
 }
 
+.slider__bg {
+  animation: upNdown 2s infinite linear;
+  padding: 5rem 0;
+}
+
+@keyframes upNdown {
+  0% {
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+  }
+}
+
 .partners h1 {
   font-family: "Poppins", sans-serif;
   color: var(--darkText);
