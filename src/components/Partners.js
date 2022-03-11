@@ -26,30 +26,39 @@ const Partners = (props) => {
 
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
-              <img
-                src={props.theme == "light" ? marketDark : market}
-                width="100px"
-                height="auto"
-              />
+              <a href="#" target="_blank">
+                <img
+                  src={props.theme == "light" ? marketDark : market}
+                  width="100px"
+                  height="auto"
+                />
+              </a>
               {/* <div className="logo__hover"></div> */}
             </Zoom>
           </Col>
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
-              <img
-                src={props.theme == "light" ? yahooDark : yahoo}
-                width="100px"
-                height="auto"
-              />
+              <a
+                href="https://finance.yahoo.com/news/metaclass-first-decentralized-classified-ads-184500312.html"
+                target="_blank"
+              >
+                <img
+                  src={props.theme == "light" ? yahooDark : yahoo}
+                  width="100px"
+                  height="auto"
+                />
+              </a>
             </Zoom>
           </Col>
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
-              <img
-                src={props.theme == "light" ? postDark : post}
-                width="100px"
-                height="auto"
-              />
+              <a href="#" target="_blank">
+                <img
+                  src={props.theme == "light" ? postDark : post}
+                  width="100px"
+                  height="auto"
+                />
+              </a>
             </Zoom>
           </Col>
         </Row>
