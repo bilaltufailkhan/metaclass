@@ -18,7 +18,7 @@ import useLocalStorage from "use-local-storage";
 import { NavLink as Link, useHistory, useLocation } from "react-router-dom";
 import { Link as ScrollLink } from "react-scroll";
 
-import litepaper from "../assets/pdf/whitepaper.pdf";
+// import litepaper from "/whitepaper.pdf";
 
 const MainNav = (props) => {
   const [isOpen, setIsOpen] = React.useState(true);
@@ -113,7 +113,11 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <a href={litepaper} className="lightPaper__link p-3 mr-5">
+                  <a
+                    href="/whitepaper.pdf"
+                    target="_blank"
+                    className="lightPaper__link p-3 mr-5"
+                  >
                     Read Litepaper
                   </a>
                 </NavItem>
@@ -161,7 +165,11 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <a href={litepaper} className="lightPaper__link p-3 mr-5">
+                  <a
+                    href="/whitepaper.pdf"
+                    target="_blank"
+                    className="lightPaper__link p-3 mr-5"
+                  >
                     Read Litepaper
                   </a>
                 </NavItem>
@@ -282,7 +290,11 @@ const MainNav = (props) => {
                     </ScrollLink>
                   </li>
                   <li className="drawer__item">
-                    <a href={litepaper} className="openApp__btn">
+                    <a
+                      href="/whitepaper.pdf"
+                      target="_blank"
+                      className="openApp__btn"
+                    >
                       Read Litepaper
                     </a>
                   </li>
@@ -360,7 +372,11 @@ const MainNav = (props) => {
                     </Link>
                   </li>
                   <li className="drawer__item">
-                    <a href={litepaper} className="openApp__btn">
+                    <a
+                      href="/whitepaper.pdf"
+                      target="_blank"
+                      className="openApp__btn"
+                    >
                       Read Litepaper
                     </a>
                   </li>
