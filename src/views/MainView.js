@@ -19,6 +19,7 @@ import useLocalStorage from "use-local-storage";
 import Switch from "react-switch";
 import TokenDist from "../components/TokenDist";
 import Wallet from "../components/Wallet";
+import SideSocials from "../components/global/SideSocials";
 
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -64,6 +65,7 @@ const AdminView = (props) => {
           <i class="fa-solid fa-chevron-up"></i>
         </button>
       )}
+      {/* <SideSocials /> */}
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
           <Col xs="12">

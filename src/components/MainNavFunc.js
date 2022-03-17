@@ -53,13 +53,13 @@ const MainNav = (props) => {
         <>
           <Navbar className="navbar py-3" checked={checked}>
             <Container className="navbar__inner d-flex align-items-center">
-              <NavbarBrand href="/" className="logo">
+              <Link to="/" className="navbar-brand logo">
                 <img
                   src={props.theme == "light" ? logoDark : logo}
                   height="35px"
                   width="auto"
                 />
-              </NavbarBrand>
+              </Link>
               <Nav className="ml-auto navlist">
                 <NavItem>
                   <ScrollLink
@@ -149,13 +149,13 @@ const MainNav = (props) => {
         <>
           <Navbar className="navbar py-3" checked={checked}>
             <Container className="navbar__inner d-flex align-items-center">
-              <NavbarBrand href="/" className="logo">
+              <Link to="/" className="navbar-brand logo">
                 <img
                   src={props.theme == "light" ? logoDark : logo}
                   height="35px"
                   width="auto"
                 />
-              </NavbarBrand>
+              </Link>
               <Nav className="ml-auto navlist">
                 <NavItem>
                   <Link className="nav-link" to="/staking">

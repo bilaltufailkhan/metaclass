@@ -40,9 +40,11 @@ class RoadMap extends React.Component {
               <Zoom>
                 <h1>Product Roadmap</h1>
                 <p>
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                  accusantium doloremque laudantium, totam rem aperiam, eaque
-                  ipsa quae ab illo inventore veritatis et.
+                  Metaverse is a decentralized hotline technological network of
+                  3D virtual worlds subjected to converge physical, augmented,
+                  and virtual reality in a shared online space powered by an
+                  open blockchain technology that encompasses digital assets and
+                  digital identities.
                 </p>
               </Zoom>
             </Col>

@@ -946,6 +946,9 @@ body {
 }
 
 @media screen and (max-width: 480px) {
+  .sideSocials {
+    display: none;
+  }
   .wallet {
     padding-right: 0 !important;
     margin-left: 0 !important;
@@ -1052,4 +1055,31 @@ body {
   outline: 0;
   z-index: 10000001;
   color: #efefef;
+}
+
+.sideSocials {
+  position: absolute;
+  left: -450px;
+  transform: rotate(90deg);
+  height: 100%;
+}
+
+.sideSocials > a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #efefef;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  font-size: 0.8rem;
+}
+
+.sideSocials > a:hover {
+  text-decoration: none;
+  color: #efefef;
+}
+
+@media screen and (max-width: 1300px) {
+  .sideSocials {
+    display: none;
+  }
 }

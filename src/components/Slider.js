@@ -4,10 +4,12 @@ import "../assets/css/style.css";
 
 import sliderBG from "../assets/img/illustration.svg";
 import Fade from "react-reveal/Fade";
+import SideSocials from "./global/SideSocials";
 
 const Slider = () => {
   return (
     <>
+      <SideSocials />
       <Container className="slider py-5">
         <Row className="align-items-center">
           <Col md="6" sm="12">

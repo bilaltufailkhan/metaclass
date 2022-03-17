@@ -10,6 +10,8 @@ import marketDark from "../assets/img/metaclass-assets/dark/marketwatch.svg";
 import yahooDark from "../assets/img/metaclass-assets/dark/yahoofinance.svg";
 import postDark from "../assets/img/metaclass-assets/dark/financialpost.svg";
 
+import digitalImg from "../assets/img/metaclass-assets/digital.png";
+
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
 
@@ -26,7 +28,10 @@ const Partners = (props) => {
 
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
-              <a href="#" target="_blank">
+              <a
+                href="https://www.marketwatch.com/press-release/metaclass-as-the-first-decentralized-classified-ads-platform-for-metaverse-2022-03-13?mod=search_headline"
+                target="_blank"
+              >
                 <img
                   src={props.theme == "light" ? marketDark : market}
                   width="100px"
@@ -52,9 +57,26 @@ const Partners = (props) => {
           </Col>
           <Col md="2" sm="4" className="partner__img my-3">
             <Zoom>
-              <a href="#" target="_blank">
+              <a
+                href="https://markets.financialcontent.com/startribune/news/read/42252831/metaclass_as_the_first_decentralized_classified_ads_platform_for_metaverse"
+                target="_blank"
+              >
                 <img
                   src={props.theme == "light" ? postDark : post}
+                  width="100px"
+                  height="auto"
+                />
+              </a>
+            </Zoom>
+          </Col>
+          <Col md="2" sm="4" className="partner__img my-3">
+            <Zoom>
+              <a
+                href="https://www.digitaljournal.com/pr/metaclass-as-the-first-decentralized-classified-ads-platform-for-the-metaverse"
+                target="_blank"
+              >
+                <img
+                  src={props.theme == "light" ? digitalImg : digitalImg}
                   width="100px"
                   height="auto"
                 />

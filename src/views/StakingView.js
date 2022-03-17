@@ -49,7 +49,7 @@ const StakingView = (props) => {
             />
           </Col>
           <Col xs="12">
-            <Wallet />
+            <Wallet theme={theme} />
           </Col>
 
           <Col xs="12">
