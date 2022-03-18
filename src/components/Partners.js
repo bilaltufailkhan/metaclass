@@ -10,7 +10,8 @@ import marketDark from "../assets/img/metaclass-assets/dark/marketwatch.svg";
 import yahooDark from "../assets/img/metaclass-assets/dark/yahoofinance.svg";
 import postDark from "../assets/img/metaclass-assets/dark/financialpost.svg";
 
-import digitalImg from "../assets/img/metaclass-assets/digital.png";
+import digitalLight from "../assets/img/metaclass-assets/light/digital-light.png";
+import digitalDark from "../assets/img/metaclass-assets/dark/digital-dark.png";
 
 import Fade from "react-reveal/Fade";
 import Zoom from "react-reveal/Zoom";
@@ -76,7 +77,7 @@ const Partners = (props) => {
                 target="_blank"
               >
                 <img
-                  src={props.theme == "light" ? digitalImg : digitalImg}
+                  src={props.theme == "light" ? digitalDark : digitalLight}
                   width="100px"
                   height="auto"
                 />
