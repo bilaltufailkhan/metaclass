@@ -7,7 +7,7 @@ const APY = () => {
     <>
       <Container className='apy'>
         <Row className='align-items-center'>
-          <Col md="6" sm="12" className="my-3">
+          <Col md="6" sm="12" className="my-3 text-md-left text-center">
             <Fade left>
               <h1>APY</h1>
             </Fade>
