@@ -1083,3 +1083,15 @@ body {
     display: none;
   }
 }
+
+.apy {
+}
+
+.apy h1 {
+  font-size: 5rem;
+  color: var(--darkText);
+}
+
+.apy__value {
+  text-shadow: 0 0 10px #d600a6;
+}

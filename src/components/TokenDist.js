@@ -7,6 +7,9 @@ import { Zoom } from "react-reveal";
 import tokenImg from "../assets/img/metaclass-assets/light/total-supply-light.svg";
 import tokenImgDark from "../assets/img/metaclass-assets/dark/total-supply-dark.svg";
 
+import tokenomicsDark from '../assets/img/metaclass-assets/dark/tokenomics-dark.png'
+import tokenomicsLight from '../assets/img/metaclass-assets/light/tokenomics-light.png'
+
 import BscScanDark from "../assets/img/metaclass-assets/dark/bscscan-logo.svg";
 import CoinGekoDark from "../assets/img/metaclass-assets/dark/coin-gecko-logo.svg";
 import PanCakeDark from "../assets/img/metaclass-assets/dark/pancake-swap-logo.svg";
@@ -34,7 +37,7 @@ const TokenDist = (props) => {
           <Col xs="12">
             <Zoom>
               <img
-                src={props.theme == "dark" ? tokenImg : tokenImgDark}
+                src={props.theme == "dark" ? tokenomicsLight : tokenomicsDark}
                 width="70%"
                 height="auto"
               />

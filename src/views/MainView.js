@@ -3,6 +3,7 @@ import { Button, Col, Container, Row } from "reactstrap";
 
 import MainNavFunc from "../components/MainNavFunc";
 import Slider from "../components/Slider";
+import APY from "../components/APY";
 import Partners from "../components/Partners";
 import Control from "../components/Control";
 import MarketPlace from "../components/MarketPlace";
@@ -77,6 +78,9 @@ const AdminView = (props) => {
           </Col>
           <Col xs="12">
             <Slider />
+          </Col>
+          <Col xs="12">
+            <APY theme={theme} />
           </Col>
           <Col xs="12">
             <Partners theme={theme} />
