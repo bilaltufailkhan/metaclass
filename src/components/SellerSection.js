@@ -2,9 +2,8 @@ import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import "../assets/css/style.css";
 
-import { Zoom, Fade, Bounce } from "react-reveal";
+import { Zoom, Fade } from "react-reveal";
 
-import illustration2 from "../assets/img/illustration2.png";
 import sellerIllustration from "../assets/img/metaclass-assets/dark/seller-illustration.svg";
 import sellerIllustrationLight from "../assets/img/metaclass-assets/light/seller-illustration.svg";
 

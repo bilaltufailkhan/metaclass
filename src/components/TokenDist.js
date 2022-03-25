@@ -7,8 +7,8 @@ import { Zoom } from "react-reveal";
 import tokenImg from "../assets/img/metaclass-assets/light/total-supply-light.svg";
 import tokenImgDark from "../assets/img/metaclass-assets/dark/total-supply-dark.svg";
 
-import tokenomicsDark from '../assets/img/metaclass-assets/dark/tokenomics-dark.png'
-import tokenomicsLight from '../assets/img/metaclass-assets/light/tokenomics-light.png'
+import tokenomicsDark from '../assets/img/metaclass-assets/dark/total_supply.svg'
+import tokenomicsLight from '../assets/img/metaclass-assets/light/total_supply.svg'
 
 import BscScanDark from "../assets/img/metaclass-assets/dark/bscscan-logo.svg";
 import CoinGekoDark from "../assets/img/metaclass-assets/dark/coin-gecko-logo.svg";

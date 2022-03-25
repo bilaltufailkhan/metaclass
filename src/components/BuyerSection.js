@@ -3,8 +3,8 @@ import "../assets/css/style.css";
 
 import { Container, Row, Col } from "reactstrap";
 
-import illustration2 from "../assets/img/metaclass-assets/dark/mobile-dark.svg";
-import illustration1 from "../assets/img/metaclass-assets/light/mobile-light.svg";
+import illustration2 from "../assets/img/metaclass-assets/dark/mobile-dark.png";
+import illustration1 from "../assets/img/metaclass-assets/light/mobile-light.png";
 
 import { Bounce, Zoom, Fade } from "react-reveal";
 
