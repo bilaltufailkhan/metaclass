@@ -21,7 +21,8 @@
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
     "use-local-storage": "^2.3.6",
-    "web-vitals": "^1.0.1"
+    "web-vitals": "^1.0.1",
+    "web3": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
