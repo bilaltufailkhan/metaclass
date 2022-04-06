@@ -31,8 +31,8 @@ const Wallet = (props) => {
             <div className="px-5 stake__one">
               <h1>Stake MetaClass</h1>
               <p className="pr-5 mb-5">
-                Stake BEP-20 DCLASS to earn DCLASS. You can buy on Pancakeswap
-                to get DCLASS tokens.
+                Stake BEP-20 MetaClass to earn MetaClass. You can buy on
+                Pancakeswap to get MetaClass tokens.
               </p>
               <div className="form__inner">
                 <p>DPY -</p>

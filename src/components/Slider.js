@@ -6,6 +6,8 @@ import sliderBG from "../assets/img/illustration.svg";
 import Fade from "react-reveal/Fade";
 import SideSocials from "./global/SideSocials";
 
+import solidProofLogo from "../assets/img/solidproof.png";
+
 const Slider = () => {
   return (
     <>
@@ -22,8 +24,8 @@ const Slider = () => {
                 blockchain technology that encompasses digital assets and
                 digital identities.
               </p>
-              <Row>
-                <Col lg="4" md="4">
+              <Row className="">
+                <Col md="4" sm="12">
                   <a
                     href="https://t.me/metaclassbsc"
                     target="_blank"
@@ -32,10 +34,15 @@ const Slider = () => {
                     Join Telegram
                   </a>
                 </Col>
-                <Col lg="4" md="4">
+                <Col md="4" sm="12">
                   <a className="p-3 btn__info">
                     <i class="fa-solid fa-circle-play"></i>How it works
                   </a>
+                </Col>
+              </Row>
+              <Row className="justify-content-center text-center text-md-left">
+                <Col sm="12">
+                  <img src={solidProofLogo} width="60%" height="auto" />
                 </Col>
               </Row>
             </Fade>

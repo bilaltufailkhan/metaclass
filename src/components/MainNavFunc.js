@@ -56,7 +56,7 @@ const MainNav = (props) => {
               <Link to="/" className="navbar-brand logo">
                 <img
                   src={props.theme == "light" ? logoDark : logo}
-                  height="35px"
+                  height="45px"
                   width="auto"
                 />
               </Link>
@@ -106,20 +106,23 @@ const MainNav = (props) => {
                   </ScrollLink>
                 </NavItem>
                 <NavItem>
-                  <Link className="nav-link" to="/staking">
-                    Staking
-                  </Link>
+                  <a
+                    className="nav-link"
+                    href="/whitepaper.pdf"
+                    target="_blank"
+                  >
+                    Litepaper
+                  </a>
                 </NavItem>
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <a
-                    href="/whitepaper.pdf"
-                    target="_blank"
-                    className="lightPaper__link p-3 mr-5"
+                  <Link
+                    to="/dashboard"
+                    className="lightPaper__link py-3 px-5 mr-5"
                   >
-                    Read Litepaper
-                  </a>
+                    Open App
+                  </Link>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -158,20 +161,16 @@ const MainNav = (props) => {
               </Link>
               <Nav className="ml-auto navlist">
                 <NavItem>
-                  <Link className="nav-link" to="/staking">
+                  <Link className="nav-link" id="staking" to="/staking">
                     Staking
                   </Link>
                 </NavItem>
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <a
-                    href="/whitepaper.pdf"
-                    target="_blank"
-                    className="lightPaper__link p-3 mr-5"
-                  >
-                    Read Litepaper
-                  </a>
+                  <Link to="/dashboard" className="lightPaper__link p-3 mr-5">
+                    Open App
+                  </Link>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -290,13 +289,13 @@ const MainNav = (props) => {
                     </ScrollLink>
                   </li>
                   <li className="drawer__item">
-                    <a
-                      href="/whitepaper.pdf"
+                    <Link
+                      href="/dashboard"
                       target="_blank"
                       className="openApp__btn"
                     >
-                      Read Litepaper
-                    </a>
+                      Open App
+                    </Link>
                   </li>
                   {/* <li className="mode__changer drawer__item py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -372,13 +371,9 @@ const MainNav = (props) => {
                     </Link>
                   </li>
                   <li className="drawer__item">
-                    <a
-                      href="/whitepaper.pdf"
-                      target="_blank"
-                      className="openApp__btn"
-                    >
-                      Read Litepaper
-                    </a>
+                    <Link href="/dashboard" className="openApp__btn">
+                      Open App
+                    </Link>
                   </li>
                   {/* <li className="mode__changer drawer__item py-3">
                   <i class="fa-solid fa-moon"></i>

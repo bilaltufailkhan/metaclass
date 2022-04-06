@@ -81,6 +81,15 @@ const MarketPlace = (props) => {
                     of traffic across the globe.
                   </p>
                 </Col>
+                <Col xs="4" className="my-4">
+                  <a
+                    href="https://t.me/metaclassbsc"
+                    target="_blank"
+                    className="p-2 btn__audit"
+                  >
+                    Audit
+                  </a>
+                </Col>
               </Row>
             </Fade>
           </Col>
