@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import CalculatorComponent from "../components/Dashboard/CalculatorComponent";
+import DashboardNav from "../components/Dashboard/DashboardNav";
 import SideNav from "../components/SideNav/SideNav";
 
 const Calculator = () => {
@@ -8,10 +9,11 @@ const Calculator = () => {
     <>
       <Container fluid>
         <Row>
-          <Col md="2">
+          <Col md="2" className="d-none d-md-block">
             <SideNav />
           </Col>
-          <Col md="10">
+          <Col md="10" sm="12">
+            <DashboardNav />
             <CalculatorComponent />
           </Col>
         </Row>

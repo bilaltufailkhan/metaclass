@@ -1,6 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 import AccountComponent from "../components/Dashboard/AccountComponent";
+import DashboardNav from "../components/Dashboard/DashboardNav";
 import SideNav from "../components/SideNav/SideNav";
 
 const Account = () => {
@@ -8,10 +9,11 @@ const Account = () => {
     <>
       <Container fluid>
         <Row>
-          <Col md="2">
+          <Col md="2" className="d-none d-md-block">
             <SideNav />
           </Col>
-          <Col md="10" className="py-5 my-5">
+          <Col md="10" sm="12" className="">
+            <DashboardNav />
             <AccountComponent />
           </Col>
         </Row>

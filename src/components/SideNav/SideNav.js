@@ -3,6 +3,13 @@ import { Link } from "react-router-dom";
 import { Container } from "reactstrap";
 import logo from "../../assets/img/metaclass-assets/logo.png";
 
+import dashboardIcon from "../../assets/img/dashboard/dashboard.svg";
+import accountIcon from "../../assets/img/dashboard/account.svg";
+import calculatorIcon from "../../assets/img/dashboard/calculator.svg";
+import nftsIcon from "../../assets/img/dashboard/nfts.svg";
+import docsIcon from "../../assets/img/dashboard/docs.svg";
+import swapIcon from "../../assets/img/dashboard/swap-dark.png";
+
 const SideNav = () => {
   return (
     <>
@@ -16,19 +23,33 @@ const SideNav = () => {
           />
         </Link>
         <Link to="/dashboard" className="nav-link">
-          Dashboard
+          <img src={dashboardIcon} width="24px" height="auto" />
+          &nbsp;Dashboard
         </Link>
         <Link to="/account" className="nav-link">
-          Account
+          <img src={accountIcon} width="24px" height="auto" />
+          &nbsp; Account
         </Link>
         <Link to="/calculator" className="nav-link">
-          Calculator
+          <img src={calculatorIcon} width="24px" height="auto" />
+          &nbsp; Calculator
         </Link>
         <a href="#section" className="nav-link">
-          NFTs
+          <img src={nftsIcon} width="24px" height="auto" />
+          &nbsp; NFTs
         </a>
         <a href="#section" className="nav-link">
-          Docs
+          <img
+            src={swapIcon}
+            width="24px"
+            height="auto"
+            style={{ fill: "#ffffff" }}
+          />
+          &nbsp; Swap
+        </a>
+        <a href="#section" className="nav-link">
+          <img src={docsIcon} width="24px" height="auto" />
+          &nbsp; Docs
         </a>
         <div className="socials__dashboard">
           <a href="https://www.facebook.com/metaclassbsc/" target="_blank">

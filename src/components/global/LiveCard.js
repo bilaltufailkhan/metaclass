@@ -19,7 +19,7 @@ const LiveCard = (props) => {
         </Bounce>
         <Flip left>
           <Link
-            to="/staking"
+            to="/dashboard"
             style={{ marginTop: `${props.margin}`, height: "5rem" }}
             className="liveCard__btn"
           >

@@ -12,8 +12,6 @@ import { Bounce, Fade, Flip, Zoom } from "react-reveal";
 class RoadMap extends React.Component {
   constructor(props) {
     super(props);
-
-    // this.toggle = this.toggle.bind(this);
     this.state = {
       windowWidth: window.innerWidth,
     };
@@ -52,7 +50,7 @@ class RoadMap extends React.Component {
           <Row className="justify-content-center align-items-center my-5">
             <Col md="3" sm="12" className="roadmap__card p-4">
               <Bounce>
-                <h5>2021- Q3</h5>
+                <h5>2022- Q1</h5>
                 <ul>
                   <li>Fair Launch (no-presale)</li>
                   <li>Staking</li>
@@ -87,7 +85,7 @@ class RoadMap extends React.Component {
               className="roadmap__card p-4 order-1 order-md-2"
             >
               <Bounce>
-                <h5>2021- Q4</h5>
+                <h5>2022- Q2</h5>
                 <ul>
                   <li>Classified Ads Platform</li>
                   <li>Featured Ads</li>
@@ -100,7 +98,7 @@ class RoadMap extends React.Component {
           <Row className="justify-content-center align-items-center my-5">
             <Col md="3" sm="12" className="roadmap__card p-4">
               <Bounce>
-                <h5>2022- Q1</h5>
+                <h5>2022- Q3</h5>
                 <ul>
                   <li>100K users on platform</li>
                   <li>Mobile Application and Wallet</li>
@@ -123,7 +121,7 @@ class RoadMap extends React.Component {
             </Col>
             <Col md="3" sm="12" className="roadmap__card p-4">
               <Bounce>
-                <h5>2022- Q2</h5>
+                <h5>2022- Q4</h5>
                 <ul>
                   <li>2 Million Users</li>
                   <li>5 Million Monthly Pageviews</li>
