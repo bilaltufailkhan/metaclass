@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1208px" height="610px" viewBox="0 0 1208 610" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>total-supply</title>
+    <defs>
+        <linearGradient x1="94.8246822%" y1="79.0208965%" x2="27.9955318%" y2="21.6309144%" id="linearGradient-1">
+            <stop stop-color="#D600A6" offset="0%"></stop>
+            <stop stop-color="#00BEFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="94.8246822%" y1="79.0333877%" x2="27.9955318%" y2="21.6187037%" id="linearGradient-2">
+            <stop stop-color="#D600A6" offset="0%"></stop>
+            <stop stop-color="#00BEFF" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="94.8246822%" y1="79.073782%" x2="27.9955318%" y2="21.5792167%" id="linearGradient-3">
+            <stop stop-color="#D600A6" offset="0%"></stop>
+            <stop stop-color="#00BEFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MetaClass---Landing-page---white" transform="translate(-356.000000, -6053.000000)">
+            <g id="token-distribution" transform="translate(361.333333, 5840.666667)">
+                <g id="total-supply" transform="translate(0.000000, 218.000000)">
+                    <g id="main" transform="translate(333.333333, 338.000000)">
+                        <path d="M257.697921,265.333333 C302.579716,265.333333 393.569298,265.333333 530.666667,265.333333 C530.666667,118.79378 411.872887,0 265.333333,0 C118.79378,0 0,118.79378 0,265.333333 C133.740023,265.333333 219.63933,265.333333 257.697921,265.333333 Z" fill="#F7F7F7"></path>
+                        <g id="total-supply" transform="translate(140.366657, 56.000000)" fill="#000000">
+                            <text id="100M" font-family="Oswald-Medium, Oswald" font-size="113.333333" font-weight="400">
+                                <tspan x="0.211588542" y="140">100M</tspan>
+                            </text>
+                            <text id="Total" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="33.3333333" font-weight="bold">
+                                <tspan x="6.96667608" y="35">TOTAL</tspan>
+                            </text>
+                            <text id="Supply" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="33.3333333" font-weight="bold">
+                                <tspan x="120.801035" y="174.333333">SUPPLY</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <path d="M965.333333,598.666667 C965.333333,488.502609 916.617526,389.706384 839.534882,322.608446 M728.459579,256.176921 C688.208279,240.981973 644.576096,232.666667 599,232.666667 C519.456249,232.666667 445.833764,257.995555 385.771868,301.020961 M294.565363,395.019889 C255.472142,453.239293 232.666667,523.292151 232.666667,598.666667" id="Shape" stroke="url(#linearGradient-1)" stroke-width="10" stroke-linecap="round"></path>
+                    <path d="M1078.66667,598.666667 C1078.66667,562.598131 1074.68012,527.460057 1067.12332,493.668451 M1018.92405,366.818146 C937.158101,219.244643 779.754933,119.333333 599,119.333333 M463.094895,138.844884 C264.372212,197.405648 119.333333,381.110105 119.333333,598.666667" id="Shape" stroke="url(#linearGradient-2)" stroke-width="10" stroke-linecap="round"></path>
+                    <path d="M1197.33333,598.666667 C1197.33333,388.062232 1088.58422,202.857514 924.177104,96.1436283 M794.970916,32.9266942 C733.475158,11.591402 667.424571,0 598.666667,0 C410.073604,0 241.848396,87.2051499 132.114866,223.491626 M52.0030301,354.251939 C18.5845765,428.882388 0,511.604197 0,598.666667" id="Shape" stroke="url(#linearGradient-3)" stroke-width="10" stroke-linecap="round"></path>
+                    <g id="burn" transform="translate(38.666667, 233.333333)">
+                        <circle id="Oval" fill="#00BEFF" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(17.333333, 19.285714)" fill="#FFFFFF">
+                            <text id="30%" font-family="Oswald-Medium, Oswald" font-size="32" font-weight="400">
+                                <tspan x="0" y="50.4805195">30%</tspan>
+                            </text>
+                            <text id="Burn" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="16" font-weight="bold">
+                                <tspan x="0.8" y="17">BURN</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="liquidity" transform="translate(810.000000, 16.000000)">
+                        <circle id="Oval" fill="#D600A6" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(10.666667, 19.285714)" fill="#FFFFFF">
+                            <text id="20%" font-family="Oswald-Medium, Oswald" font-size="32" font-weight="400">
+                                <tspan x="0" y="50.4805195">20%</tspan>
+                            </text>
+                            <text id="Liquidity" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="16" font-weight="bold">
+                                <tspan x="0.8" y="17">LIQUIDITY</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="metaclass" transform="translate(997.333333, 377.333333)">
+                        <circle id="Oval" fill="#D600A6" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(7.300000, 29.285714)" fill="#FFFFFF" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="14.6666667" font-weight="bold" opacity="0.7">
+                            <text id="MetaClass-Dust">
+                                <tspan x="0.208666667" y="15">METACLASS</tspan>
+                                <tspan x="23.6533333" y="35">DUST</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="team" transform="translate(284.000000, 294.000000)">
+                        <circle id="Oval" fill="#00BEFF" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(26.000000, 19.285714)" fill="#FFFFFF">
+                            <text id="2%" font-family="Oswald-Medium, Oswald" font-size="32" font-weight="400">
+                                <tspan x="0" y="50.4805195">2%</tspan>
+                            </text>
+                            <text id="Team" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="16" font-weight="bold">
+                                <tspan x="0.8" y="17">TEAM</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="marketing" transform="translate(735.333333, 234.666667)">
+                        <circle id="Oval" fill="#D600A6" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(10.285714, 24.571429)" fill="#FFFFFF">
+                            <text id="2%" font-family="Oswald-Medium, Oswald" font-size="27.4285714" font-weight="400">
+                                <tspan x="0" y="43.2690167">2%</tspan>
+                            </text>
+                            <text id="Marketing" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="13.7142857" font-weight="bold">
+                                <tspan x="0.685714286" y="14">MARKETING</tspan>
+                            </text>
+                        </g>
+                    </g>
+                    <g id="reward" transform="translate(482.000000, 75.333333)">
+                        <circle id="Oval" fill="#00BEFF" cx="50" cy="50" r="50"></circle>
+                        <g id="Group-5" transform="translate(17.333333, 19.285714)" fill="#FFFFFF">
+                            <text id="46%" font-family="Oswald-Medium, Oswald" font-size="32" font-weight="400">
+                                <tspan x="0" y="50.4805195">46%</tspan>
+                            </text>
+                            <text id="Reward" opacity="0.7" font-family="FONTSPRINGDEMO-BiennaleBoldRegular, FONTSPRING DEMO - Biennale Bold" font-size="16" font-weight="bold">
+                                <tspan x="0.8" y="17">REWARD</tspan>
+                            </text>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

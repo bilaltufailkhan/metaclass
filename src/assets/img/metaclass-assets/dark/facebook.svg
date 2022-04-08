@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="11px" height="20px" viewBox="0 0 11 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>facebook</title>
+    <defs>
+        <linearGradient x1="-10.5110062%" y1="-21.8824984%" x2="151.631105%" y2="187.930241%" id="linearGradient-1">
+            <stop stop-color="#D600A6" offset="0%"></stop>
+            <stop stop-color="#00BEFF" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MetaClass---Landing-page" transform="translate(-1472.000000, -9952.000000)" fill="url(#linearGradient-1)" fill-rule="nonzero">
+            <g id="Footer" transform="translate(0.000000, 9866.000000)">
+                <g id="social-media" transform="translate(226.666667, 86.000000)">
+                    <g transform="translate(1199.333333, 0.000000)">
+                        <g id="facebook" transform="translate(46.715958, 0.364322)">
+                            <path d="M3.00253028,19.6220137 L3.00253028,10.7131576 L0,10.7131576 L0,7.0763156 L3.00253028,7.0763156 L3.00253028,4.02201406 C3.00253028,1.80070845 4.80323874,0 7.02454435,0 L10.1634613,0 L10.1634613,3.27034404 L7.9174087,3.27034404 C7.21158888,3.27034404 6.63937229,3.84256063 6.63937229,4.54838045 L6.63937229,7.07636621 L10.1070341,7.07636621 L9.62778315,10.7132082 L6.63937229,10.7132082 L6.63937229,19.6220137 L3.00253028,19.6220137 Z" id="Path"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
