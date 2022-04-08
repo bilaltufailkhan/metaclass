@@ -6,6 +6,8 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "@web3-react/core": "^6.1.9",
+    "@web3-react/injected-connector": "^6.0.7",
     "bootstrap": "4.6.0",
     "crypto-js": "^4.1.1",
     "ethers": "^5.6.2",
@@ -23,7 +25,7 @@
     "redux-thunk": "^2.3.0",
     "use-local-storage": "^2.3.6",
     "web-vitals": "^1.0.1",
-    "web3": "^1.7.1"
+    "web3": "^1.7.3"
   },
   "scripts": {
     "start": "react-scripts start",

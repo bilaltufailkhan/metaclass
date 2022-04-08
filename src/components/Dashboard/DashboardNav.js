@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Col, Container, Nav, Navbar, NavItem, Row } from "reactstrap";
 
 import logo from "../../assets/img/metaclass-assets/logo.png";
+import { injected } from "../../config/connectors";
+import { useWeb3React } from "@web3-react/core";
 
 const DashboardNav = (props) => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -15,6 +17,9 @@ const DashboardNav = (props) => {
   const [userBalance, setUserBalance] = React.useState(null);
 
   const defaultAddress = "0xa18bdf653018166e58319dee3487f72f13147f38";
+
+  const { active, account, library, connector, activate, deactivate } =
+    useWeb3React();
 
   const connectWalletHandler = () => {
     if (window.ethereum) {
@@ -28,9 +33,17 @@ const DashboardNav = (props) => {
     }
   };
 
+  const connect = async () => {
+    try {
+      await activate(injected);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   const accountChangedHandler = (newAccount) => {
     setDefaultAccount(newAccount);
-    getUserBalance(newAccount);
+    getUserBalance(newAccount.toString());
   };
 
   const getUserBalance = (address) => {
@@ -40,6 +53,8 @@ const DashboardNav = (props) => {
         setUserBalance(ethers.utils.formatEther(balance));
       });
   };
+
+  window.ethereum.on("accountsChanged", accountChangedHandler);
 
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
@@ -71,10 +86,7 @@ const DashboardNav = (props) => {
                     <button className="nav-link dbnav__btn">MCLS</button>
                   </NavItem> */}
                   <NavItem>
-                    <button
-                      onClick={connectWalletHandler}
-                      className="nav-link dbnav__btn"
-                    >
+                    <button onClick={connect} className="nav-link dbnav__btn">
                       Connect Wallet
                     </button>
                   </NavItem>
@@ -140,7 +152,7 @@ const DashboardNav = (props) => {
               </li>
               <li className="drawer__item">
                 <button
-                  onClick={connectWalletHandler}
+                  onClick={connect}
                   target="_blank"
                   className="openApp__btn"
                 >

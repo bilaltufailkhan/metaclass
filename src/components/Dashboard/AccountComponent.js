@@ -1,7 +1,7 @@
 import React from "react";
 import { Col, Container, Row } from "reactstrap";
 
-const AccountComponent = () => {
+const AccountComponent = (props) => {
   return (
     <>
       <Container>
