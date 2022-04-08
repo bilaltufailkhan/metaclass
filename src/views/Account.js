@@ -4,7 +4,7 @@ import AccountComponent from "../components/Dashboard/AccountComponent";
 import DashboardNav from "../components/Dashboard/DashboardNav";
 import SideNav from "../components/SideNav/SideNav";
 
-const Account = (props) => {
+const Account = () => {
   return (
     <>
       <Container fluid>

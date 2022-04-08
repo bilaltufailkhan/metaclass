@@ -14,8 +14,8 @@ const getLibrary = (provider) => {
 function App() {
   return (
     <>
-      {/* <Provider store={store}> */}
-      <Web3ReactProvider getLibrary={getLibrary}>
+      <Provider store={store}>
+        {/* <Web3ReactProvider getLibrary={getLibrary}> */}
         <BrowserRouter>
           <Switch>
             {routes.map((route) => {
@@ -41,8 +41,8 @@ function App() {
             <Redirect to="/" />
           </Switch>
         </BrowserRouter>
-        {/* </Provider> */}
-      </Web3ReactProvider>
+      </Provider>
+      {/* </Web3ReactProvider> */}
     </>
   );
 }

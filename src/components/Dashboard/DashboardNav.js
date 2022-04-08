@@ -8,7 +8,7 @@ import logo from "../../assets/img/metaclass-assets/logo.png";
 import { injected } from "../../config/connectors";
 import { useWeb3React } from "@web3-react/core";
 
-const DashboardNav = (props) => {
+const DashboardNav = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const [isOpen, setIsOpen] = React.useState(true);
 
@@ -82,11 +82,14 @@ const DashboardNav = (props) => {
             <Col md="12">
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
-                  {/* <NavItem>
-                    <button className="nav-link dbnav__btn">MCLS</button>
-                  </NavItem> */}
                   <NavItem>
-                    <button onClick={connect} className="nav-link dbnav__btn">
+                    <button className="nav-link dbnav__btn">MCLS</button>
+                  </NavItem>
+                  <NavItem>
+                    <button
+                      onClick={connectWalletHandler}
+                      className="nav-link dbnav__btn"
+                    >
                       Connect Wallet
                     </button>
                   </NavItem>
@@ -103,12 +106,12 @@ const DashboardNav = (props) => {
       <Container>
         <div className="drawer__nav py-4 container">
           <div className="logo">
-            <a href="https://metaclass.market">
+            <a href="https://metaclass.market" className="nav-link">
               <img src={logo} height="30px" width="auto" />
             </a>
           </div>
           <div className="bread__crumb">
-            <button className="btn__drawer" onClick={handleDrawer}>
+            <button className="btn__drawer nav-link" onClick={handleDrawer}>
               <i class="fa-solid fa-bars"></i>
             </button>
           </div>
@@ -129,9 +132,7 @@ const DashboardNav = (props) => {
                 <Link to="/calculator">Calculator</Link>
               </li>
               <li className="drawer__item">
-                <Link to="/dashboard" className="nav-link">
-                  NFTs
-                </Link>
+                <Link to="/dashboard">NFTs</Link>
               </li>
               <li className="drawer__item">
                 <a
@@ -151,11 +152,7 @@ const DashboardNav = (props) => {
                 </a>
               </li>
               <li className="drawer__item">
-                <button
-                  onClick={connect}
-                  target="_blank"
-                  className="openApp__btn"
-                >
+                <button onClick={connectWalletHandler} className="openApp__btn">
                   Connect Wallet
                 </button>
               </li>
