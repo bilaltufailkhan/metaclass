@@ -117,12 +117,12 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <Link
-                    to="/dashboard"
+                  <a
+                    href="https://app.metaclass.market"
                     className="lightPaper__link py-3 px-5 mr-5"
                   >
                     Open App
-                  </Link>
+                  </a>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -168,9 +168,12 @@ const MainNav = (props) => {
               </Nav>
               <Nav className="ml-auto navlist">
                 <NavItem className="btn__lightPaper">
-                  <Link to="/dashboard" className="lightPaper__link p-3 mr-5">
+                  <a
+                    href="https://app.metaclass.market"
+                    className="lightPaper__link p-3 mr-5"
+                  >
                     Open App
-                  </Link>
+                  </a>
                 </NavItem>
                 <NavItem className="mode__changer py-3">
                   <i class="fa-solid fa-moon"></i>
@@ -290,31 +293,12 @@ const MainNav = (props) => {
                   </li>
                   <li className="drawer__item">
                     <Link
-                      href="/dashboard"
-                      target="_blank"
+                      href="https://app.metaclass.market"
                       className="openApp__btn"
                     >
                       Open App
                     </Link>
                   </li>
-                  {/* <li className="mode__changer drawer__item py-3">
-                  <i class="fa-solid fa-moon"></i>
-                  <div className="mode__button">
-                    <Switch
-                      onChange={switchTheme}
-                      checked={checked}
-                      className="react-switch"
-                      uncheckedIcon={false}
-                      checkedIcon={false}
-                      offColor="#12131d"
-                      onColor="#12131d"
-                      handleDiameter={11}
-                      width={35}
-                      height={20}
-                    />
-                  </div>
-                  <i class="fa-solid fa-sun"></i>
-                </li> */}
                 </ul>
               </div>
             </div>
@@ -371,28 +355,13 @@ const MainNav = (props) => {
                     </Link>
                   </li>
                   <li className="drawer__item">
-                    <Link href="/dashboard" className="openApp__btn">
+                    <Link
+                      href="https://app.metaclass.market"
+                      className="openApp__btn"
+                    >
                       Open App
                     </Link>
                   </li>
-                  {/* <li className="mode__changer drawer__item py-3">
-                  <i class="fa-solid fa-moon"></i>
-                  <div className="mode__button">
-                    <Switch
-                      onChange={switchTheme}
-                      checked={checked}
-                      className="react-switch"
-                      uncheckedIcon={false}
-                      checkedIcon={false}
-                      offColor="#12131d"
-                      onColor="#12131d"
-                      handleDiameter={11}
-                      width={35}
-                      height={20}
-                    />
-                  </div>
-                  <i class="fa-solid fa-sun"></i>
-                </li> */}
                 </ul>
               </div>
             </div>
