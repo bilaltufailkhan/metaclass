@@ -24,7 +24,7 @@ const SideNav = () => {
             src={logo}
             width="40%"
             height="auto"
-            style={{ marginBottom: "3rem" }}
+            style={{ marginBottom: "3rem", marginLeft: "3rem" }}
           />
         </Link>
         <Link to="/dashboard" className="nav-link">

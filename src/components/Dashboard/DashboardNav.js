@@ -67,9 +67,9 @@ const DashboardNav = (props) => {
             <Col md="12">
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
-                  <NavItem>
+                  {/* <NavItem>
                     <button className="nav-link dbnav__btn">MCLS</button>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <button
                       onClick={connectWalletHandler}

@@ -1297,10 +1297,19 @@ span {
 }
 
 .dbnav__btn {
-  background: #efefef;
+  background: transparent;
+  margin: 1rem;
+  color: #d8d8d8 !important;
+  font-weight: 600;
+  border: #d8d8d8 solid 2px;
+  outline: 0;
+}
+
+.dbnav__btn:hover {
+  background: #d8d8d8;
   margin: 1rem;
   color: #12131d !important;
   font-weight: 600;
-  border: none;
+  border: transparent solid 2px;
   outline: 0;
 }
