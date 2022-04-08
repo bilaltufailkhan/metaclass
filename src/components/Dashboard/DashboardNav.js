@@ -91,9 +91,9 @@ const DashboardNav = (props) => {
       <Container>
         <div className="drawer__nav py-4 container">
           <div className="logo">
-            <Link to="/">
+            <a href="https://metaclass.market">
               <img src={logo} height="30px" width="auto" />
-            </Link>
+            </a>
           </div>
           <div className="bread__crumb">
             <button className="btn__drawer" onClick={handleDrawer}>
@@ -108,7 +108,7 @@ const DashboardNav = (props) => {
                 </button>
               </li>
               <li className="drawer__item text-end">
-                <Link to="/dashboard">Dashboard</Link>
+                <Link to="/">Dashboard</Link>
               </li>
               <li className="drawer__item text-end">
                 <Link to="/account">Account</Link>
@@ -122,24 +122,30 @@ const DashboardNav = (props) => {
                 </Link>
               </li>
               <li className="drawer__item">
-                <Link to="/dashboard" className="nav-link">
+                <a
+                  href="https://pancakeswap.finance/"
+                  target="_blank"
+                  className="nav-link"
+                >
                   Swap
-                </Link>
+                </a>
               </li>
               <li className="drawer__item">
-                <Link className="nav-link" to="/dashboard">
+                <a
+                  className="nav-link"
+                  href="https://metaclass.market/whitepaper.pdf"
+                >
                   Docs
-                </Link>
+                </a>
               </li>
               <li className="drawer__item">
-                <Link to="/dashboard" className="nav-link">
-                  MCLS
-                </Link>
-              </li>
-              <li className="drawer__item">
-                <Link to="/" target="_blank" className="openApp__btn">
+                <button
+                  onClick={connectWalletHandler}
+                  target="_blank"
+                  className="openApp__btn"
+                >
                   Connect Wallet
-                </Link>
+                </button>
               </li>
             </ul>
           </div>

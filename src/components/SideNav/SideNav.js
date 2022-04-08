@@ -19,14 +19,14 @@ const SideNav = () => {
   return (
     <>
       <div className="sidenav">
-        <Link to="/" className="nav-link">
+        <a href="https://metaclass.market" className="nav-link">
           <img
             src={logo}
             width="40%"
             height="auto"
             style={{ marginBottom: "3rem", marginLeft: "3rem" }}
           />
-        </Link>
+        </a>
         <Link to="/dashboard" className="nav-link">
           <img src={dashboardIcon} width="24px" height="auto" />
           &nbsp;Dashboard
