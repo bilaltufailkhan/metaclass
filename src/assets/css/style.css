@@ -1301,8 +1301,6 @@ span {
   margin: 1rem;
   color: #12131d !important;
   font-weight: 600;
-}
-
-.sidenav .disabled:hover {
-  cursor: pointer;
+  border: none;
+  outline: 0;
 }

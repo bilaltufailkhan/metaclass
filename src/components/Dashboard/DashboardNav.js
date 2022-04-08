@@ -1,4 +1,5 @@
 import React from "react";
+import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 
 import { Col, Container, Nav, Navbar, NavItem, Row } from "reactstrap";
@@ -8,6 +9,37 @@ import logo from "../../assets/img/metaclass-assets/logo.png";
 const DashboardNav = (props) => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const [isOpen, setIsOpen] = React.useState(true);
+
+  const [errorMessage, setErrorMessage] = React.useState(null);
+  const [defaultAccount, setDefaultAccount] = React.useState(null);
+  const [userBalance, setUserBalance] = React.useState(null);
+
+  const defaultAddress = "0xa18bdf653018166e58319dee3487f72f13147f38";
+
+  const connectWalletHandler = () => {
+    if (window.ethereum) {
+      window.ethereum
+        .request({ method: "eth_requestAccounts" })
+        .then((result) => {
+          accountChangedHandler(result[0]);
+        });
+    } else {
+      setErrorMessage("Install Metamask");
+    }
+  };
+
+  const accountChangedHandler = (newAccount) => {
+    setDefaultAccount(newAccount);
+    getUserBalance(newAccount);
+  };
+
+  const getUserBalance = (address) => {
+    window.ethereum
+      .request({ method: "eth_getBalance", params: [address, "latest"] })
+      .then((balance) => {
+        setUserBalance(ethers.utils.formatEther(balance));
+      });
+  };
 
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
@@ -36,10 +68,15 @@ const DashboardNav = (props) => {
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
                   <NavItem>
-                    <Link className="nav-link dbnav__btn">MCLS</Link>
+                    <button className="nav-link dbnav__btn">MCLS</button>
                   </NavItem>
                   <NavItem>
-                    <Link className="nav-link dbnav__btn">Connect Wallet</Link>
+                    <button
+                      onClick={connectWalletHandler}
+                      className="nav-link dbnav__btn"
+                    >
+                      Connect Wallet
+                    </button>
                   </NavItem>
                 </Nav>
               </Navbar>
