@@ -20,9 +20,9 @@ const Slider = () => {
               <p>
                 MetaClass is a decentralized hotline technological network of 3D
                 virtual worlds subjected to converge physical, augmented, and
-                virtual reality in a shared online space powered by an open
-                blockchain technology that encompasses digital assets and
-                digital identities.
+                virtual reality in a shared online space powered by an
+                Auto-Compounding, Auto-Staking System that encompasses digital
+                assets and digital identities.
               </p>
               <Row className="">
                 <Col md="4" sm="12">
@@ -42,7 +42,12 @@ const Slider = () => {
               </Row>
               <Row className="justify-content-center text-center text-md-left">
                 <Col sm="12">
-                  <img src={solidProofLogo} width="60%" height="auto" />
+                  <a
+                    href="https://github.com/solidproof/projects/tree/main/MetaClass"
+                    target="_blank"
+                  >
+                    <img src={solidProofLogo} width="60%" height="auto" />
+                  </a>
                 </Col>
               </Row>
             </Fade>

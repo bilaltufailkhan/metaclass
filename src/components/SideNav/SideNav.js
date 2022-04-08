@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "reactstrap";
+import { Container, Tooltip } from "reactstrap";
 import logo from "../../assets/img/metaclass-assets/logo.png";
 
 import dashboardIcon from "../../assets/img/dashboard/dashboard.svg";
@@ -11,15 +11,20 @@ import docsIcon from "../../assets/img/dashboard/docs.svg";
 import swapIcon from "../../assets/img/dashboard/swap-dark.png";
 
 const SideNav = () => {
+  const [tooltipOpen, setTooltipOpen] = React.useState(false);
+
+  const toggleToolTip = () => {
+    setTooltipOpen(!tooltipOpen);
+  };
   return (
     <>
       <div className="sidenav">
         <Link to="/" className="nav-link">
           <img
             src={logo}
-            width="20%"
+            width="40%"
             height="auto"
-            style={{ marginBottom: "5rem" }}
+            style={{ marginBottom: "3rem" }}
           />
         </Link>
         <Link to="/dashboard" className="nav-link">
@@ -34,11 +39,27 @@ const SideNav = () => {
           <img src={calculatorIcon} width="24px" height="auto" />
           &nbsp; Calculator
         </Link>
-        <a href="#section" className="nav-link">
+        <Link to="/" className="nav-link">
           <img src={nftsIcon} width="24px" height="auto" />
-          &nbsp; NFTs
-        </a>
-        <a href="#section" className="nav-link">
+          &nbsp;{" "}
+          <span id="DisabledAutoHideExample" className="text-muted">
+            NFTs
+          </span>
+          <Tooltip
+            placement="right"
+            isOpen={tooltipOpen}
+            autohide={false}
+            target="DisabledAutoHideExample"
+            toggle={toggleToolTip}
+          >
+            Coming Soon!
+          </Tooltip>
+        </Link>
+        <a
+          href="https://pancakeswap.finance/"
+          target="_blank"
+          className="nav-link"
+        >
           <img
             src={swapIcon}
             width="24px"
@@ -47,7 +68,7 @@ const SideNav = () => {
           />
           &nbsp; Swap
         </a>
-        <a href="#section" className="nav-link">
+        <a href="/whitepaper.pdf" className="nav-link">
           <img src={docsIcon} width="24px" height="auto" />
           &nbsp; Docs
         </a>

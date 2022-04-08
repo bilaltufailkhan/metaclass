@@ -21,7 +21,9 @@ const APY = () => {
         </Row>
         <Row className="justify-content-center text-center">
           <Col xs="12">
-            <h1 className="text_light">Reward every 24 Hours</h1>
+            <h2 className="text_light">
+              Reward every 10 Minutes - 144 Times a Day
+            </h2>
           </Col>
         </Row>
       </Container>

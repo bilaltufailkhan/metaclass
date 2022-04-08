@@ -7,8 +7,11 @@ import { Zoom } from "react-reveal";
 import tokenImg from "../assets/img/metaclass-assets/light/total-supply-light.svg";
 import tokenImgDark from "../assets/img/metaclass-assets/dark/total-supply-dark.svg";
 
-import tokenomicsDark from '../assets/img/metaclass-assets/dark/total_supply.svg'
-import tokenomicsLight from '../assets/img/metaclass-assets/light/total_supply.svg'
+// import tokenomicsDark from '../assets/img/metaclass-assets/dark/total_supply.svg'
+// import tokenomicsLight from '../assets/img/metaclass-assets/light/total_supply.svg'
+
+import tokenomicsDark from "../assets/img/metaclass-assets/totalsupply.svg";
+import tokenomicsLight from "../assets/img/metaclass-assets/totalsupply.svg";
 
 import BscScanDark from "../assets/img/metaclass-assets/dark/bscscan-logo.svg";
 import CoinGekoDark from "../assets/img/metaclass-assets/dark/coin-gecko-logo.svg";
@@ -29,7 +32,7 @@ const TokenDist = (props) => {
           <Col md="7" sm="12">
             <Zoom>
               <h1>Token Distribution</h1>
-              <p>All distributions are locked in unicrypt locker</p>
+              {/* <p>All distributions are locked in unicrypt locker</p> */}
             </Zoom>
           </Col>
         </Row>

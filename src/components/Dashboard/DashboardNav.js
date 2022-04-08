@@ -36,10 +36,10 @@ const DashboardNav = (props) => {
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
                   <NavItem>
-                    <Link className="nav-link">MCLS</Link>
+                    <Link className="nav-link dbnav__btn">MCLS</Link>
                   </NavItem>
                   <NavItem>
-                    <Link className="nav-link">Connect Wallet</Link>
+                    <Link className="nav-link dbnav__btn">Connect Wallet</Link>
                   </NavItem>
                 </Nav>
               </Navbar>
