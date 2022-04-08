@@ -119,7 +119,7 @@ const MainNav = (props) => {
                 <NavItem className="btn__lightPaper">
                   <a
                     href="https://app.metaclass.market"
-                    className="lightPaper__link py-3 px-5 mr-5"
+                    className="lightPaper__link nav-link py-3 px-5 mr-5"
                   >
                     Open App
                   </a>
@@ -170,7 +170,7 @@ const MainNav = (props) => {
                 <NavItem className="btn__lightPaper">
                   <a
                     href="https://app.metaclass.market"
-                    className="lightPaper__link p-3 mr-5"
+                    className="lightPaper__link p-3 mr-5 nav-link"
                   >
                     Open App
                   </a>
@@ -292,12 +292,12 @@ const MainNav = (props) => {
                     </ScrollLink>
                   </li>
                   <li className="drawer__item">
-                    <Link
+                    <a
                       href="https://app.metaclass.market"
-                      className="openApp__btn"
+                      className="openApp__btn nav-link"
                     >
                       Open App
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
@@ -355,12 +355,12 @@ const MainNav = (props) => {
                     </Link>
                   </li>
                   <li className="drawer__item">
-                    <Link
+                    <a
                       href="https://app.metaclass.market"
-                      className="openApp__btn"
+                      className="openApp__btn nav-link"
                     >
                       Open App
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
