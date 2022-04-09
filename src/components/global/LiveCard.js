@@ -18,13 +18,14 @@ const LiveCard = (props) => {
           <p>{props.text}</p>
         </Bounce>
         <Flip left>
-          <Link
-            to="/dashboard"
+          <a
+            href="https://app.metaclass.market"
+            target="_blank"
             style={{ marginTop: `${props.margin}`, height: "5rem" }}
             className="liveCard__btn"
           >
             {props.btnTitle}
-          </Link>
+          </a>
         </Flip>
       </Col>
     </>
