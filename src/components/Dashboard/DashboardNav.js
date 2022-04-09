@@ -11,6 +11,9 @@ import { useWeb3React } from "@web3-react/core";
 
 import { injected, walletconnect } from "../../config/connectors";
 
+import walletConnectImg from "../../assets/img/metaclass-assets/walletconnect-circle-blue.svg";
+import metaMaskImg from "../../assets/img/metaclass-assets/metamask-fox.svg";
+
 const DashboardNav = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const [isOpen, setIsOpen] = React.useState(true);
@@ -119,40 +122,37 @@ const DashboardNav = () => {
           centered
           className="modal"
         >
-          <Modal.Body className="text-center pb-5">
+          <Modal.Body className="text-center pb-5 bg-dark text-white rounded">
             <span className="logo"></span>
             <h4 className="heading-4 mt-4 mb-0">Connect Wallet</h4>
-            <h5 className="mt-0">To start using Moon Arch</h5>
+            <h5 className="mt-0">To start using MetaClass</h5>
             <div className="col-8 mb-4 mt-4 m-auto">
-              <ul className="list-group">
-                <li
-                  className="list-group-item list-group-item-action"
-                  onClick={() => {
-                    injectWeb3();
-                  }}
-                >
-                  <span className="icon-wallet">
-                    <img src="/assets/metamask-fox.svg" width={26} />
-                  </span>
-                  {` `}
-                  <span>Metamask</span>
-                </li>
-                <li
-                  className="list-group-item list-group-item-action"
-                  onClick={() => {
-                    walletConnect();
-                  }}
-                >
-                  <span className="icon-wallet iw-mt">
-                    <img
-                      src="/assets/walletconnect-circle-blue.svg"
-                      width={26}
-                    />
-                  </span>
-                  {` `}
-                  <span>WalletConnect</span>
-                </li>
-              </ul>
+              {/* <ul className="list-group"> */}
+              <button
+                className="btn btn-danger my-3 btn-block btn-lg"
+                onClick={() => {
+                  injectWeb3();
+                }}
+              >
+                <span className="icon-wallet">
+                  <img src={metaMaskImg} width={26} />
+                </span>
+                {` `}
+                <span>Metamask</span>
+              </button>
+              <button
+                className="btn btn-primary my-3 btn-block btn-lg"
+                onClick={() => {
+                  walletConnect();
+                }}
+              >
+                <span className="icon-wallet iw-mt">
+                  <img src={walletConnectImg} width={26} />
+                </span>
+                {` `}
+                <span>WalletConnect</span>
+              </button>
+              {/* </ul> */}
             </div>
 
             <p className="p-0 m-0">Need help connecting a wallet?</p>
@@ -237,10 +237,7 @@ const DashboardNav = () => {
                 </a>
               </li>
               <li className="drawer__item">
-                <button
-                  onClick={() => setModalShow(true)}
-                  className="openApp__btn"
-                >
+                <button onClick={walletConnect} className="openApp__btn">
                   Connect Wallet
                 </button>
               </li>
