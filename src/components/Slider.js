@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Col, Container, Row } from "reactstrap";
 import "../assets/css/style.css";
 
@@ -7,8 +7,14 @@ import Fade from "react-reveal/Fade";
 import SideSocials from "./global/SideSocials";
 
 import solidProofLogo from "../assets/img/solidproof.png";
+import { Modal } from "react-bootstrap";
 
-const Slider = () => {
+const Slider = (props) => {
+  const [modalShow, setModalShow] = useState(false);
+
+  const handleClose = () => setModalShow(false);
+  const handleShow = () => setModalShow(true);
+
   return (
     <>
       <SideSocials />
@@ -35,9 +41,9 @@ const Slider = () => {
                   </a>
                 </Col>
                 <Col md="4" sm="12">
-                  <a className="p-3 btn__info">
+                  <button className="p-3 btn__info" onClick={handleShow}>
                     <i class="fa-solid fa-circle-play"></i>How it works
-                  </a>
+                  </button>
                 </Col>
               </Row>
               <Row className="justify-content-center text-center text-md-left">
@@ -62,6 +68,31 @@ const Slider = () => {
           </Col>
         </Row>
       </Container>
+      <Modal
+        show={modalShow}
+        onHide={handleClose}
+        centered
+        className="modal"
+        size="lg"
+      >
+        <Modal.Body
+          className={
+            `text-center pb-5 ` + props.theme === "dark"
+              ? "bg-light"
+              : "bg-dark"
+          }
+        >
+          <iframe
+            width="100%"
+            height="480"
+            src="https://www.youtube.com/embed/byl0CPxA95s"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </Modal.Body>
+      </Modal>
     </>
   );
 };

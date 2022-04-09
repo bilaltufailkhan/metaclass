@@ -77,7 +77,7 @@ const AdminView = (props) => {
             />
           </Col>
           <Col xs="12">
-            <Slider />
+            <Slider theme={theme} />
           </Col>
           <Col xs="12">
             <APY theme={theme} />

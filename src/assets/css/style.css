@@ -217,11 +217,17 @@ body {
   text-decoration: none;
   font-family: "Poppins", sans-serif;
   cursor: pointer;
+  border: none;
+  outline: 0;
 }
 
 .slider .btn__info:hover {
   color: var(--darkText);
   text-decoration: none;
+}
+
+.slider .btn__info i{
+  margin-right: 1rem;
 }
 
 .slider__bg {
