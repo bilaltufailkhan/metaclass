@@ -1,12 +1,15 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 
 import { Col, Container, Nav, Navbar, NavItem, Row } from "reactstrap";
 
+import { Modal } from "react-bootstrap";
+
 import logo from "../../assets/img/metaclass-assets/logo.png";
-import { injected } from "../../config/connectors";
 import { useWeb3React } from "@web3-react/core";
+
+import { injected, walletconnect } from "../../config/connectors";
 
 const DashboardNav = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
@@ -21,40 +24,44 @@ const DashboardNav = () => {
   // const { active, account, library, connector, activate, deactivate } =
   //   useWeb3React();
 
-  const connectWalletHandler = () => {
-    if (window.ethereum) {
-      window.ethereum
-        .request({ method: "eth_requestAccounts" })
-        .then((result) => {
-          accountChangedHandler(result[0]);
-        });
-    } else {
-      setErrorMessage("Install Metamask");
-    }
-  };
+  // const connectWalletHandler = () => {
+  //   if (window.ethereum) {
+  //     window.ethereum
+  //       .request({ method: "eth_requestAccounts" })
+  //       .then((result) => {
+  //         accountChangedHandler(result[0]);
+  //       });
+  //   } else {
+  //     setErrorMessage("Install Metamask");
+  //   }
+  // };
 
   // const connect = async () => {
   //   try {
-  //     await activate(injected);
+  //     if (!active) {
+  //       await activate(injected);
+  //     } else {
+  //       await deactivate();
+  //     }
   //   } catch (err) {
   //     console.log(err);
   //   }
   // };
 
-  const accountChangedHandler = (newAccount) => {
-    setDefaultAccount(newAccount);
-    getUserBalance(newAccount.toString());
-  };
+  // const accountChangedHandler = (newAccount) => {
+  //   setDefaultAccount(newAccount);
+  //   getUserBalance(newAccount.toString());
+  // };
 
-  const getUserBalance = (address) => {
-    window.ethereum
-      .request({ method: "eth_getBalance", params: [address, "latest"] })
-      .then((balance) => {
-        setUserBalance(ethers.utils.formatEther(balance));
-      });
-  };
+  // const getUserBalance = (address) => {
+  //   window.ethereum
+  //     .request({ method: "eth_getBalance", params: [address, "latest"] })
+  //     .then((balance) => {
+  //       setUserBalance(ethers.utils.formatEther(balance));
+  //     });
+  // };
 
-  window.ethereum.on("accountsChanged", accountChangedHandler);
+  // window.ethereum.on("accountsChanged", accountChangedHandler);
 
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
@@ -74,9 +81,87 @@ const DashboardNav = () => {
     setIsOpen(!isOpen);
   };
 
+  const [modalShow, setModalShow] = useState(false);
+
+  const { account, activate } = useWeb3React();
+
+  async function injectWeb3() {
+    try {
+      await activate(injected);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+
+  async function walletConnect() {
+    try {
+      await activate(walletconnect);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+
+  useEffect(() => {
+    if (account) {
+      setModalShow(false);
+    }
+  }, [account]);
+
+  // Component Desing Starts Here
+
   if (windowWidth > 992) {
     return (
       <>
+        {/* Wallet Modal */}
+        <Modal
+          show={modalShow}
+          onHide={() => setModalShow(false)}
+          centered
+          className="modal"
+        >
+          <Modal.Body className="text-center pb-5">
+            <span className="logo"></span>
+            <h4 className="heading-4 mt-4 mb-0">Connect Wallet</h4>
+            <h5 className="mt-0">To start using Moon Arch</h5>
+            <div className="col-8 mb-4 mt-4 m-auto">
+              <ul className="list-group">
+                <li
+                  className="list-group-item list-group-item-action"
+                  onClick={() => {
+                    injectWeb3();
+                  }}
+                >
+                  <span className="icon-wallet">
+                    <img src="/assets/metamask-fox.svg" width={26} />
+                  </span>
+                  {` `}
+                  <span>Metamask</span>
+                </li>
+                <li
+                  className="list-group-item list-group-item-action"
+                  onClick={() => {
+                    walletConnect();
+                  }}
+                >
+                  <span className="icon-wallet iw-mt">
+                    <img
+                      src="/assets/walletconnect-circle-blue.svg"
+                      width={26}
+                    />
+                  </span>
+                  {` `}
+                  <span>WalletConnect</span>
+                </li>
+              </ul>
+            </div>
+
+            <p className="p-0 m-0">Need help connecting a wallet?</p>
+            <p className="green-anchor p-0 m-0">
+              <a href="#">Learn more about wallets</a>
+            </p>
+          </Modal.Body>
+        </Modal>
+        {/* Modal End */}
         <Container>
           <Row>
             <Col md="12">
@@ -87,10 +172,10 @@ const DashboardNav = () => {
                   </NavItem> */}
                   <NavItem>
                     <button
-                      onClick={connectWalletHandler}
+                      onClick={() => setModalShow(true)}
                       className="nav-link dbnav__btn"
                     >
-                      Connect Wallet
+                      Connect Account
                     </button>
                   </NavItem>
                 </Nav>
@@ -152,7 +237,10 @@ const DashboardNav = () => {
                 </a>
               </li>
               <li className="drawer__item">
-                <button onClick={connectWalletHandler} className="openApp__btn">
+                <button
+                  onClick={() => setModalShow(true)}
+                  className="openApp__btn"
+                >
                   Connect Wallet
                 </button>
               </li>
