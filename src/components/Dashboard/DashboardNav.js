@@ -18,8 +18,8 @@ const DashboardNav = () => {
 
   const defaultAddress = "0xa18bdf653018166e58319dee3487f72f13147f38";
 
-  const { active, account, library, connector, activate, deactivate } =
-    useWeb3React();
+  // const { active, account, library, connector, activate, deactivate } =
+  //   useWeb3React();
 
   const connectWalletHandler = () => {
     if (window.ethereum) {
@@ -33,13 +33,13 @@ const DashboardNav = () => {
     }
   };
 
-  const connect = async () => {
-    try {
-      await activate(injected);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  // const connect = async () => {
+  //   try {
+  //     await activate(injected);
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // };
 
   const accountChangedHandler = (newAccount) => {
     setDefaultAccount(newAccount);
@@ -82,9 +82,9 @@ const DashboardNav = () => {
             <Col md="12">
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
-                  <NavItem>
+                  {/* <NavItem>
                     <button className="nav-link dbnav__btn">MCLS</button>
-                  </NavItem>
+                  </NavItem> */}
                   <NavItem>
                     <button
                       onClick={connectWalletHandler}
