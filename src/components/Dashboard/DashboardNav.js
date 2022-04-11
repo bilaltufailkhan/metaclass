@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { ethers } from "ethers";
 import { Link } from "react-router-dom";
 
 import { Col, Container, Nav, Navbar, NavItem, Row } from "reactstrap";
@@ -17,54 +16,6 @@ import metaMaskImg from "../../assets/img/metaclass-assets/metamask-fox.svg";
 const DashboardNav = () => {
   const [windowWidth, setWindowWidth] = React.useState(window.innerWidth);
   const [isOpen, setIsOpen] = React.useState(true);
-
-  const [errorMessage, setErrorMessage] = React.useState(null);
-  const [defaultAccount, setDefaultAccount] = React.useState(null);
-  const [userBalance, setUserBalance] = React.useState(null);
-
-  const defaultAddress = "0xa18bdf653018166e58319dee3487f72f13147f38";
-
-  // const { active, account, library, connector, activate, deactivate } =
-  //   useWeb3React();
-
-  // const connectWalletHandler = () => {
-  //   if (window.ethereum) {
-  //     window.ethereum
-  //       .request({ method: "eth_requestAccounts" })
-  //       .then((result) => {
-  //         accountChangedHandler(result[0]);
-  //       });
-  //   } else {
-  //     setErrorMessage("Install Metamask");
-  //   }
-  // };
-
-  // const connect = async () => {
-  //   try {
-  //     if (!active) {
-  //       await activate(injected);
-  //     } else {
-  //       await deactivate();
-  //     }
-  //   } catch (err) {
-  //     console.log(err);
-  //   }
-  // };
-
-  // const accountChangedHandler = (newAccount) => {
-  //   setDefaultAccount(newAccount);
-  //   getUserBalance(newAccount.toString());
-  // };
-
-  // const getUserBalance = (address) => {
-  //   window.ethereum
-  //     .request({ method: "eth_getBalance", params: [address, "latest"] })
-  //     .then((balance) => {
-  //       setUserBalance(ethers.utils.formatEther(balance));
-  //     });
-  // };
-
-  // window.ethereum.on("accountsChanged", accountChangedHandler);
 
   const handleResize = (e) => {
     setWindowWidth(window.innerWidth);
@@ -86,8 +37,10 @@ const DashboardNav = () => {
 
   const [modalShow, setModalShow] = useState(false);
 
-  const { account, activate } = useWeb3React();
+  const { active, account, library, connector, activate, deactivate } =
+    useWeb3React();
 
+  // MetaMask Connection
   async function injectWeb3() {
     try {
       await activate(injected);
@@ -96,9 +49,18 @@ const DashboardNav = () => {
     }
   }
 
+  // WalletConnect Connection
   async function walletConnect() {
     try {
       await activate(walletconnect);
+    } catch (ex) {
+      console.log(ex);
+    }
+  }
+
+  async function walletDisconnect() {
+    try {
+      deactivate();
     } catch (ex) {
       console.log(ex);
     }
@@ -167,17 +129,26 @@ const DashboardNav = () => {
             <Col md="12">
               <Navbar expand="md" className="dashboard__nav">
                 <Nav className="ml-auto">
-                  {/* <NavItem>
-                    <button className="nav-link dbnav__btn">MCLS</button>
-                  </NavItem> */}
-                  <NavItem>
-                    <button
-                      onClick={() => setModalShow(true)}
-                      className="nav-link dbnav__btn"
-                    >
-                      Connect Account
-                    </button>
-                  </NavItem>
+                  {!active ? (
+                    <NavItem>
+                      <button
+                        onClick={() => setModalShow(true)}
+                        className="nav-link dbnav__btn"
+                      >
+                        Connect Account
+                      </button>
+                    </NavItem>
+                  ) : (
+                    <NavItem>
+                      <button
+                        onClick={walletDisconnect}
+                        className="nav-link dbnav__btn"
+                      >
+                        Disconnect
+                      </button>
+                    </NavItem>
+                  )}
+                  )
                 </Nav>
               </Navbar>
             </Col>
@@ -237,9 +208,15 @@ const DashboardNav = () => {
                 </a>
               </li>
               <li className="drawer__item">
-                <button onClick={walletConnect} className="openApp__btn">
-                  Connect Wallet
-                </button>
+                {!active ? (
+                  <button onClick={walletConnect} className="openApp__btn">
+                    Connect Wallet
+                  </button>
+                ) : (
+                  <button onClick={walletDisconnect} className="openApp__btn">
+                    Disconnect
+                  </button>
+                )}
               </li>
             </ul>
           </div>

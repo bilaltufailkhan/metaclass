@@ -1,7 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 
+import {
+  UseTokenContract,
+  UseTokenPrice,
+  getTreasuryTokenValue,
+  getTreasuryValueOfUser,
+} from "../../hooks";
+import { getAddresses } from "../../constants/addresses";
+import { trim } from "../../utils/trim";
+import { useCountdown } from "../../utils/countdown";
+import { useWeb3React } from "@web3-react/core";
+
 const AccountComponent = () => {
+  const tokenContract = UseTokenContract();
+  const tokenPrice = UseTokenPrice();
+  const treasuryTokenValue = getTreasuryTokenValue();
+  const treasuryUserValue = getTreasuryValueOfUser();
+  const addresses = getAddresses(56);
+  const rebaseTime = useCountdown();
+
+  const [info, setInfo] = useState({
+    supply: "",
+    tokenPrice: "",
+    marketCap: "",
+    treasuryValue: "",
+  });
+
+  useEffect(() => {
+    (async () => {
+      // console.log("library", await library?.getBalance(addresses.TREASURY_ADDRESS));
+      const totalSupply =
+        (await tokenContract?.totalSupply()) / Math.pow(10, 5);
+
+      const _tokenPrice = await tokenPrice;
+
+      const circSupply =
+        totalSupply -
+        (await tokenContract.balanceOf(addresses.FIREPIT_ADDRESS)) /
+          Math.pow(10, 5);
+
+      const _treasuryTokenValue = await treasuryTokenValue;
+      const _treasuryUserValue = await treasuryUserValue;
+      // console.log('x',_treasuryUserValue);
+
+      // const treasuryValue =
+      //   ((await tokenContract.balanceOf(addresses.TREASURY_ADDRESS)) /
+      //     Math.pow(10, 5)) *
+      //   _tokenPrice;
+
+      setInfo({
+        supply: circSupply,
+        tokenPrice: _tokenPrice,
+        marketCap: totalSupply * _tokenPrice,
+      });
+    })();
+  }, []);
+
   return (
     <>
       <Container>
@@ -21,7 +76,7 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading offset-md-1 text-center"
           >
             <p>APY</p>
-            <h4>383,025.8%</h4>
+            <h4>{`${trim(Number(info.supply), 2)}`}</h4>
             <p>Daily ROI 2.28%</p>
           </Col>
           <Col
@@ -41,7 +96,7 @@ const AccountComponent = () => {
                 <p>Current MCLS Price</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$162.84</span>
+                <span>{`$${trim(info.tokenPrice, 2)}`}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -73,7 +128,14 @@ const AccountComponent = () => {
                 <p>ROI(1-Day Rate) USD</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$0</span>
+                <span>
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 0,
+                  }).format(info.marketCap)}
+                </span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
