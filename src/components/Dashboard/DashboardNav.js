@@ -8,7 +8,7 @@ import { Modal } from "react-bootstrap";
 import logo from "../../assets/img/metaclass-assets/logo.png";
 import { useWeb3React } from "@web3-react/core";
 
-import { injected, walletconnect } from "../../config/connectors";
+import { injected, walletconnect } from "../../common/Wallet/connectors";
 
 import walletConnectImg from "../../assets/img/metaclass-assets/walletconnect-circle-blue.svg";
 import metaMaskImg from "../../assets/img/metaclass-assets/metamask-fox.svg";

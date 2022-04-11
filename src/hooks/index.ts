@@ -1,1 +1,1 @@
-export * from "./useContracts";
+export * from "./useContract";

@@ -1,7 +1,62 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 
+import {
+  UseTokenContract,
+  UseTokenPrice,
+  getTreasuryTokenValue,
+  getTreasuryValueOfUser,
+} from "../../hooks";
+import { getAddresses } from "../../constants/addresses";
+import { trim } from "../../utils/trim";
+import { useCountdown } from "../../utils/countdown";
+import { useWeb3React } from "@web3-react/core";
+
 const DashboardComponent = () => {
+  const tokenContract = UseTokenContract();
+  const tokenPrice = UseTokenPrice();
+  const treasuryTokenValue = getTreasuryTokenValue();
+  const treasuryUserValue = getTreasuryValueOfUser();
+  const addresses = getAddresses(56);
+  const rebaseTime = useCountdown();
+
+  const [info, setInfo] = useState({
+    supply: "",
+    tokenPrice: "",
+    marketCap: "",
+    treasuryValue: "",
+  });
+
+  useEffect(() => {
+    (async () => {
+      // console.log("library", await library?.getBalance(addresses.TREASURY_ADDRESS));
+      const totalSupply =
+        (await tokenContract?.totalSupply()) / Math.pow(10, 5);
+
+      const _tokenPrice = await tokenPrice;
+
+      const circSupply =
+        totalSupply -
+        (await tokenContract.balanceOf(addresses.FIREPIT_ADDRESS)) /
+          Math.pow(10, 5);
+
+      const _treasuryTokenValue = await treasuryTokenValue;
+      const _treasuryUserValue = await treasuryUserValue;
+      // console.log('x',_treasuryUserValue);
+
+      // const treasuryValue =
+      //   ((await tokenContract.balanceOf(addresses.TREASURY_ADDRESS)) /
+      //     Math.pow(10, 5)) *
+      //   _tokenPrice;
+
+      setInfo({
+        supply: circSupply,
+        tokenPrice: _tokenPrice,
+        marketCap: totalSupply * _tokenPrice,
+      });
+    })();
+  }, []);
+
   return (
     <>
       <Container className="dashboard">
@@ -14,7 +69,14 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Market Cap</p>
-                <h4>$98,737,533</h4>
+                <h4>
+                  {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    maximumFractionDigits: 0,
+                    minimumFractionDigits: 0,
+                  }).format(info.marketCap)}
+                </h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Circulating Supply</p>
@@ -28,7 +90,7 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Next Rebase</p>
-                <h4>00:10:44</h4>
+                <h4>{`00:${rebaseTime[2]}:${rebaseTime[3]}`}</h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Total Supply</p>
@@ -45,7 +107,7 @@ const DashboardComponent = () => {
                 className="text-center p-5 my-2 readings__text dashboard__row"
               >
                 <p>MCLS Price</p>
-                <h4>$159.59</h4>
+                <h4>{`$${trim(info.tokenPrice, 2)}`}</h4>
               </Col>
               <Col
                 md="6"

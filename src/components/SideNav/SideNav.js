@@ -11,6 +11,7 @@ import docsIcon from "../../assets/img/dashboard/docs.svg";
 import swapIcon from "../../assets/img/dashboard/swap-dark.png";
 
 import { useWeb3React } from "@web3-react/core";
+import { useAddress } from "../../utils/useAddress";
 
 const SideNav = () => {
   const [tooltipOpen, setTooltipOpen] = React.useState(false);
@@ -33,11 +34,7 @@ const SideNav = () => {
             style={{ marginBottom: "3rem", marginLeft: "3rem" }}
           />
         </a>
-        <p
-          style={{ color: "#efefef", fontSize: "0.8rem", textAlign: "center" }}
-        >
-          {account}
-        </p>
+        <p style={{ color: "#efefef", textAlign: "left" }}>{account}</p>
         <Link to="/dashboard" className="nav-link">
           <img src={dashboardIcon} width="24px" height="auto" />
           &nbsp;Dashboard

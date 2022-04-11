@@ -10,6 +10,7 @@ import {
 import { getAddresses } from "../../constants/addresses";
 import { trim } from "../../utils/trim";
 import { useCountdown } from "../../utils/countdown";
+
 import { useWeb3React } from "@web3-react/core";
 
 const AccountComponent = () => {
@@ -56,7 +57,6 @@ const AccountComponent = () => {
       });
     })();
   }, []);
-
   return (
     <>
       <Container>
@@ -76,7 +76,7 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading offset-md-1 text-center"
           >
             <p>APY</p>
-            <h4>{`${trim(Number(info.supply), 2)}`}</h4>
+            <h4>102,846%</h4>
             <p>Daily ROI 2.28%</p>
           </Col>
           <Col
@@ -85,7 +85,7 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading offset-md-1 text-center"
           >
             <p>Next Rebase:</p>
-            <h4>00:10:00</h4>
+            <h4>{`00:${rebaseTime[2]}:${rebaseTime[3]}`}</h4>
             <p>You will earn money soon</p>
           </Col>
         </Row>
@@ -128,14 +128,7 @@ const AccountComponent = () => {
                 <p>ROI(1-Day Rate) USD</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>
-                  {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0,
-                  }).format(info.marketCap)}
-                </span>
+                <span>234324</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
