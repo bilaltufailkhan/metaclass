@@ -10,12 +10,18 @@ import nftsIcon from "../../assets/img/dashboard/nfts.svg";
 import docsIcon from "../../assets/img/dashboard/docs.svg";
 import swapIcon from "../../assets/img/dashboard/swap-dark.png";
 
+import { useWeb3React } from "@web3-react/core";
+
 const SideNav = () => {
   const [tooltipOpen, setTooltipOpen] = React.useState(false);
 
   const toggleToolTip = () => {
     setTooltipOpen(!tooltipOpen);
   };
+
+  const { active, account, library, connector, activate, deactivate } =
+    useWeb3React();
+
   return (
     <>
       <div className="sidenav">
@@ -27,6 +33,11 @@ const SideNav = () => {
             style={{ marginBottom: "3rem", marginLeft: "3rem" }}
           />
         </a>
+        <p
+          style={{ color: "#efefef", fontSize: "0.8rem", textAlign: "center" }}
+        >
+          {account}
+        </p>
         <Link to="/dashboard" className="nav-link">
           <img src={dashboardIcon} width="24px" height="auto" />
           &nbsp;Dashboard
