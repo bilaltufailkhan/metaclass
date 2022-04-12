@@ -35,7 +35,7 @@ body {
   overflow-x: hidden;
 }
 
-#ellipse1 {
+/* #ellipse1 {
   height: 300px;
   width: 300px;
   position: absolute;
@@ -43,7 +43,7 @@ body {
   left: 0;
   background-color: var(--gradientBG);
   z-index: 3004;
-}
+} */
 
 .bgSetting {
   background-color: var(--darkBG);
@@ -226,7 +226,7 @@ body {
   text-decoration: none;
 }
 
-.slider .btn__info i{
+.slider .btn__info i {
   margin-right: 1rem;
 }
 
