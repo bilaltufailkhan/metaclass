@@ -37,7 +37,7 @@ export function UseTokenContract(
   withSignerIfPossible?: boolean
 ): Contract | null {
   const addresses = getAddresses(56);
-  console.log("Addresses***" + addresses);
+  console.log("Addresses***" + addresses.toString());
   return useContract(addresses.TOKEN_ADDRESS, tokenABI, withSignerIfPossible);
 }
 

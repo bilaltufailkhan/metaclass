@@ -80,7 +80,7 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Circulating Supply</p>
-                <h4>612,026.06</h4>
+                <h4>{info.supply}</h4>
               </Col>
             </Row>
             <Row className="justify-content-center mb-5">

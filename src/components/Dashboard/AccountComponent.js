@@ -30,7 +30,6 @@ const AccountComponent = () => {
 
   useEffect(() => {
     (async () => {
-      // console.log("library", await library?.getBalance(addresses.TREASURY_ADDRESS));
       const totalSupply =
         (await tokenContract?.totalSupply()) / Math.pow(10, 5);
 
@@ -41,22 +40,14 @@ const AccountComponent = () => {
         (await tokenContract.balanceOf(addresses.FIREPIT_ADDRESS)) /
           Math.pow(10, 5);
 
-      const _treasuryTokenValue = await treasuryTokenValue;
-      const _treasuryUserValue = await treasuryUserValue;
-      // console.log('x',_treasuryUserValue);
-
-      // const treasuryValue =
-      //   ((await tokenContract.balanceOf(addresses.TREASURY_ADDRESS)) /
-      //     Math.pow(10, 5)) *
-      //   _tokenPrice;
-
       setInfo({
         supply: circSupply,
         tokenPrice: _tokenPrice,
         marketCap: totalSupply * _tokenPrice,
       });
     })();
-  }, []);
+  }, [info.circSupply]);
+
   return (
     <>
       <Container>
@@ -112,7 +103,7 @@ const AccountComponent = () => {
                 <p>Next Reward Amount USD</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$0</span>
+                <span>$ {info.circulatingSupply}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
