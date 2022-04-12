@@ -41,7 +41,7 @@ export function UseTokenContract(
   return useContract(addresses.TOKEN_ADDRESS, tokenABI, withSignerIfPossible);
 }
 
-export function usePairContract(
+export function UsePairContract(
   withSignerIfPossible?: boolean
 ): Contract | null {
   const addresses = getAddresses(56);
@@ -49,10 +49,9 @@ export function usePairContract(
 }
 
 export async function UseTokenPrice() {
-  const pairContract = usePairContract();
-  console.log(pairContract + "*** Pair Contract");
+  const pairContract = UsePairContract();
   const bnbPrice = await getTokenPrice();
-  const reserves = await pairContract?.getReserves();
+  const reserves = await pairContract?.pairContract();
   const marketPrice = reserves[0] / reserves[1];
   const tokenPrice = marketPrice / Math.pow(10, 13);
 
