@@ -37,14 +37,14 @@ export function UseTokenContract(
   withSignerIfPossible?: boolean
 ): Contract | null {
   const addresses = getAddresses(56);
-  return useContract(addresses.TOKEN_ADDRESS, tokenABI, withSignerIfPossible);
+  return useContract(addresses.TOKEN_ADDRESS, erc20ABI, withSignerIfPossible);
 }
 
 export function UsePairContract(
   withSignerIfPossible?: boolean
 ): Contract | null {
   const addresses = getAddresses(56);
-  return useContract(addresses.PAIR_ADDRESS, lpABI, withSignerIfPossible);
+  return useContract(addresses.TOKEN_ADDRESS, erc20ABI, withSignerIfPossible);
 }
 
 export async function UseTokenPrice() {
@@ -61,7 +61,7 @@ export function useBusdContract(
   withSignerIfPossible?: boolean
 ): Contract | null {
   const addresses = getAddresses(56);
-  return useContract(addresses.BUSD_ADDRESS, erc20ABI, withSignerIfPossible);
+  return useContract(addresses.TOKEN_ADDRESS, erc20ABI, withSignerIfPossible);
 }
 
 export async function getTreasuryTokenValue() {

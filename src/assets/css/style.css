@@ -1,4 +1,18 @@
+iframe {
+  pointer-events: none;
+}
+
 body {
+  background-color: #12131d;
+  margin: 0;
+  left: 0;
+  right: 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+html {
   background-color: #12131d;
   margin: 0;
   left: 0;
@@ -29,8 +43,6 @@ body {
   background: linear-gradient(146.97deg, #d600a6 7.88%, #00beff 163.69%);
   cursor: pointer !important;
 }
-
-
 
 .bread__crumb > .btn__drawer > i {
   font-size: 1.5rem;

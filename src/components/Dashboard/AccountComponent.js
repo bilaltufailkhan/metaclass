@@ -6,6 +6,7 @@ import {
   UseTokenPrice,
   getTreasuryTokenValue,
   getTreasuryValueOfUser,
+  useContract,
 } from "../../hooks";
 import { getAddresses } from "../../constants/addresses";
 import { trim } from "../../utils/trim";
@@ -31,14 +32,20 @@ const AccountComponent = () => {
   useEffect(() => {
     (async () => {
       const totalSupply =
-        (await tokenContract?.totalSupply()) / Math.pow(10, 5);
+        (await tokenContract?._totalSupply()) / Math.pow(10, 5);
+
+      console.log(totalSupply, "Total Supply");
 
       const _tokenPrice = await tokenPrice;
 
+      console.log("Token Price", _tokenPrice);
+
       const circSupply =
         totalSupply -
-        (await tokenContract.balanceOf(addresses.FIREPIT_ADDRESS)) /
+        (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
           Math.pow(10, 5);
+
+      console.log(circSupply, "Circular Supply");
 
       setInfo({
         supply: circSupply,
@@ -46,7 +53,7 @@ const AccountComponent = () => {
         marketCap: totalSupply * _tokenPrice,
       });
     })();
-  }, [info.circSupply]);
+  }, []);
 
   return (
     <>

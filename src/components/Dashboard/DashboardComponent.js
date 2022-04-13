@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 
 import {
+  useContract,
   UseTokenContract,
   UseTokenPrice,
   getTreasuryTokenValue,
@@ -30,23 +31,21 @@ const DashboardComponent = () => {
   useEffect(() => {
     (async () => {
       const totalSupply =
-        (await tokenContract?.totalSupply()) / Math.pow(10, 5);
+        (await tokenContract?._totalSupply()) / Math.pow(10, 5);
 
-      const _tokenPrice = await tokenPrice;
+      console.log(totalSupply, "Dashboard Total Supply");
+
+      const _tokenPrice = 1;
+      // const _tokenPrice = await tokenPrice;
+
+      console.log("Token Price", _tokenPrice);
 
       const circSupply =
         totalSupply -
         (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
           Math.pow(10, 5);
 
-      const _treasuryTokenValue = await treasuryTokenValue;
-      const _treasuryUserValue = await treasuryUserValue;
-      // console.log('x',_treasuryUserValue);
-
-      // const treasuryValue =
-      //   ((await tokenContract.balanceOf(addresses.TREASURY_ADDRESS)) /
-      //     Math.pow(10, 5)) *
-      //   _tokenPrice;
+      console.log(circSupply, "Circular Supply");
 
       setInfo({
         supply: circSupply,
@@ -69,17 +68,18 @@ const DashboardComponent = () => {
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Market Cap</p>
                 <h4>
-                  {new Intl.NumberFormat("en-US", {
+                  ${info.marketCap}
+                  {/* {new Intl.NumberFormat("en-US", {
                     style: "currency",
                     currency: "USD",
                     maximumFractionDigits: 0,
                     minimumFractionDigits: 0,
-                  }).format(info.marketCap)}
+                  }).format(info.marketCap)} */}
                 </h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Circulating Supply</p>
-                <h4>{info.supply}</h4>
+                <h4>$ {info.supply}</h4>
               </Col>
             </Row>
             <Row className="justify-content-center mb-5">
