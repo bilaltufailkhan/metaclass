@@ -36,7 +36,7 @@ const DashboardComponent = () => {
 
       const circSupply =
         totalSupply -
-        (await tokenContract.balanceOf(addresses.FIREPIT_ADDRESS)) /
+        (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
           Math.pow(10, 5);
 
       const _treasuryTokenValue = await treasuryTokenValue;
