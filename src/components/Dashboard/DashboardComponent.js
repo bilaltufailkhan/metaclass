@@ -29,7 +29,6 @@ const DashboardComponent = () => {
 
   useEffect(() => {
     (async () => {
-      // console.log("library", await library?.getBalance(addresses.TREASURY_ADDRESS));
       const totalSupply =
         (await tokenContract?.totalSupply()) / Math.pow(10, 5);
 
