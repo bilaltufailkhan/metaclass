@@ -79,6 +79,7 @@ const DashboardNav = () => {
       if (localStorage?.getItem("isWalletConnected") === "true") {
         try {
           await activate(injected);
+          localStorage.setItem("isWalletConnected", true);
         } catch (ex) {
           console.log(ex);
         }
