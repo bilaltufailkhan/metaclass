@@ -53,6 +53,7 @@ const DashboardNav = () => {
   async function walletConnect() {
     try {
       await activate(walletconnect);
+      localStorage.setItem("isWalletConnected", true);
     } catch (ex) {
       console.log(ex);
     }
@@ -61,6 +62,7 @@ const DashboardNav = () => {
   async function walletDisconnect() {
     try {
       deactivate();
+      localStorage.setItem("isWalletConnected", false);
     } catch (ex) {
       console.log(ex);
     }
@@ -71,6 +73,19 @@ const DashboardNav = () => {
       setModalShow(false);
     }
   }, [account]);
+
+  useEffect(() => {
+    const connectWalletOnPageLoad = async () => {
+      if (localStorage?.getItem("isWalletConnected") === "true") {
+        try {
+          await activate(injected);
+        } catch (ex) {
+          console.log(ex);
+        }
+      }
+    };
+    connectWalletOnPageLoad();
+  }, []);
 
   // Component Desing Starts Here
 

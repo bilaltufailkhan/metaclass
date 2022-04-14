@@ -22,10 +22,13 @@ const DashboardComponent = () => {
   const rebaseTime = useCountdown();
 
   const [info, setInfo] = useState({
+    price: "",
     supply: "",
     tokenPrice: "",
     marketCap: "",
     treasuryValue: "",
+    totalSupply: "",
+    firePitValue: "",
   });
 
   useEffect(() => {
@@ -40,17 +43,26 @@ const DashboardComponent = () => {
 
       console.log("Token Price", _tokenPrice);
 
-      const circSupply =
-        totalSupply -
-        (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
-          Math.pow(10, 5);
+      // const circSupply =
+      //   totalSupply -
+      //   (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
+      //     Math.pow(10, 5);
 
-      console.log(circSupply, "Circular Supply");
+      const circulatingSupply =
+        (await tokenContract.getCirculatingSupply()) / Math.pow(10, 5);
+
+      console.log(circulatingSupply, "Circular Supply");
+
+      const firePit = (await tokenContract.firePitFee()) / Math.pow(10, 5);
+      console.log("***FirePit Fees", firePit);
 
       setInfo({
-        supply: circSupply,
+        price: "161.32",
+        supply: circulatingSupply,
         tokenPrice: _tokenPrice,
         marketCap: totalSupply * _tokenPrice,
+        totalSupply,
+        firePitValue: firePit,
       });
     })();
   }, []);
@@ -63,7 +75,7 @@ const DashboardComponent = () => {
             <Row className="justify-content-center mt-5">
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>MCLS Price</p>
-                <h4>$161.32</h4>
+                <h4>${info.price}</h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Market Cap</p>
@@ -79,7 +91,7 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Circulating Supply</p>
-                <h4>$ {info.supply}</h4>
+                <h4>{info.supply}</h4>
               </Col>
             </Row>
             <Row className="justify-content-center mb-5">
@@ -93,7 +105,7 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Total Supply</p>
-                <h4>724,591.63</h4>
+                <h4>{info.totalSupply}</h4>
               </Col>
             </Row>
           </Col>
@@ -145,21 +157,21 @@ const DashboardComponent = () => {
                 md="4"
                 className="text-center dashboard__row p-5 my-2 readings__text"
               >
-                <p>Total Supply</p>
+                <p># Value of FirePit</p>
+                <h4>{info.firePitValue}</h4>
+              </Col>
+              <Col
+                md="3"
+                className="text-center offset-md-1 dashboard__row p-5 my-2 readings__text"
+              >
+                <p>$ Value of FirePit</p>
                 <h4>724,591.63</h4>
               </Col>
               <Col
                 md="3"
                 className="text-center offset-md-1 dashboard__row p-5 my-2 readings__text"
               >
-                <p>Total Supply</p>
-                <h4>724,591.63</h4>
-              </Col>
-              <Col
-                md="3"
-                className="text-center offset-md-1 dashboard__row p-5 my-2 readings__text"
-              >
-                <p>Total Supply</p>
+                <p>%FirePit:Supply</p>
                 <h4>724,591.63</h4>
               </Col>
             </Row>

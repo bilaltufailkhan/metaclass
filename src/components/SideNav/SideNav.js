@@ -23,6 +23,12 @@ const SideNav = () => {
   const { active, account, library, connector, activate, deactivate } =
     useWeb3React();
 
+  const formatAddress = (str) => {
+    return str.length > 41
+      ? str.substring(0, 4) + "..." + str.substring(38, 42)
+      : str;
+  };
+
   return (
     <>
       <div className="sidenav">
@@ -34,7 +40,10 @@ const SideNav = () => {
             style={{ marginBottom: "3rem", marginLeft: "3rem" }}
           />
         </a>
-        <p style={{ color: "#efefef", textAlign: "left" }}>{account}</p>
+        <p style={{ color: "#efefef", textAlign: "left" }}>
+          {/* {useAddress(account)} */}
+          {!account ? "" : formatAddress(account)}
+        </p>
         <Link to="/dashboard" className="nav-link">
           <img src={dashboardIcon} width="24px" height="auto" />
           &nbsp;Dashboard

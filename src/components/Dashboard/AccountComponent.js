@@ -23,7 +23,7 @@ const AccountComponent = () => {
   const rebaseTime = useCountdown();
 
   const [info, setInfo] = useState({
-    supply: "",
+    balance: "",
     tokenPrice: "",
     marketCap: "",
     treasuryValue: "",
@@ -31,26 +31,19 @@ const AccountComponent = () => {
 
   useEffect(() => {
     (async () => {
-      const totalSupply =
-        (await tokenContract?._totalSupply()) / Math.pow(10, 5);
+      // const _tokenPrice = await tokenPrice;
+      const _tokenPrice = 1;
+      const accountBalance = await tokenContract.getBalance(
+        addresses.TOKEN_ADDRESS
+      );
 
-      console.log(totalSupply, "Total Supply");
-
-      const _tokenPrice = await tokenPrice;
+      console.log(accountBalance, "******Account Balance");
 
       console.log("Token Price", _tokenPrice);
 
-      const circSupply =
-        totalSupply -
-        (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
-          Math.pow(10, 5);
-
-      console.log(circSupply, "Circular Supply");
-
       setInfo({
-        supply: circSupply,
+        balance: accountBalance,
         tokenPrice: _tokenPrice,
-        marketCap: totalSupply * _tokenPrice,
       });
     })();
   }, []);
@@ -65,7 +58,7 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading text-center"
           >
             <p>Your Balance</p>
-            <h4>$0</h4>
+            <h4>${info.balance}</h4>
             <p>0 MCLS</p>
           </Col>
           <Col
