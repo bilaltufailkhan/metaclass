@@ -15,6 +15,12 @@ import {
 const CalculatorComponent = () => {
   const [mcls, setMcls] = useState(162.84);
   const [apy, setApy] = useState(19686.1);
+  const [pricePurchase, setPricePurchase] = useState(162.84);
+
+  const [initInvestment, setInitInvestment] = useState(0);
+  const [currentWealth, setCurrentWealth] = useState(0);
+  const [rewardEst, setRewardEst] = useState(0);
+  const [potentialReturn, setPotentialReturn] = useState(0);
 
   const onFormSubmit = (e) => {
     // e.preventDefault();
@@ -136,7 +142,7 @@ const CalculatorComponent = () => {
                 <p>Your initial investment</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$0</span>
+                <span>${initInvestment}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -144,7 +150,7 @@ const CalculatorComponent = () => {
                 <p>Current wealth</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$0</span>
+                <span>${currentWealth}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -152,7 +158,7 @@ const CalculatorComponent = () => {
                 <p>MCLS rewards estimation</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>0 MCLS</span>
+                <span>{rewardEst} MCLS</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -160,7 +166,7 @@ const CalculatorComponent = () => {
                 <p>Potential return</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$0</span>
+                <span>${potentialReturn}</span>
               </Col>
             </Row>
           </Col>
