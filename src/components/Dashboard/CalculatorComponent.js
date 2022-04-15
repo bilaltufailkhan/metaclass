@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Col,
   Container,
@@ -13,6 +13,14 @@ import {
 } from "reactstrap";
 
 const CalculatorComponent = () => {
+  const [mcls, setMcls] = useState(162.84);
+  const [apy, setApy] = useState(19686.1);
+
+  const onFormSubmit = (e) => {
+    // e.preventDefault();
+    console.log("Form Submitted");
+  };
+
   return (
     <>
       <Container className="calculator p-5 my-5 rounded">
@@ -25,18 +33,18 @@ const CalculatorComponent = () => {
         <Row className="justify-content-center">
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>MCLS Price</p>
-            <h2>$162.84</h2>
+            <h2>${mcls}</h2>
           </Col>
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>Current APY</p>
-            <h2>383,025.8%</h2>
+            <h2>{apy}%</h2>
           </Col>
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>Your MCLS Balance</p>
             <h2>0 MCLS</h2>
           </Col>
         </Row>
-        <Form className="calculator__form">
+        <Form className="calculator__form" onSubmit={onFormSubmit}>
           <Row className="justify-content-between">
             <Col md="5" className="my-4">
               <FormGroup>
@@ -47,6 +55,7 @@ const CalculatorComponent = () => {
                     name="amount"
                     id="amount"
                     placeholder="0"
+                    onChange={(e) => setMcls(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
                     <Button>Max</Button>
