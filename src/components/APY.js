@@ -6,6 +6,11 @@ const APY = () => {
   return (
     <>
       <Container className="apy">
+        <Row className="official__address justify-content-center">
+          <Col xs="12" className="text-center">
+            <p>Official Address: 0xa18bdf653018166e58319dee3487f72f13147f38</p>
+          </Col>
+        </Row>
         <Row className="align-items-center justify-content-center">
           <Col md="3" sm="12" className="my-3 text-md-left text-center">
             <Fade left>
