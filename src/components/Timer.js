@@ -1,12 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { calculateTimeLeft } from "../hooks/calculateTimer";
+import NewTimer from "./NewTimer";
 const STATUS = {
   STARTED: "Started",
   STOPPED: "Stopped",
 };
 
+// let lastRebasedTime = 1;
 const INITIAL_COUNT = 57600 + 1560 + 60;
+// const INITIAL_COUNT = 9 * Math.pow(10, 5) -
+//           ((Date.now() - lastRebasedTime) % (9 * Math.pow(10, 5)))
 
 const Timer = () => {
   const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT);
