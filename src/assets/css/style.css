@@ -1314,6 +1314,5 @@ span {
 .official__address p {
   font-family: "Share Tech Mono", monospace;
   font-size: 1.5rem;
-  color: #d8d8d8;
-  text-shadow: 0 0 10px #ffff00;
+  color: #ffe600;
 }
