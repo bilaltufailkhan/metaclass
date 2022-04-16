@@ -21,6 +21,7 @@ import Switch from "react-switch";
 import TokenDist from "../components/TokenDist";
 import Wallet from "../components/Wallet";
 import SideSocials from "../components/global/SideSocials";
+import Timer from "../components/Timer";
 
 const AdminView = (props) => {
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
@@ -69,6 +70,9 @@ const AdminView = (props) => {
       {/* <SideSocials /> */}
       <Container fluid className="bgSetting" data-theme={theme}>
         <Row>
+          <Col xs="12">
+            <Timer theme={theme} />
+          </Col>
           <Col xs="12">
             <MainNavFunc
               checked={checked}

@@ -1316,3 +1316,8 @@ span {
   font-size: 1.5rem;
   color: #ffe600;
 }
+
+.timer {
+  background: var(--gradientBG);
+  font-size: 1.2rem;
+}
