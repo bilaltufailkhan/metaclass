@@ -14,7 +14,11 @@ import { useCountdown } from "../../utils/countdown";
 
 import { useWeb3React } from "@web3-react/core";
 
+import { css } from "@emotion/react";
+import PuffLoader from "react-spinners/PuffLoader";
+
 const AccountComponent = () => {
+  const [mcls, setMcls] = useState(162.84);
   const tokenContract = UseTokenContract();
   const tokenPrice = UseTokenPrice();
   const treasuryTokenValue = getTreasuryTokenValue();
@@ -23,28 +27,40 @@ const AccountComponent = () => {
   const rebaseTime = useCountdown();
 
   const [info, setInfo] = useState({
-    balance: "",
+    balance: 0,
+    nextReward: 0,
+    nextAmount: 0,
+    accountBalance: "",
     tokenPrice: "",
-    marketCap: "",
-    treasuryValue: "",
   });
+
+  const override = css`
+    display: block;
+    margin: 0 auto;
+    // border-color: red;
+  `;
+
+  let [loading, setLoading] = useState(true);
+  let [color, setColor] = useState("#ffffff");
 
   useEffect(() => {
     (async () => {
-      // const _tokenPrice = await tokenPrice;
-      const _tokenPrice = 1;
-      const accountBalance = await tokenContract.getBalance(
+      const _tokenPrice = await tokenPrice;
+      console.log(_tokenPrice, "Accounts Token Price");
+      const accountBalance = await tokenContract?.balanceOf(
         addresses.TOKEN_ADDRESS
       );
-
-      console.log(accountBalance, "******Account Balance");
-
-      console.log("Token Price", _tokenPrice);
-
+      const balance = _tokenPrice * accountBalance;
+      const nextReward = balance + 0.3834882;
+      const nextAmount = nextAmount * mcls;
       setInfo({
-        balance: accountBalance,
+        balance: balance,
+        accountBalance: accountBalance,
+        nextReward: nextReward,
+        nextAmount: nextAmount,
         tokenPrice: _tokenPrice,
       });
+      setLoading(false);
     })();
   }, []);
 
@@ -58,8 +74,19 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading text-center"
           >
             <p>Your Balance</p>
-            <h4>${info.balance}</h4>
-            <p>0 MCLS</p>
+            <h4>
+              {!loading ? (
+                "$ " + info.tokenPrice * info.accountBalance
+              ) : (
+                <PuffLoader
+                  color={color}
+                  loading={loading}
+                  css={override}
+                  size={30}
+                />
+              )}
+            </h4>
+            <p>{mcls} MCLS</p>
           </Col>
           <Col
             md="3"
@@ -67,7 +94,7 @@ const AccountComponent = () => {
             className="p-4 my-4 dashboard__row text__reading offset-md-1 text-center"
           >
             <p>APY</p>
-            <h4>102,846%</h4>
+            <h4>19686.1%</h4>
             <p>Daily ROI 2.28%</p>
           </Col>
           <Col
@@ -87,7 +114,7 @@ const AccountComponent = () => {
                 <p>Current MCLS Price</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>{`$${trim(info.tokenPrice, 2)}`}</span>
+                <span>${mcls}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -95,7 +122,7 @@ const AccountComponent = () => {
                 <p>Next Reward Amount</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>0 MCLS</span>
+                <span>{info.nextReward} MCLS</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
@@ -103,7 +130,7 @@ const AccountComponent = () => {
                 <p>Next Reward Amount USD</p>
               </Col>
               <Col xs="6" className="text-right">
-                <span>$ {info.circulatingSupply}</span>
+                <span>$ {info.nextAmount}</span>
               </Col>
             </Row>
             <Row className="account__table align-items-center my-2">
