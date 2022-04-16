@@ -1321,3 +1321,8 @@ span {
   background: var(--gradientBG);
   font-size: 1.2rem;
 }
+
+.timer .joinNow__btn {
+  text-decoration: none;
+  background: #d8d8d8;
+}
