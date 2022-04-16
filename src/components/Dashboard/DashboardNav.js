@@ -74,20 +74,6 @@ const DashboardNav = () => {
     }
   }, [account]);
 
-  useEffect(() => {
-    const connectWalletOnPageLoad = async () => {
-      if (localStorage?.getItem("isWalletConnected") === "true") {
-        try {
-          await activate(injected);
-          localStorage.setItem("isWalletConnected", true);
-        } catch (ex) {
-          console.log(ex);
-        }
-      }
-    };
-    connectWalletOnPageLoad();
-  }, []);
-
   // Component Desing Starts Here
 
   if (windowWidth > 992) {
