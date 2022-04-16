@@ -227,7 +227,7 @@ span {
   font-size: 1.2rem;
 }
 
-.calculator__form input[type="text"] {
+.calculator__form input[type="number"] {
   background-color: rgba(214, 0, 166, 0.1);
   border: none;
   outline: 0;

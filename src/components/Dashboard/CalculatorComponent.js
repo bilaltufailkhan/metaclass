@@ -13,30 +13,40 @@ import {
 } from "reactstrap";
 
 const CalculatorComponent = () => {
-  const [currentValue, setCurrentValue] = useState(162.84);
+  const currentMcls = 162.84;
+  const currentApy = 19686.1;
   const [mcls, setMcls] = useState(0);
   const [pricePurchase, setPricePurchase] = useState(162.84);
   const [apy, setApy] = useState(19686.1);
   const [days, setDays] = useState(30);
-  const [futurePrice, setFuturePrice] = useState(currentValue);
+  const [futurePrice, setFuturePrice] = useState(currentMcls);
 
   const [initInvestment, setInitInvestment] = useState(0);
   const [currentWealth, setCurrentWealth] = useState(0);
   const [rewardEst, setRewardEst] = useState(0);
   const [potentialReturn, setPotentialReturn] = useState(0);
 
-  const compoundCalc = () => {
-    const result = mcls * Math.pow(1 + apy, days);
-    const interest = result - mcls;
+  const principal = mcls;
+  const time = days;
+  const rate = apy/365;
+  const n = 144;
+
+  const compoundInterest = (p, t, r, n) => {
+    const amount = p * (Math.pow((1 + (r / n)), (n * t)));
+    const interest = amount - p;
     setInitInvestment(interest);
+    setCurrentWealth(interest)
+    setRewardEst(interest)
+    setPotentialReturn(interest)
   };
 
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form Submitted");
-    compoundCalc();
-  };
+  const onFormSubmit = (e,interest) => {
+    compoundInterest(principal,time,rate,n);
+  }
 
+  useEffect(() => {
+    onFormSubmit()
+  }, [mcls, days])
   return (
     <>
       <Container className="calculator p-5 my-5 rounded">
@@ -49,11 +59,11 @@ const CalculatorComponent = () => {
         <Row className="justify-content-center">
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>MCLS Price</p>
-            <h2>${currentValue}</h2>
+            <h2>${currentMcls}</h2>
           </Col>
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>Current APY</p>
-            <h2>{apy}%</h2>
+            <h2>{currentApy}%</h2>
           </Col>
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>Your MCLS Balance</p>
@@ -67,7 +77,7 @@ const CalculatorComponent = () => {
                 <Label for="mcls_amount">MCLS Amount</Label>
                 <InputGroup>
                   <Input
-                    type="text"
+                    type="number"
                     name="mcls_amount"
                     placeholder={mcls}
                     onChange={(e) => setMcls(e.target.value)}
@@ -84,14 +94,14 @@ const CalculatorComponent = () => {
                 <Label for="apy">APY %</Label>
                 <InputGroup>
                   <Input
-                    type="text"
+                    type="number"
                     name="apy"
                     placeholder="Value of APY"
                     value={apy}
                     onChange={(e) => setApy(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={() => setApy(apy)}>Current</Button>
+                    <Button onClick={() => setApy(19686.1)}>Current</Button>
                   </InputGroupAddon>
                 </InputGroup>
               </FormGroup>
@@ -105,14 +115,14 @@ const CalculatorComponent = () => {
                 </Label>
                 <InputGroup>
                   <Input
-                    type="text"
+                    type="number"
                     name="price_at_purchase"
                     placeholder={pricePurchase}
                     value={pricePurchase}
                     onChange={(e) => setPricePurchase(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={() => setPricePurchase(currentValue)}>
+                    <Button onClick={() => setPricePurchase(currentMcls)}>
                       Current
                     </Button>
                   </InputGroupAddon>
@@ -124,14 +134,14 @@ const CalculatorComponent = () => {
                 <Label for="future_price">Future MCLS market price ($)</Label>
                 <InputGroup>
                   <Input
-                    type="text"
+                    type="number"
                     name="future_price"
                     placeholder="162.84"
                     value={futurePrice}
                     onChange={(e) => setFuturePrice(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={() => setFuturePrice(currentValue)}>
+                    <Button onClick={() => setFuturePrice(currentMcls)}>
                       Current
                     </Button>
                   </InputGroupAddon>
@@ -150,20 +160,13 @@ const CalculatorComponent = () => {
                   name="amount"
                   type="range"
                   className="rangeInput"
-                  min="0"
+                  min="1"
                   max="365"
                   step="1"
                   value={days}
                   onChange={(e) => setDays(e.target.value)}
                 />
               </FormGroup>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs="12">
-              <Button type="submit" onClick={onFormSubmit}>
-                Calculate
-              </Button>
             </Col>
           </Row>
         </Form>

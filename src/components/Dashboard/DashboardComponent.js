@@ -34,6 +34,8 @@ const DashboardComponent = () => {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
 
+  
+
   const [info, setInfo] = useState({
     price: "",
     supply: "",

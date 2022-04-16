@@ -13,9 +13,12 @@ import { trim } from "../../utils/trim";
 import { useCountdown } from "../../utils/countdown";
 
 import { useWeb3React } from "@web3-react/core";
+import Web3 from "web3";
 
 import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";
+import { ethers } from "ethers";
+import { Provider } from "@ethersproject/providers";
 
 const AccountComponent = () => {
   const [mcls, setMcls] = useState(162.84);
@@ -25,6 +28,10 @@ const AccountComponent = () => {
   const treasuryUserValue = getTreasuryValueOfUser();
   const addresses = getAddresses(56);
   const rebaseTime = useCountdown();
+
+  
+  const { active, account, library, connector, activate, deactivate } =
+  useWeb3React();
 
   const [info, setInfo] = useState({
     balance: 0,
@@ -50,12 +57,16 @@ const AccountComponent = () => {
       const accountBalance = await tokenContract?.balanceOf(
         addresses.TOKEN_ADDRESS
       );
-      const balance = _tokenPrice * accountBalance;
+
+      const getBalance = await library.getBalance(account);
+      console.log("getBalance amount", ethers.utils.formatEther(getBalance))
+
+      const balance = _tokenPrice * getBalance;
       const nextReward = balance + 0.3834882;
       const nextAmount = nextAmount * mcls;
       setInfo({
         balance: balance,
-        accountBalance: accountBalance,
+        accountBalance: getBalance,
         nextReward: nextReward,
         nextAmount: nextAmount,
         tokenPrice: _tokenPrice,
