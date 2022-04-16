@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Col,
   Container,
@@ -13,25 +13,28 @@ import {
 } from "reactstrap";
 
 const CalculatorComponent = () => {
-  const [mcls, setMcls] = useState(162.84);
-  const [apy, setApy] = useState(19686.1);
+  const [currentValue, setCurrentValue] = useState(162.84);
+  const [mcls, setMcls] = useState(0);
   const [pricePurchase, setPricePurchase] = useState(162.84);
+  const [apy, setApy] = useState(19686.1);
   const [days, setDays] = useState(30);
+  const [futurePrice, setFuturePrice] = useState(currentValue);
 
   const [initInvestment, setInitInvestment] = useState(0);
   const [currentWealth, setCurrentWealth] = useState(0);
   const [rewardEst, setRewardEst] = useState(0);
   const [potentialReturn, setPotentialReturn] = useState(0);
 
-  const onFormSubmit = () => {
-    // e.preventDefault();
+  const compoundCalc = () => {
+    const result = mcls * Math.pow(1 + apy, days);
+    const interest = result - mcls;
+    setInitInvestment(interest);
   };
 
-  const handleOnChange = () => {};
-
-  const resetValue = () => {
-    const initialInvestment = mcls * apy * pricePurchase;
-    setInitInvestment(initialInvestment);
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted");
+    compoundCalc();
   };
 
   return (
@@ -46,7 +49,7 @@ const CalculatorComponent = () => {
         <Row className="justify-content-center">
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>MCLS Price</p>
-            <h2>${mcls}</h2>
+            <h2>${currentValue}</h2>
           </Col>
           <Col md="4" sm="12" className="text-center calculator__text my-5">
             <p>Current APY</p>
@@ -80,9 +83,15 @@ const CalculatorComponent = () => {
               <FormGroup>
                 <Label for="apy">APY %</Label>
                 <InputGroup>
-                  <Input type="text" name="apy" placeholder={apy} value={apy} />
+                  <Input
+                    type="text"
+                    name="apy"
+                    placeholder="Value of APY"
+                    value={apy}
+                    onChange={(e) => setApy(e.target.value)}
+                  />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={resetValue}>Current</Button>
+                    <Button onClick={() => setApy(apy)}>Current</Button>
                   </InputGroupAddon>
                 </InputGroup>
               </FormGroup>
@@ -100,9 +109,12 @@ const CalculatorComponent = () => {
                     name="price_at_purchase"
                     placeholder={pricePurchase}
                     value={pricePurchase}
+                    onChange={(e) => setPricePurchase(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={resetValue}>Current</Button>
+                    <Button onClick={() => setPricePurchase(currentValue)}>
+                      Current
+                    </Button>
                   </InputGroupAddon>
                 </InputGroup>
               </FormGroup>
@@ -111,9 +123,17 @@ const CalculatorComponent = () => {
               <FormGroup>
                 <Label for="future_price">Future MCLS market price ($)</Label>
                 <InputGroup>
-                  <Input type="text" name="future_price" placeholder="162.84" />
+                  <Input
+                    type="text"
+                    name="future_price"
+                    placeholder="162.84"
+                    value={futurePrice}
+                    onChange={(e) => setFuturePrice(e.target.value)}
+                  />
                   <InputGroupAddon addonType="append">
-                    <Button onClick={resetValue}>Current</Button>
+                    <Button onClick={() => setFuturePrice(currentValue)}>
+                      Current
+                    </Button>
                   </InputGroupAddon>
                 </InputGroup>
               </FormGroup>
@@ -127,7 +147,7 @@ const CalculatorComponent = () => {
                 </Label>
                 <Input
                   id="exampleRange"
-                  name="range"
+                  name="amount"
                   type="range"
                   className="rangeInput"
                   min="0"
@@ -137,6 +157,13 @@ const CalculatorComponent = () => {
                   onChange={(e) => setDays(e.target.value)}
                 />
               </FormGroup>
+            </Col>
+          </Row>
+          <Row>
+            <Col xs="12">
+              <Button type="submit" onClick={onFormSubmit}>
+                Calculate
+              </Button>
             </Col>
           </Row>
         </Form>

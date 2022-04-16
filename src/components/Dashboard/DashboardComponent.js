@@ -8,6 +8,10 @@ import {
   getTreasuryTokenValue,
   getTreasuryValueOfUser,
 } from "../../hooks";
+
+import { css } from "@emotion/react";
+import PuffLoader from "react-spinners/PuffLoader";
+
 import { getAddresses } from "../../constants/addresses";
 import { trim } from "../../utils/trim";
 import { useCountdown } from "../../utils/countdown";
@@ -20,6 +24,15 @@ const DashboardComponent = () => {
   const treasuryUserValue = getTreasuryValueOfUser();
   const addresses = getAddresses(56);
   const rebaseTime = useCountdown();
+
+  const override = css`
+    display: block;
+    margin: 0 auto;
+    // border-color: red;
+  `;
+
+  let [loading, setLoading] = useState(true);
+  let [color, setColor] = useState("#ffffff");
 
   const [info, setInfo] = useState({
     price: "",
@@ -35,27 +48,11 @@ const DashboardComponent = () => {
     (async () => {
       const totalSupply =
         (await tokenContract?._totalSupply()) / Math.pow(10, 5);
-
-      console.log(totalSupply, "Dashboard Total Supply");
-
-      const _tokenPrice = 1;
-      // const _tokenPrice = await tokenPrice;
-
-      console.log("Token Price", _tokenPrice);
-
-      // const circSupply =
-      //   totalSupply -
-      //   (await tokenContract.balanceOf(addresses.TOKEN_ADDRESS)) /
-      //     Math.pow(10, 5);
+      const _tokenPrice = await tokenPrice;
 
       const circulatingSupply =
         (await tokenContract.getCirculatingSupply()) / Math.pow(10, 5);
-
-      console.log(circulatingSupply, "Circular Supply");
-
       const firePit = (await tokenContract.firePitFee()) / Math.pow(10, 5);
-      console.log("***FirePit Fees", firePit);
-
       setInfo({
         price: "161.32",
         supply: circulatingSupply,
@@ -64,6 +61,7 @@ const DashboardComponent = () => {
         totalSupply,
         firePitValue: firePit,
       });
+      setLoading(false);
     })();
   }, []);
 
@@ -75,23 +73,48 @@ const DashboardComponent = () => {
             <Row className="justify-content-center mt-5">
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>MCLS Price</p>
-                <h4>${info.price}</h4>
+                <h4>
+                  {!loading ? (
+                    "$ " + info.price
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Market Cap</p>
                 <h4>
-                  ${info.marketCap}
-                  {/* {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    maximumFractionDigits: 0,
-                    minimumFractionDigits: 0,
-                  }).format(info.marketCap)} */}
+                  {!loading ? (
+                    "$ " + info.marketCap
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
                 </h4>
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Circulating Supply</p>
-                <h4>{info.supply}</h4>
+                <h4>
+                  {!loading ? (
+                    info.supply
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
             </Row>
             <Row className="justify-content-center mb-5">
@@ -105,7 +128,18 @@ const DashboardComponent = () => {
               </Col>
               <Col sm="4" className="text-center my-2 readings__text">
                 <p>Total Supply</p>
-                <h4>{info.totalSupply}</h4>
+                <h4>
+                  {!loading ? (
+                    info.totalSupply
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
             </Row>
           </Col>
@@ -118,7 +152,18 @@ const DashboardComponent = () => {
                 className="text-center p-5 my-2 readings__text dashboard__row"
               >
                 <p>MCLS Price</p>
-                <h4>{`$${trim(info.tokenPrice, 2)}`}</h4>
+                <h4>
+                  {!loading ? (
+                    "$ " + info.price
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
               <Col
                 md="6"
@@ -158,21 +203,54 @@ const DashboardComponent = () => {
                 className="text-center dashboard__row p-5 my-2 readings__text"
               >
                 <p># Value of FirePit</p>
-                <h4>{info.firePitValue}</h4>
+                <h4>
+                  {!loading ? (
+                    info.firePitValue
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
               <Col
                 md="3"
                 className="text-center offset-md-1 dashboard__row p-5 my-2 readings__text"
               >
                 <p>$ Value of FirePit</p>
-                <h4>724,591.63</h4>
+                <h4>
+                  {!loading ? (
+                    "$ " + info.firePitValue
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
               <Col
                 md="3"
                 className="text-center offset-md-1 dashboard__row p-5 my-2 readings__text"
               >
                 <p>%FirePit:Supply</p>
-                <h4>724,591.63</h4>
+                <h4>
+                  {!loading ? (
+                    ((info.firePitValue / info.price) * 100).toFixed(4)
+                  ) : (
+                    <PuffLoader
+                      color={color}
+                      loading={loading}
+                      css={override}
+                      size={30}
+                    />
+                  )}
+                </h4>
               </Col>
             </Row>
           </Col>
