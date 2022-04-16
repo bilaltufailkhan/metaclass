@@ -21,12 +21,14 @@ const Timer = () => {
 
     timerComponents.push(
       <span>
-        {timeLeft[interval]} {interval}{" "}
+        {" : "}
+        {timeLeft[interval]}
       </span>
     );
   });
   return (
-    <div className="text-center timer py-2">
+    <div className="text-center timer py-2 text-white font-weight-bold">
+      Start Sale{" "}
       {timerComponents.length ? timerComponents : <span>Time's up!</span>}
       <a
         href="https://www.pinksale.finance/#/launchpad/0x7AD30e896C88243200023d3A3ACc43A5983931cd?chain=BSC"

@@ -1325,4 +1325,16 @@ span {
 .timer .joinNow__btn {
   text-decoration: none;
   background: #d8d8d8;
+  /* transition: all 2s ease-in-out; */
+  animation-name: joinAnim;
+  animation-duration: 2s;
+}
+
+@keyframes joinAnim {
+  0% {
+    transform: scaleZ(10px);
+  }
+  100% {
+    transform: scaleZ(100px);
+  }
 }
