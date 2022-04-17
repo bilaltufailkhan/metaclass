@@ -46,7 +46,7 @@ const CalculatorComponent = () => {
 
   useEffect(() => {
     onFormSubmit();
-  }, [mcls, days]);
+  }, [mcls, days, pricePurchase]);
   return (
     <>
       <Container className="calculator p-5 my-5 rounded">
