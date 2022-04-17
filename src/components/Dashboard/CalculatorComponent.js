@@ -97,8 +97,8 @@ const CalculatorComponent = () => {
                     type="number"
                     name="apy"
                     placeholder="Value of APY"
-                    value={apy}
-                    onChange={(e) => setApy(e.target.value)}
+                    value={currentApy}
+                    // onChange={(e) => setApy(e.target.value)}
                   />
                   <InputGroupAddon addonType="append">
                     <Button onClick={() => setApy(19686.1)}>Current</Button>
