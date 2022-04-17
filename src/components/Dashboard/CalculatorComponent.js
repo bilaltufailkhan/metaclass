@@ -28,7 +28,7 @@ const CalculatorComponent = () => {
 
   const principal = mcls;
   const time = days;
-  const rate = apy;
+  const rate = 0.014;
   const n = 365 / 144;
 
   const compoundInterest = (p, t, r, n) => {
