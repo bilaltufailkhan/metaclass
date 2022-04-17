@@ -17,7 +17,7 @@ const CalculatorComponent = () => {
   const currentApy = 19686.1;
   const [mcls, setMcls] = useState(0);
   const [pricePurchase, setPricePurchase] = useState(162.84);
-  const [apy, setApy] = useState(19686.1);
+  const [apy, setApy] = useState(0.02355);
   const [days, setDays] = useState(30);
   const [futurePrice, setFuturePrice] = useState(currentMcls);
 
@@ -28,25 +28,25 @@ const CalculatorComponent = () => {
 
   const principal = mcls;
   const time = days;
-  const rate = apy/365;
-  const n = 144;
+  const rate = apy;
+  const n = 365 / 144;
 
   const compoundInterest = (p, t, r, n) => {
-    const amount = p * (Math.pow((1 + (r / n)), (n * t)));
+    const amount = p * Math.pow(1 + r / n, n * t);
     const interest = amount - p;
-    setInitInvestment(interest);
-    setCurrentWealth(interest)
-    setRewardEst(interest)
-    setPotentialReturn(interest)
+    setInitInvestment(interest.toFixed(4));
+    setCurrentWealth(interest.toFixed(4));
+    setRewardEst(interest.toFixed(4));
+    setPotentialReturn(interest.toFixed(4));
   };
 
-  const onFormSubmit = (e,interest) => {
-    compoundInterest(principal,time,rate,n);
-  }
+  const onFormSubmit = (e, interest) => {
+    compoundInterest(principal, time, rate, n);
+  };
 
   useEffect(() => {
-    onFormSubmit()
-  }, [mcls, days])
+    onFormSubmit();
+  }, [mcls, days]);
   return (
     <>
       <Container className="calculator p-5 my-5 rounded">
