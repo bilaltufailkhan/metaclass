@@ -2,15 +2,14 @@ import { useEffect, useState } from "react";
 
 let lastRebasedTime = 0;
 
-
 const useCountdown = () => {
   const [countDown, setCountDown] = useState<number>(900000);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setCountDown(
-        9 * Math.pow(10, 5) -
-          ((Date.now() - lastRebasedTime) % (9 * Math.pow(10, 5)))
+        60 * 60 * 60 * Math.pow(10, 5) -
+          ((Date.now() - lastRebasedTime) % (60 * 60 * 60 * Math.pow(10, 5)))
       );
     }, 1000);
 

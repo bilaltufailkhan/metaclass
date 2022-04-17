@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { calculateTimeLeft } from "../hooks/calculateTimer";
+import { useCountdown } from "../utils/timer";
 import NewTimer from "./NewTimer";
 const STATUS = {
   STARTED: "Started",
@@ -13,6 +14,7 @@ const INITIAL_COUNT = 57600 + 1560 + 60;
 //           ((Date.now() - lastRebasedTime) % (9 * Math.pow(10, 5)))
 
 const Timer = () => {
+  const rebaseTime = useCountdown();
   const [secondsRemaining, setSecondsRemaining] = useState(INITIAL_COUNT);
   const [status, setStatus] = useState(STATUS.STARTED);
 
@@ -72,11 +74,12 @@ const Timer = () => {
     <div className="">
       <div className="text-center timer py-2 text-white font-weight-bold">
         Start Sale{" "}
-        {twoDigits(hoursToDisplay) +
+        {/* {twoDigits(hoursToDisplay) +
           ":" +
           twoDigits(minutesToDisplay) +
           ":" +
-          twoDigits(secondsToDisplay)}
+          twoDigits(secondsToDisplay)} */}
+        {`${rebaseTime[1]}:${rebaseTime[2]}:${rebaseTime[3]}`}
         <a
           href="https://www.pinksale.finance/#/launchpad/0x7AD30e896C88243200023d3A3ACc43A5983931cd?chain=BSC"
           target="_blank"
