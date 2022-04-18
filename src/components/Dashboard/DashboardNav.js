@@ -37,7 +37,7 @@ const DashboardNav = () => {
 
   const [modalShow, setModalShow] = useState(false);
 
-  const { active, account, library, connector, activate, deactivate } =
+  const { active, account, activate, deactivate } =
     useWeb3React();
 
   // MetaMask Connection
@@ -99,7 +99,7 @@ const DashboardNav = () => {
                 }}
               >
                 <span className="icon-wallet">
-                  <img src={metaMaskImg} width={26} />
+                  <img src={metaMaskImg} width={26} alt="Meta Mask Logo" />
                 </span>
                 {` `}
                 <span>Metamask</span>
@@ -111,7 +111,7 @@ const DashboardNav = () => {
                 }}
               >
                 <span className="icon-wallet iw-mt">
-                  <img src={walletConnectImg} width={26} />
+                  <img src={walletConnectImg} width={26} alt="Wallet Connect Logo" />
                 </span>
                 {` `}
                 <span>WalletConnect</span>
@@ -121,7 +121,7 @@ const DashboardNav = () => {
 
             <p className="p-0 m-0">Need help connecting a wallet?</p>
             <p className="green-anchor p-0 m-0">
-              <a href="#">Learn more about wallets</a>
+              <a href="/">Learn more about wallets</a>
             </p>
           </Modal.Body>
         </Modal>
@@ -165,7 +165,7 @@ const DashboardNav = () => {
         <div className="drawer__nav py-4 container">
           <div className="logo">
             <a href="https://metaclass.market" className="nav-link">
-              <img src={logo} height="30px" width="auto" />
+              <img src={logo} height="30px" width="auto" alt="logo" />
             </a>
           </div>
           <div className="bread__crumb">
@@ -197,6 +197,7 @@ const DashboardNav = () => {
                   href="https://pancakeswap.finance/"
                   target="_blank"
                   className="nav-link"
+                  rel="noreferrer"
                 >
                   Swap
                 </a>

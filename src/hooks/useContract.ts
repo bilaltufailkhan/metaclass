@@ -3,7 +3,7 @@ import { useWeb3React as UseWeb3React } from "@web3-react/core";
 import { useMemo } from "react";
 import { getContract } from "../utils/contracts";
 import { Contract } from "@ethersproject/contracts";
-import { erc20ABI, tokenABI, lpABI } from "../constants/abis";
+import { erc20ABI } from "../constants/abis";
 import { ethers } from "ethers";
 import { BNBChain } from "../common/Wallet/connectors";
 import { getTokenPrice } from "../utils/getPrice";
@@ -78,7 +78,7 @@ export async function getTreasuryTokenValue() {
 }
 
 export function getTreasuryValueOfUser() {
-  const { library, account } = UseWeb3React();
+  const { library } = UseWeb3React();
   const addresses = getAddresses(56);
 
   let ethersProvider = new ethers.providers.JsonRpcProvider(BNBChain.rpc);

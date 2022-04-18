@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "reactstrap";
 
 import {
-  useContract,
   UseTokenContract,
   UseTokenPrice,
   getTreasuryTokenValue,
@@ -13,9 +12,7 @@ import { css } from "@emotion/react";
 import PuffLoader from "react-spinners/PuffLoader";
 
 import { getAddresses } from "../../constants/addresses";
-import { trim } from "../../utils/trim";
 import { useCountdown } from "../../utils/countdown";
-import { useWeb3React } from "@web3-react/core";
 
 const DashboardComponent = () => {
   const tokenContract = UseTokenContract();
@@ -34,7 +31,7 @@ const DashboardComponent = () => {
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#ffffff");
 
-  
+
 
   const [info, setInfo] = useState({
     price: "",

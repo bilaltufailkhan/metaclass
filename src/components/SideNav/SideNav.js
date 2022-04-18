@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container, Tooltip } from "reactstrap";
+import { Tooltip } from "reactstrap";
 import logo from "../../assets/img/metaclass-assets/logo.png";
 
 import dashboardIcon from "../../assets/img/dashboard/dashboard.svg";
@@ -11,7 +11,6 @@ import docsIcon from "../../assets/img/dashboard/docs.svg";
 import swapIcon from "../../assets/img/dashboard/swap-dark.png";
 
 import { useWeb3React } from "@web3-react/core";
-import { useAddress } from "../../utils/useAddress";
 
 const SideNav = () => {
   const [tooltipOpen, setTooltipOpen] = React.useState(false);
@@ -20,7 +19,7 @@ const SideNav = () => {
     setTooltipOpen(!tooltipOpen);
   };
 
-  const { active, account, library, connector, activate, deactivate } =
+  const { account } =
     useWeb3React();
 
   const formatAddress = (str) => {
@@ -38,26 +37,26 @@ const SideNav = () => {
             width="40%"
             height="auto"
             style={{ marginBottom: "3rem", marginLeft: "3rem" }}
+            alt="Logo"
           />
         </a>
         <p style={{ color: "#efefef", textAlign: "left" }}>
-          {/* {useAddress(account)} */}
           {!account ? "" : formatAddress(account)}
         </p>
         <Link to="/dashboard" className="nav-link">
-          <img src={dashboardIcon} width="24px" height="auto" />
+          <img src={dashboardIcon} width="24px" height="auto" alt="Dashboard Icon" />
           &nbsp;Dashboard
         </Link>
         <Link to="/account" className="nav-link">
-          <img src={accountIcon} width="24px" height="auto" />
+          <img src={accountIcon} width="24px" height="auto" alt="User Icon" />
           &nbsp; Account
         </Link>
         <Link to="/calculator" className="nav-link">
-          <img src={calculatorIcon} width="24px" height="auto" />
+          <img src={calculatorIcon} width="24px" height="auto" alt="Calculator Icon" />
           &nbsp; Calculator
         </Link>
         <Link to="/" className="nav-link">
-          <img src={nftsIcon} width="24px" height="auto" />
+          <img src={nftsIcon} width="24px" height="auto" alt="NFTs Icon" />
           &nbsp;{" "}
           <span id="DisabledAutoHideExample" className="text-muted">
             NFTs
@@ -75,6 +74,7 @@ const SideNav = () => {
         <a
           href="https://pancakeswap.finance/"
           target="_blank"
+          rel="noreferrer"
           className="nav-link"
         >
           <img
@@ -82,24 +82,25 @@ const SideNav = () => {
             width="24px"
             height="auto"
             style={{ fill: "#ffffff" }}
+            alt="Swap icon"
           />
           &nbsp; Swap
         </a>
         <a href="https://metaclass.market/whitepaper.pdf" className="nav-link">
-          <img src={docsIcon} width="24px" height="auto" />
+          <img src={docsIcon} width="24px" height="auto" alt="Documents icon" />
           &nbsp; Docs
         </a>
         <div className="socials__dashboard">
-          <a href="https://www.facebook.com/metaclassbsc/" target="_blank">
+          <a href="https://www.facebook.com/metaclassbsc/" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="#">
+          <a href="https://www.instagram.com/metaclassbsc/">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://metaclassbsc.medium.com/" target="_blank">
+          <a href="https://metaclassbsc.medium.com/" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-medium"></i>
           </a>
-          <a href="https://twitter.com/metaclassbsc" target="_blank">
+          <a href="https://twitter.com/metaclassbsc" target="_blank" rel="noreferrer">
             <i class="fa-brands fa-twitter"></i>
           </a>
         </div>
