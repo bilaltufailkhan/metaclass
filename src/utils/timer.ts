@@ -8,8 +8,8 @@ const useCountdown = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCountDown(
-        250 * Math.pow(10, 5) -
-          ((Date.now() - lastRebasedTime) % (250 * Math.pow(10, 5)))
+        210 * Math.pow(10, 5) -
+        ((Date.now() - lastRebasedTime) % (250 * Math.pow(10, 5)))
       );
     }, 1000);
 
